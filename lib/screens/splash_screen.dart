@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utils/app_theme.dart';
+import '../services/sound_service.dart';
 import 'main_menu_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
+    SoundService().playBgMusic(); // 🔊 Background music shuru
     Future.delayed(const Duration(seconds: 3), () {
       if (mounted) {
         Navigator.of(context).pushReplacement(

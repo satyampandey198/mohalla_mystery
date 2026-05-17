@@ -1,0 +1,354 @@
+[
+  {
+    "id": "chapter_31",
+    "title": "Shimla Ka Pashmina",
+    "subtitle": "Baraf ki chadar mein dhoka...",
+    "location": "Shimla — Mall Road",
+    "backgroundEmoji": "❄️",
+    "mystery": "Mall Road ki sabse mehengi dukaan se 5 lakh ka asli Pashmina shawl chori ho gaya. Dukan mein chaar log the aur bahar baraf gir rahi thi.",
+    "solution": "char_tourist",
+    "isLocked": true,
+    "order": 31,
+    "clues": [
+      {"id":"c31_barf","name":"Pighli Baraf","description":"Kanch ke counter ke paas paani ki boondein (pighli baraf).","emoji":"💧","location":"Counter","isImportant":true,"order":1},
+      {"id":"c31_ticket","name":"Bus Ticket","description":"Delhi ki aakhri bus ka ticket zameen par mila.","emoji":"🎫","location":"Dukaan Ka Darwaza","isImportant":true,"order":2},
+      {"id":"c31_glove","name":"Kaala Glove","description":"Sirf ek kaala chota dastana.","emoji":"🧤","location":"Trial Room","isImportant":true,"order":3},
+      {"id":"c31_coffee","name":"Giri Hui Coffee","description":"Bahar table par aadhi coffee giri hai.","emoji":"☕","location":"Bahar Ki Table","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_tourist",
+        "name": "Rohan",
+        "role": "Delhi Ka Tourist",
+        "emoji": "🧣",
+        "description": "Bohot thand lag rahi hai, jaldi nikalna chahta hai.",
+        "suspicionLevel": 85,
+        "dialogues": [
+          {"id":"d31_t1","trigger":"Aap yahan kya kar rahe the?","response":"Main sirf window shopping kar raha tha. Mujhe nikalna hai.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d31_t2","trigger":"Counter pe pighli baraf kaise aayi?","response":"Main wahan shawl dekhne gaya tha! Main chori kyu karunga?","revealClue":"c31_barf","isHidden":true,"requiredClueId":"c31_barf","isImportant":true,"followUpIds":[]},
+          {"id":"d31_t3","trigger":"Ye Delhi ki bus ka ticket aapka hai?","response":"Haan, meri bus chhutne wali hai! Mujhe jaane do!","revealClue":"c31_ticket","isHidden":true,"requiredClueId":"c31_ticket","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_manager",
+        "name": "Vikram",
+        "role": "Shop Manager",
+        "emoji": "👔",
+        "description": "Dukaan ka naya manager, owner se naaraz hai.",
+        "suspicionLevel": 30,
+        "dialogues": [
+          {"id":"d31_m1","trigger":"Shawl kab gayab hua?","response":"Jab main coffee lene gaya tha. Main piche tha!","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d31_m2","trigger":"Coffee bahar kyu giri hai?","response":"Ek customer se takra gaya tha, mera glove bhi vahin gir gaya.","revealClue":"c31_coffee","isHidden":true,"requiredClueId":"c31_coffee","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_vip",
+        "name": "Mrs. Kapoor",
+        "role": "VIP Customer",
+        "emoji": "👜",
+        "description": "Ameer customer, usse Pashmina chahiye tha par mehenga laga.",
+        "suspicionLevel": 20,
+        "dialogues": [
+          {"id":"d31_v1","trigger":"Aap trial room me kya kar rahi thi?","response":"Dusre shawl try kar rahi thi!","revealClue":"c31_glove","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_guard",
+        "name": "Bhim Singh",
+        "role": "Guard",
+        "emoji": "💂‍♂️",
+        "description": "Aadhi neend me tha.",
+        "suspicionLevel": 10,
+        "dialogues": [
+          {"id":"d31_g1","trigger":"Kisi ko bhagte dekha?","response":"Sirf ek ladka Delhi bus stand ki taraf bhaga.","revealClue":"c31_ticket","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_counter","name":"Kanch Ka Counter 🪟","emoji":"🪟","xPercent":0.5,"yPercent":0.5,"clueId":"c31_barf","description":"Pashmina yahan rakha tha."},
+      {"id":"spot_door","name":"Darwaza 🚪","emoji":"🚪","xPercent":0.8,"yPercent":0.8,"clueId":"c31_ticket","description":"Bahar baraf hai."},
+      {"id":"spot_trial","name":"Trial Room 👗","emoji":"👗","xPercent":0.2,"yPercent":0.4,"clueId":"c31_glove","description":"Kapde try karne ki jagah."},
+      {"id":"spot_out","name":"Bahar Ki Table 🪑","emoji":"🪑","xPercent":0.9,"yPercent":0.2,"clueId":"c31_coffee","description":"Dukaan ke bahar ka area."}
+    ]
+  },
+  {
+    "id": "chapter_32",
+    "title": "Jakhoo Mandir Ki Ghanti",
+    "subtitle": "Pahadi mandir se chori...",
+    "location": "Shimla — Jakhoo Temple",
+    "backgroundEmoji": "🛕",
+    "mystery": "Pahadi par sthit Jakhoo Mandir se sadiyon purani sone ki choti ghanti chori ho gayi. Wahan bandar bahut hain, par chor insaan hi hai.",
+    "solution": "char_vendor",
+    "isLocked": true,
+    "order": 32,
+    "clues": [
+      {"id":"c32_prasad","name":"Gira Hua Prasad","description":"Murti ke peeche chane aur prasad bikhra hai.","emoji":"🌰","location":"Garbhagriha","isImportant":true,"order":1},
+      {"id":"c32_dhaga","name":"Lal Dhaga","description":"Deewar ki keel par phansa ek lal dhaaga.","emoji":"🧵","location":"Mandir Ki Deewar","isImportant":true,"order":2},
+      {"id":"c32_shoe","name":"Mitti Wala Joota","description":"Deewar par chadhne ke nishan.","emoji":"🥾","location":"Peeche Ki Deewar","isImportant":true,"order":3},
+      {"id":"c32_bag","name":"Khaali Thaila","description":"Prasad bechne wale ka thaila jiska rang lal hai.","emoji":"🛍️","location":"Mandir Ki Seedhi","isImportant":true,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_vendor",
+        "name": "Ramu Prasad Wala",
+        "role": "Dukandar",
+        "emoji": "🧔",
+        "description": "Bandaron se nafrat karta hai, aur karze mein dooba hai.",
+        "suspicionLevel": 85,
+        "dialogues": [
+          {"id":"d32_v1","trigger":"Tumhara lal thaila kahan hai?","response":"Bandar le gaye honge!","revealClue":"c32_bag","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d32_v2","trigger":"Deewar pe tumhara lal dhaga kaise fasa?","response":"Main toh bas... bandar ko bhaga raha tha, isliye chada deewar pe!","revealClue":"c32_dhaga","isHidden":true,"requiredClueId":"c32_dhaga","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_priest",
+        "name": "Pandit Ji",
+        "role": "Mukhya Pujari",
+        "emoji": "📿",
+        "description": "Mandir ki ghanti ko lekar pareshan hain.",
+        "suspicionLevel": 15,
+        "dialogues": [
+          {"id":"d32_p1","trigger":"Murti ke piche prasad kyu gira hai?","response":"Shayad bandar andar ghus aaye honge. Ya kisi ne lalach diya hoga unhe.","revealClue":"c32_prasad","isHidden":true,"requiredClueId":"c32_prasad","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_tourist2",
+        "name": "Neha",
+        "role": "Photographer",
+        "emoji": "📷",
+        "description": "Bandaron ki photo kheench rahi thi.",
+        "suspicionLevel": 20,
+        "dialogues": [
+          {"id":"d32_t1","trigger":"Aapne deewar pe kisi ko chadte dekha?","response":"Haan, ek aadmi lal kapdon mein piche ki deewar faand raha tha.","revealClue":"c32_shoe","isHidden":true,"requiredClueId":"c32_shoe","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_cleaner",
+        "name": "Raju Sweeper",
+        "role": "Safaiwala",
+        "emoji": "🧹",
+        "description": "Subah sabse pehle aaya tha.",
+        "suspicionLevel": 5,
+        "dialogues": [
+          {"id":"d32_c1","trigger":"Kab pata chala ghanti gayab hai?","response":"Main subah jhaadu laga raha tha tab kisine deewar ke paas jhaadiyan todi thi.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_garbh","name":"Murti 🛕","emoji":"🛕","xPercent":0.5,"yPercent":0.4,"clueId":"c32_prasad","description":"Mukhya mandir."},
+      {"id":"spot_deewar","name":"Mandir Ki Deewar 🧱","emoji":"🧱","xPercent":0.8,"yPercent":0.3,"clueId":"c32_dhaga","description":"Uchi deewar, uspe chadhna mushkil hai."},
+      {"id":"spot_pdeewar","name":"Peeche Ki Deewar ⬛","emoji":"⬛","xPercent":0.2,"yPercent":0.5,"clueId":"c32_shoe","description":"Jahan nishan mile hain."},
+      {"id":"spot_seedhi","name":"Seedhiyan 🪜","emoji":"🪜","xPercent":0.5,"yPercent":0.8,"clueId":"c32_bag","description":"Upar aane ka rasta."}
+    ]
+  },
+  {
+    "id": "chapter_33",
+    "title": "Toy Train Ka Safar",
+    "subtitle": "Kalka se Shimla ke raste mein...",
+    "location": "Shimla — Toy Train",
+    "backgroundEmoji": "🚂",
+    "mystery": "Train ke chalte safar mein ek VIP passenger ka briefcase gayab ho gaya. Train kahin nahi ruki thi, matlab chor train ke andar hi hai.",
+    "solution": "char_tt",
+    "isLocked": true,
+    "order": 33,
+    "clues": [
+      {"id":"c33_ticket","name":"Phata Ticket","description":"Kisi aur passenger ka phata hua ticket washroom me mila.","emoji":"🎫","location":"Washroom","isImportant":true,"order":1},
+      {"id":"c33_punch","name":"Ticket Puncher","description":"TT ka puncher VIP ki seat ke niche gira mila.","emoji":"🕳️","location":"VIP Seat","isImportant":true,"order":2},
+      {"id":"c33_mud","name":"Keechad Wale Joote","description":"Keechad se sane joote ke nishan AC coach me the.","emoji":"👞","location":"Aisle","isImportant":true,"order":3},
+      {"id":"c33_chain","name":"Tooti Chain","description":"Chain pulling handle ke paas kharoch ke nishan.","emoji":"⛓️","location":"Door","isImportant":true,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_tt",
+        "name": "Ramesh TT",
+        "role": "Ticket Checker",
+        "emoji": "👨‍✈️",
+        "description": "Sabhi coaches me aane jane ki ijazat hai.",
+        "suspicionLevel": 90,
+        "dialogues": [
+          {"id":"d33_tt1","trigger":"Washroom me kiska ticket tha?","response":"Mujhe kya pata? Main toh bas check kar raha tha.","revealClue":"c33_ticket","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d33_tt2","trigger":"Tumhara puncher VIP ki seat ke niche kaise?","response":"Woh... gir gaya hoga jab ticket check kar raha tha! Maine bag nahi liya!","revealClue":"c33_punch","isHidden":true,"requiredClueId":"c33_punch","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_vip_train",
+        "name": "Seth Ji",
+        "role": "VIP Passenger",
+        "emoji": "💼",
+        "description": "Bahut ameer aur gusse wale.",
+        "suspicionLevel": 5,
+        "dialogues": [
+          {"id":"d33_v1","trigger":"Bag kab gayab hua?","response":"Jab TT mera ticket check karke gaya, uske baad main so gaya tha.","revealClue":"c33_punch","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_pantry",
+        "name": "Chai Wala",
+        "role": "Vendor",
+        "emoji": "☕",
+        "description": "Sabse zyada ghoomta hai.",
+        "suspicionLevel": 35,
+        "dialogues": [
+          {"id":"d33_p1","trigger":"Tumhare jooton me keechad kyu hai?","response":"Station pe paani gira tha sahab. Main AC coach me nahi gaya.","revealClue":"c33_mud","isHidden":true,"requiredClueId":"c33_mud","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_student",
+        "name": "Aman",
+        "role": "College Student",
+        "emoji": "🎒",
+        "description": "Door ke paas khada tha.",
+        "suspicionLevel": 20,
+        "dialogues": [
+          {"id":"d33_s1","trigger":"Tumne chain pull ki?","response":"Nahi! Maine TT ko darwaze ke paas kisi cheez ko dhakka dete dekha tha.","revealClue":"c33_chain","isHidden":true,"requiredClueId":"c33_chain","isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_washroom","name":"Washroom 🚽","emoji":"🚽","xPercent":0.2,"yPercent":0.5,"clueId":"c33_ticket","description":"Train ka toilet."},
+      {"id":"spot_seat","name":"VIP Seat 💺","emoji":"💺","xPercent":0.6,"yPercent":0.4,"clueId":"c33_punch","description":"Bag yahin tha."},
+      {"id":"spot_aisle","name":"Coach Rasta 🛤️","emoji":"🛤️","xPercent":0.5,"yPercent":0.8,"clueId":"c33_mud","description":"Chalne ki jagah."},
+      {"id":"spot_door","name":"Train Door 🚪","emoji":"🚪","xPercent":0.8,"yPercent":0.5,"clueId":"c33_chain","description":"Chalti train ka darwaza."}
+    ]
+  },
+  {
+    "id": "chapter_34",
+    "title": "Baga Beach Ki Surfboard",
+    "subtitle": "Goa ki lehron mein raaz...",
+    "location": "Goa — Baga Beach",
+    "backgroundEmoji": "🏖️",
+    "mystery": "Ek international surfing competition se pehle champion ka custom-made surfboard chori ho gaya. Beach par 4 suspicious log the.",
+    "solution": "char_rival_surfer",
+    "isLocked": true,
+    "order": 34,
+    "clues": [
+      {"id":"c34_wax","name":"Pink Surf Wax","description":"Tumbuo ke bahar pink color ka special surf wax gira hai.","emoji":"🕯️","location":"Tent Ke Bahar","isImportant":true,"order":1},
+      {"id":"c34_sandals","name":"Bade Sandals","description":"Ek bade size ka sandal jisme pink wax laga hai.","emoji":"🩴","location":"Beach Bar","isImportant":true,"order":2},
+      {"id":"c34_sunscreen","name":"Khali Sunscreen","description":"Tent ke andar khali sunscreen ki bottle.","emoji":"🧴","location":"Champion Tent","isImportant":false,"order":3},
+      {"id":"c34_goggles","name":"Toote Goggles","description":"Zameen par toote hue swimming goggles.","emoji":"🥽","location":"Paani Ke Paas","isImportant":true,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_rival_surfer",
+        "name": "Leo",
+        "role": "Rival Surfer",
+        "emoji": "🏄‍♂️",
+        "description": "Hamesha second aata hai, competition jeetna chahta hai.",
+        "suspicionLevel": 95,
+        "dialogues": [
+          {"id":"d34_r1","trigger":"Tumhara pink wax wahan kyu gira?","response":"Mera wax nahi hai, koi bhi khareed sakta hai.","revealClue":"c34_wax","isHidden":true,"requiredClueId":"c34_wax","isImportant":true,"followUpIds":[]},
+          {"id":"d34_r2","trigger":"Tumhare sandals me wax kaise aaya?","response":"Main... main bas tent check karne gaya tha! Maine board nahi churaya!","revealClue":"c34_sandals","isHidden":true,"requiredClueId":"c34_sandals","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_champ",
+        "name": "Sam",
+        "role": "Champion",
+        "emoji": "🥇",
+        "description": "Uska board gayab hai, bahut gusse me hai.",
+        "suspicionLevel": 5,
+        "dialogues": [
+          {"id":"d34_c1","trigger":"Board me kya special tha?","response":"Bohot halka tha. Aur sirf Leo pink wax use karta hai.","revealClue":"c34_wax","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_shack",
+        "name": "Tony",
+        "role": "Shack Owner",
+        "emoji": "🍹",
+        "description": "Beach bar chalata hai.",
+        "suspicionLevel": 20,
+        "dialogues": [
+          {"id":"d34_s1","trigger":"Koi suspicious aadmi dekha?","response":"Leo subah jaldi mere bar ke paas aaya tha, usne kuch chhipaya.","revealClue":"c34_sandals","isHidden":true,"requiredClueId":"c34_sandals","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_lifeguard",
+        "name": "Ravi",
+        "role": "Lifeguard",
+        "emoji": "🛟",
+        "description": "Sabpe nazar rakhta hai.",
+        "suspicionLevel": 15,
+        "dialogues": [
+          {"id":"d34_l1","trigger":"Toote goggles kiske hain?","response":"Ye kal Sam ke dost ke the, unka jhagda hua tha.","revealClue":"c34_goggles","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_tent_out","name":"Tent Ke Bahar ⛺","emoji":"⛺","xPercent":0.3,"yPercent":0.5,"clueId":"c34_wax","description":"Sam ke tent ka darwaza."},
+      {"id":"spot_bar","name":"Beach Bar 🍹","emoji":"🍹","xPercent":0.8,"yPercent":0.3,"clueId":"c34_sandals","description":"Drinks milti hain."},
+      {"id":"spot_tent_in","name":"Tent Ke Andar 🛏️","emoji":"🛏️","xPercent":0.4,"yPercent":0.6,"clueId":"c34_sunscreen","description":"Sam ka saman."},
+      {"id":"spot_water","name":"Kinaara 🌊","emoji":"🌊","xPercent":0.2,"yPercent":0.8,"clueId":"c34_goggles","description":"Geeli ret."}
+    ]
+  },
+  {
+    "id": "chapter_35",
+    "title": "Aguada Fort Ka Raaz",
+    "subtitle": "Purane lighthouse me naya dhoka...",
+    "location": "Goa — Aguada Fort",
+    "backgroundEmoji": "🗼",
+    "mystery": "Lighthouse ke andar chal rahi ek secret shooting ka camera memory card chori ho gaya. Wahan sirf 4 crew members the.",
+    "solution": "char_makeup",
+    "isLocked": true,
+    "order": 35,
+    "clues": [
+      {"id":"c35_hairpin","name":"Kaala Hairpin","description":"Camera tripod ke paas ek kaala hairpin gira mila.","emoji":"🧷","location":"Lighthouse Top","isImportant":true,"order":1},
+      {"id":"c35_powder","name":"Face Powder","description":"Camera lens par thoda sa white face powder laga hai.","emoji":"💄","location":"Camera","isImportant":true,"order":2},
+      {"id":"c35_script","name":"Fati Script","description":"Zameen par director ki fati hui script.","emoji":"📝","location":"Seedhiyan","isImportant":false,"order":3},
+      {"id":"c35_can","name":"Cola Can","description":"Adha khali cola can.","emoji":"🥤","location":"Window","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_makeup",
+        "name": "Simran",
+        "role": "Makeup Artist",
+        "emoji": "👩‍🎨",
+        "description": "Star banna chahti thi, par background me rakhi gayi.",
+        "suspicionLevel": 90,
+        "dialogues": [
+          {"id":"d35_m1","trigger":"Lens par powder kaise aaya?","response":"Pata nahi, hava se ud gaya hoga!","revealClue":"c35_powder","isHidden":true,"requiredClueId":"c35_powder","isImportant":true,"followUpIds":[]},
+          {"id":"d35_m2","trigger":"Tripod ke paas tumhara hairpin mila.","response":"Camera set karte waqt gir gaya tha. Maine footage delete nahi ki!","revealClue":"c35_hairpin","isHidden":true,"requiredClueId":"c35_hairpin","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_director",
+        "name": "Karan",
+        "role": "Director",
+        "emoji": "🎬",
+        "description": "Gusse me pagal ho raha hai.",
+        "suspicionLevel": 10,
+        "dialogues": [
+          {"id":"d35_d1","trigger":"Kiske paas access tha?","response":"Main break pe gaya tha, camera chalu choda tha. Makeup artist Simran wahan thi.","revealClue":"c35_powder","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_actor",
+        "name": "Rahul Star",
+        "role": "Lead Actor",
+        "emoji": "😎",
+        "description": "Apni hi duniya me hai.",
+        "suspicionLevel": 25,
+        "dialogues": [
+          {"id":"d35_a1","trigger":"Aap kahan the?","response":"Main vanity van me juice pi raha tha bro. Script bahut boring hai.","revealClue":"c35_script","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_lightboy",
+        "name": "Chhotu",
+        "role": "Lightman",
+        "emoji": "🔦",
+        "description": "Lights theek kar raha tha.",
+        "suspicionLevel": 15,
+        "dialogues": [
+          {"id":"d35_l1","trigger":"Kuch dekha tumne?","response":"Didi (Simran) bahut dhyan se camera dekh rahi thi jab director sir nahi the.","revealClue":"c35_hairpin","isHidden":true,"requiredClueId":"c35_hairpin","isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_top","name":"Lighthouse Top 🗼","emoji":"🗼","xPercent":0.5,"yPercent":0.2,"clueId":"c35_hairpin","description":"Sabse uchi jagah."},
+      {"id":"spot_cam","name":"Camera Tripod 🎥","emoji":"🎥","xPercent":0.7,"yPercent":0.5,"clueId":"c35_powder","description":"Mehenga camera."},
+      {"id":"spot_stairs","name":"Gol Seedhiyan 🌀","emoji":"🌀","xPercent":0.3,"yPercent":0.6,"clueId":"c35_script","description":"Niche jane ka rasta."},
+      {"id":"spot_window","name":"Khidki 🪟","emoji":"🪟","xPercent":0.8,"yPercent":0.4,"clueId":"c35_can","description":"Bahar samundar dikhta hai."}
+    ]
+  }
+]

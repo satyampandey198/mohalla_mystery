@@ -1,0 +1,224 @@
+[
+  {
+    "id": "chapter_16",
+    "title": "Marina Ka Machhuara",
+    "subtitle": "Samundar ki lehron mein chupa saazish...",
+    "location": "Chennai — Marina Beach",
+    "backgroundEmoji": "🏖️",
+    "mystery": "Marina beach par mashoor machhuara Velu ki naav jali hui mili. Velu gayab hai. Police ko lagta hai accident hai, par naav ke paas aag lagane ka saaman mila.",
+    "solution": "char_karthik",
+    "isLocked": true,
+    "order": 16,
+    "clues": [
+      {"id":"c16_petrol","name":"Kerosene Ka Dibba","description":"Naav ke paas ek khali kerosene ka dibba.","emoji":"🛢️","location":"Ret Ke Paas","isImportant":true,"order":1},
+      {"id":"c16_ghadi","name":"Tooti Ghadi","description":"Ek mehengi ghadi, time 11:30 par ruka hai.","emoji":"⌚","location":"Naav Ke Andar","isImportant":true,"order":2},
+      {"id":"c16_paisa","name":"Bikhre Note","description":"Kuch 500 ke note ret mein dabe the.","emoji":"💸","location":"Jhaadiyon Mein","isImportant":false,"order":3}
+    ],
+    "characters": [
+      {
+        "id": "char_karthik",
+        "name": "Karthik Seth",
+        "role": "Naav Ka Maalik",
+        "emoji": "🤵",
+        "description": "Ameer businessman, Velu se naav kharidna chahta tha.",
+        "suspicionLevel": 85,
+        "dialogues": [
+          {"id":"d16_k1","trigger":"Raat ko kahan the?","response":"Hotel mein tha. Velu ki naav se mujhe kya?","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d16_k2","trigger":"Ye mehengi ghadi aapki hai?","response":"Ye meri ghadi wahan kaise? Main bas baat karne gaya tha!","revealClue":"c16_ghadi","isHidden":true,"requiredClueId":"c16_ghadi","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_muthu",
+        "name": "Muthu",
+        "role": "Dost Machhuara",
+        "emoji": "🚣",
+        "description": "Velu ka bachpan ka dost. Kaafi dariya dil hai.",
+        "suspicionLevel": 20,
+        "dialogues": [
+          {"id":"d16_m1","trigger":"Velu kahan hai?","response":"Pata nahi saheb. Karthik babu raat ko dhamki de rahe the.","revealClue":"c16_paisa","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_ret","name":"Ret Ka Kinaara 🏖️","emoji":"🏖️","xPercent":0.3,"yPercent":0.6,"clueId":"c16_petrol","description":"Ret pe kuch nishan hain."},
+      {"id":"spot_naav","name":"Jali Naav ⛵","emoji":"⛵","xPercent":0.6,"yPercent":0.4,"clueId":"c16_ghadi","description":"Naav ka adha hissa jala hua hai."},
+      {"id":"spot_jhaadi","name":"Jhaadiyan 🌿","emoji":"🌿","xPercent":0.8,"yPercent":0.7,"clueId":"c16_paisa","description":"Jhaadiyon ke peeche kuch chupa hai."}
+    ]
+  },
+  {
+    "id": "chapter_17",
+    "title": "Mylapore Ki Murti",
+    "subtitle": "Mandir se chori hui sadiyon purani dharohar...",
+    "location": "Chennai — Mylapore Temple",
+    "backgroundEmoji": "🛕",
+    "mystery": "Mylapore ke kapaleeshwarar mandir se ek choti sone ki murti gayab ho gayi. Pujari ko behosh paya gaya. CCTV wires kaate gaye the.",
+    "solution": "char_ravi",
+    "isLocked": true,
+    "order": 17,
+    "clues": [
+      {"id":"c17_wire","name":"Kaate Hue Wire","description":"Plier se CCTV ki taar kaati gayi.","emoji":"🔌","location":"Control Room","isImportant":true,"order":1},
+      {"id":"c17_rumaal","name":"Chloroform Rumaal","description":"Pujari ke paas ek rumaal mila jisme dawai ki mehek hai.","emoji":"🧣","location":"Garbhagriha","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_ravi",
+        "name": "Ravi Electrician",
+        "role": "Mandir Ka Worker",
+        "emoji": "👷",
+        "description": "Wiring ka kaam karta tha. Use CCTV ki location pata thi.",
+        "suspicionLevel": 90,
+        "dialogues": [
+          {"id":"d17_r1","trigger":"Kal raat ki shift tumhari thi?","response":"Haan, par main 10 baje nikal gaya tha.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d17_r2","trigger":"Taar tumhari plier se kaati hai?","response":"Mera plier wahan chhut gaya tha! Maine chori nahi ki!","revealClue":"c17_wire","isHidden":true,"requiredClueId":"c17_wire","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_pujari",
+        "name": "Swami Ji",
+        "role": "Mukhya Pujari",
+        "emoji": "🧘",
+        "description": "Behosh the, unhe kuch theek se yaad nahi.",
+        "suspicionLevel": 10,
+        "dialogues": [
+          {"id":"d17_p1","trigger":"Kisne hamla kiya?","response":"Chehra nahi dikha, par uske kapdon se bijli ke wire ki mehek aa rahi thi.","revealClue":"c17_rumaal","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_control","name":"Control Room 🖥️","emoji":"🖥️","xPercent":0.2,"yPercent":0.4,"clueId":"c17_wire","description":"Andhera kamra, wires bikhre hain."},
+      {"id":"spot_garbh","name":"Garbhagriha 🛕","emoji":"🛕","xPercent":0.7,"yPercent":0.5,"clueId":"c17_rumaal","description":"Pavitra jagah, yahan se murti chori hui."}
+    ]
+  },
+  {
+    "id": "chapter_18",
+    "title": "Charminar Ka Chhal",
+    "subtitle": "Nizami shaan mein dhokhe ki mehek...",
+    "location": "Hyderabad — Charminar Bazaar",
+    "backgroundEmoji": "🕌",
+    "mystery": "Ek mashoor ittar (perfume) bechne wale ki dukaan mein ek fake ittar bottle mili, jisne ek ameer grahak ko behosh kar diya. Asli ittar ki bottle gayab hai.",
+    "solution": "char_farhan",
+    "isLocked": true,
+    "order": 18,
+    "clues": [
+      {"id":"c18_bottle","name":"Nakli Bottle","description":"Bottle ka label thoda tedha laga hai.","emoji":"🧴","location":"Dukaan Ka Counter","isImportant":true,"order":1},
+      {"id":"c18_receipt","name":"Courier Receipt","description":"Ek receipt mili jisme 'Mumbai' bheja gaya package likha hai.","emoji":"📄","location":"Kachre Ke Dibbe Mein","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_farhan",
+        "name": "Farhan",
+        "role": "Dukaan Ka Manager",
+        "emoji": "🧑‍💼",
+        "description": "Ittar ka expert, par paise ki sakht zaroorat thi.",
+        "suspicionLevel": 88,
+        "dialogues": [
+          {"id":"d18_f1","trigger":"Asli bottle kahan hai?","response":"Mujhe kya pata, shayad safai mein gum ho gayi!","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d18_f2","trigger":"Mumbai kya bheja tha?","response":"Aapko kaise pata? Woh toh... bas ek sample tha!","revealClue":"c18_receipt","isHidden":true,"requiredClueId":"c18_receipt","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_grahak",
+        "name": "Nawab Sahab",
+        "role": "Ameer Grahak",
+        "emoji": "👑",
+        "description": "Behosh hue the. Abhi gusse mein hain.",
+        "suspicionLevel": 15,
+        "dialogues": [
+          {"id":"d18_g1","trigger":"Ittar mein kya tha?","response":"Sunghne ke baad chakkar aaye. Farhan ne hi mujhe test karwaya tha.","revealClue":"c18_bottle","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_counter","name":"Main Counter 🪞","emoji":"🪞","xPercent":0.5,"yPercent":0.4,"clueId":"c18_bottle","description":"Kanch ka counter, yahan saare ittar rakhe hain."},
+      {"id":"spot_kachra","name":"Kachra Dibba 🗑️","emoji":"🗑️","xPercent":0.8,"yPercent":0.8,"clueId":"c18_receipt","description":"Kone mein rakha dustbin."}
+    ]
+  },
+  {
+    "id": "chapter_19",
+    "title": "Banjara Hills Ki Raat",
+    "subtitle": "Bade gharon ke andhere raaz...",
+    "location": "Hyderabad — Banjara Hills",
+    "backgroundEmoji": "🌃",
+    "mystery": "Ek high-profile party ke dauran ghar ke maalik ka laptop gayab ho gaya jisme top-secret business deal thi. Party mein sirf VIPs the.",
+    "solution": "char_neha",
+    "isLocked": true,
+    "order": 19,
+    "clues": [
+      {"id":"c19_glass","name":"Lipstick Wala Glass","description":"Laptop table ke paas ek wine glass jispar laal lipstick hai.","emoji":"🍷","location":"Study Table","isImportant":true,"order":1},
+      {"id":"c19_usb","name":"Gira Hua USB","description":"Zameen par ek chhota sa USB drive mila.","emoji":"💾","location":"Sofe Ke Peeche","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_neha",
+        "name": "Neha Reddy",
+        "role": "Rival CEO",
+        "emoji": "👩‍💼",
+        "description": "Party mein bin bulaye mehmaan. Hamesha business secrets churati hai.",
+        "suspicionLevel": 95,
+        "dialogues": [
+          {"id":"d19_n1","trigger":"Aap study room mein kya kar rahi thi?","response":"Main sirf washroom dhoondh rahi thi.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d19_n2","trigger":"Ye lipstick aapki hai na?","response":"Fine! Maine USB lagaya tha par laptop nahi churaya!","revealClue":"c19_glass","isHidden":true,"requiredClueId":"c19_glass","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_host",
+        "name": "Mr. Sharma",
+        "role": "Party Host",
+        "emoji": "👨‍💼",
+        "description": "Bahut pareshan hain. Deal cancel ho sakti hai.",
+        "suspicionLevel": 5,
+        "dialogues": [
+          {"id":"d19_h1","trigger":"Laptop kahan rakha tha?","response":"Study table par. Wahan aakhri baar Neha ko dekha tha.","revealClue":"c19_usb","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_study","name":"Study Table 📓","emoji":"📓","xPercent":0.4,"yPercent":0.3,"clueId":"c19_glass","description":"Table par papers bikhre hain."},
+      {"id":"spot_sofa","name":"Mehnga Sofa 🛋️","emoji":"🛋️","xPercent":0.7,"yPercent":0.6,"clueId":"c19_usb","description":"Chikna chamde ka sofa."}
+    ]
+  },
+  {
+    "id": "chapter_20",
+    "title": "Taj Ka Saaya",
+    "subtitle": "Mohabbat ki nishani aur ek dhokha...",
+    "location": "Agra — Taj Ganj",
+    "backgroundEmoji": "🕌",
+    "mystery": "Taj Mahal ke paas ek purani haveli mein ek videshi tourist ka mehenga camera chori ho gaya. Haveli ka malik kehta hai usne ek bandar ko camera le jaate dekha.",
+    "solution": "char_munna",
+    "isLocked": true,
+    "order": 20,
+    "clues": [
+      {"id":"c20_lens","name":"Camera Lens Cap","description":"Lens ka dhakkan ek chhatri ke neeche mila.","emoji":"📷","location":"Aangan Mein","isImportant":true,"order":1},
+      {"id":"c20_kela","name":"Aadha Khaya Kela","description":"Bandar ko lalach dene ke liye kela rakha gaya tha.","emoji":"🍌","location":"Chhat Par","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_munna",
+        "name": "Munna Guide",
+        "role": "Local Tour Guide",
+        "emoji": "👦",
+        "description": "Tourist ko haveli laya tha. Bandaron ko control karna jaanta hai.",
+        "suspicionLevel": 80,
+        "dialogues": [
+          {"id":"d20_m1","trigger":"Camera kaise chori hua?","response":"Bandar bahut shaitaan hain sahab, le gaye honge!","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d20_m2","trigger":"Chhat par kele kyun rakhe the?","response":"Woh toh main... bandaron ko bhagane ke liye! Maine chori nahi ki!","revealClue":"c20_kela","isHidden":true,"requiredClueId":"c20_kela","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_tourist",
+        "name": "John Smith",
+        "role": "Videshi Tourist",
+        "emoji": "👱‍♂️",
+        "description": "Camera mein bahut keemti photos the.",
+        "suspicionLevel": 10,
+        "dialogues": [
+          {"id":"d20_t1","trigger":"Aapne kuch dekha?","response":"Munna went upstairs, then I heard a monkey, and my camera was gone!","revealClue":"c20_lens","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_aangan","name":"Haveli Ka Aangan 🪴","emoji":"🪴","xPercent":0.5,"yPercent":0.7,"clueId":"c20_lens","description":"Khula aangan, yahan bandar aate hain."},
+      {"id":"spot_chhat","name":"Haveli Ki Chhat 🧱","emoji":"🧱","xPercent":0.8,"yPercent":0.2,"clueId":"c20_kela","description":"Upar jaane ki seedhi."}
+    ]
+  }
+]

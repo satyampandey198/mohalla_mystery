@@ -1,0 +1,573 @@
+[
+  {
+    "id": "chapter_1",
+    "title": "Neem Wali Haveli",
+    "subtitle": "Raaz jo 40 saal se chhupta raha...",
+    "location": "Purani Dilli — Mohalla Gulshan Nagar",
+    "backgroundEmoji": "🏚️",
+    "mystery": "Gulshan Nagar ki purani haveli mein aaj subah zamindaar Maqsood Khan ki laash mili. Darwaza andar se band tha. Khidki ke neeche paon ke nishan hain. Raat ko koi aaya tha unse milne...",
+    "solution": "char_vikram",
+    "isLocked": false,
+    "order": 1,
+    "clues": [
+      {
+        "id": "c1_paon",
+        "name": "Paon ke Nishan",
+        "description": "Neem ke neeche gehre paon ke nishan hain — size 10 ka boot.",
+        "emoji": "👣",
+        "location": "Neem Ka Ped",
+        "isImportant": true,
+        "order": 1
+      },
+      {
+        "id": "c1_chitthi",
+        "name": "Dhamki Bhari Chitthi",
+        "description": "Maqsood ji ke drawer mein ek chitthi mili — 'Zameen wapas karo warna...'",
+        "emoji": "📜",
+        "location": "Andar Ka Kamra",
+        "isImportant": true,
+        "order": 2
+      },
+      {
+        "id": "c1_khanjar",
+        "name": "Toota Khanjar",
+        "description": "Puraani deewar ke paas toota hua khanjar mila — uspe khoon ke daag hain.",
+        "emoji": "🗡️",
+        "location": "Puraani Deewar",
+        "isImportant": false,
+        "order": 3
+      }
+    ],
+    "characters": [
+      {
+        "id": "char_vikram",
+        "name": "Vikram Singh",
+        "role": "Zamindaar Ka Bhatija",
+        "emoji": "🧔",
+        "description": "Maqsood ji ka bhatija — zameen ke liye ladta tha unse. Raat ko ghar pe tha — ya tha?",
+        "suspicionLevel": 80,
+        "dialogues": [
+          {
+            "id": "d1_v1",
+            "trigger": "Raat ko aap kahan the?",
+            "response": "Main ghar pe tha, so raha tha. Mujh par shak kyon?",
+            "revealClue": null,
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": false,
+            "followUpIds": []
+          },
+          {
+            "id": "d1_v2",
+            "trigger": "Ye chitthi aapne likhi?",
+            "response": "Woh... woh toh ek mazaak tha! Main sach mein nahi maarta unhe!",
+            "revealClue": "c1_chitthi",
+            "isHidden": true,
+            "requiredClueId": "c1_chitthi",
+            "isImportant": true,
+            "followUpIds": []
+          },
+          {
+            "id": "d1_v3",
+            "trigger": "Aapke boot ka size kya hai?",
+            "response": "D-das... lekin yeh toh... aap mujhe galat samajh rahe hain!",
+            "revealClue": "c1_paon",
+            "isHidden": true,
+            "requiredClueId": "c1_paon",
+            "isImportant": true,
+            "followUpIds": []
+          }
+        ]
+      },
+      {
+        "id": "char_sunita",
+        "name": "Sunita Bai",
+        "role": "Kaam Wali Bai",
+        "emoji": "👩‍🦳",
+        "description": "20 saal se haveli mein kaam karti hai. Seedhi-saadi aurat — ya hai?",
+        "suspicionLevel": 25,
+        "dialogues": [
+          {
+            "id": "d1_s1",
+            "trigger": "Koi raat ko aaya tha?",
+            "response": "Ji haan, Vikram baba aaye the — bahut gusse mein the. Kuch ghante baad chale gaye.",
+            "revealClue": null,
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": true,
+            "followUpIds": []
+          },
+          {
+            "id": "d1_s2",
+            "trigger": "Khanjar kiska hai?",
+            "response": "Woh purana khanjar Vikram baba ke kamare mein rehta tha. Aaj wahan se gayab tha.",
+            "revealClue": "c1_khanjar",
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": false,
+            "followUpIds": []
+          }
+        ]
+      }
+    ],
+    "spots": [
+      {
+        "id": "spot_neem",
+        "name": "Neem Ka Ped 🌳",
+        "emoji": "🌳",
+        "xPercent": 0.15,
+        "yPercent": 0.35,
+        "clueId": "c1_paon",
+        "description": "Purana neem ka ped — neeche mitti mein kuch dhansa hua hai."
+      },
+      {
+        "id": "spot_kamra",
+        "name": "Maqsood Ji Ka Kamra 🚪",
+        "emoji": "🚪",
+        "xPercent": 0.65,
+        "yPercent": 0.4,
+        "clueId": "c1_chitthi",
+        "description": "Darwaza aaj bhi band pada hai. Andar se ek sarkari kagazon ki boo aa rahi hai."
+      },
+      {
+        "id": "spot_deewar",
+        "name": "Puraani Deewar 🧱",
+        "emoji": "🧱",
+        "xPercent": 0.5,
+        "yPercent": 0.7,
+        "clueId": "c1_khanjar",
+        "description": "Deewar pe daag hain — kuch gira tha yahaan."
+      }
+    ]
+  },
+  {
+    "id": "chapter_2",
+    "title": "Nawab Ki Angoothi",
+    "subtitle": "Ek raat mein kho gayi laakhon ki nishani...",
+    "location": "Lucknow — Hazratganj Ki Kothi",
+    "backgroundEmoji": "🕌",
+    "mystery": "Nawab Farid Khan ki qeemti angoothi -- jo unke dada ki yaadgaar thi -- raat bhar mein gayab ho gayi. Kothi mein sirf do log the. Subah angoothi na toh tijori mein thi, na nawab sahab ke haath mein.",
+    "solution": "char_munna",
+    "isLocked": true,
+    "order": 2,
+    "clues": [
+      {
+        "id": "c2_tijori",
+        "name": "Tijori Ka Taala",
+        "description": "Tijori ka taala bina chabi ke khula tha — andar se kisi ne khurachha lagaya.",
+        "emoji": "🔐",
+        "location": "Badi Tijori",
+        "isImportant": true,
+        "order": 1
+      },
+      {
+        "id": "c2_kapda",
+        "name": "Neela Kapda Ka Tukda",
+        "description": "Khidki ke kaante mein neela kapda fansa hua mila — koi bahar gaya tha.",
+        "emoji": "🧵",
+        "location": "Peechhi Khidki",
+        "isImportant": true,
+        "order": 2
+      }
+    ],
+    "characters": [
+      {
+        "id": "char_munna",
+        "name": "Munna Miyan",
+        "role": "Nawab Ka Khaas Naukar",
+        "emoji": "🧕",
+        "description": "10 saal se nawab ji ki seva karta hai. Aaj neeli qameez pehne tha.",
+        "suspicionLevel": 75,
+        "dialogues": [
+          {
+            "id": "d2_m1",
+            "trigger": "Raat ko tijori ke paas gaye the?",
+            "response": "Nahi ji, main toh apne kamre mein tha. Kasam se!",
+            "revealClue": null,
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": false,
+            "followUpIds": []
+          },
+          {
+            "id": "d2_m2",
+            "trigger": "Ye neela kapda aapki qameez ka hai?",
+            "response": "Woh... woh kapda pehle se tha wahan! Main kasam khata hoon!",
+            "revealClue": "c2_kapda",
+            "isHidden": true,
+            "requiredClueId": "c2_kapda",
+            "isImportant": true,
+            "followUpIds": []
+          }
+        ]
+      },
+      {
+        "id": "char_zoya",
+        "name": "Zoya Begum",
+        "role": "Nawab Ki Bahu",
+        "emoji": "👸",
+        "description": "Ek mahine se kothi mein aayi hain. Angoothi ke baare mein bahut jaanti thi.",
+        "suspicionLevel": 40,
+        "dialogues": [
+          {
+            "id": "d2_z1",
+            "trigger": "Angoothi ke baare mein kya jaanti hain aap?",
+            "response": "Woh angoothi bahut qeemti thi — main toh ek baar dekh bhi nahi paai. Munna hi tijori sambhalta tha.",
+            "revealClue": "c2_tijori",
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": true,
+            "followUpIds": []
+          }
+        ]
+      }
+    ],
+    "spots": [
+      {
+        "id": "spot_tijori",
+        "name": "Nawab Ki Tijori 🔐",
+        "emoji": "🔐",
+        "xPercent": 0.7,
+        "yPercent": 0.35,
+        "clueId": "c2_tijori",
+        "description": "Bhaari lohe ki tijori — darwaza thoda khula sa lag raha hai."
+      },
+      {
+        "id": "spot_khidki",
+        "name": "Peechhi Khidki 🪟",
+        "emoji": "🪟",
+        "xPercent": 0.2,
+        "yPercent": 0.55,
+        "clueId": "c2_kapda",
+        "description": "Purani lakdi ki khidki — kaante pe kuch fansa hua dikh raha hai."
+      }
+    ]
+  },
+  {
+    "id": "chapter_3",
+    "title": "Ghat Ka Raaz",
+    "subtitle": "Banaras ke ghat pe dooba hua sach...",
+    "location": "Varanasi — Dashashwamedh Ghat",
+    "backgroundEmoji": "🪔",
+    "mystery": "Pandit Ramakant Shastri ek hafte se kisi unknown insaan ki dhamki de raha tha -- 'Paise do ya sab ko bata dunga.' Aaj subah Shastri ji ki laash Ganga mein mili. Blackmailer ab khud shikar ban gaya.",
+    "solution": "char_devraj",
+    "isLocked": true,
+    "order": 3,
+    "clues": [
+      {
+        "id": "c3_diara",
+        "name": "Bujha Hua Diara",
+        "description": "Ghat ki seedhi pe ek bujha hua diara mila — aaj ki raat ka, taaza mitti hai.",
+        "emoji": "🪔",
+        "location": "Neechi Seedi",
+        "isImportant": false,
+        "order": 1
+      },
+      {
+        "id": "c3_kagaz",
+        "name": "Geela Kagaz",
+        "description": "Paani mein bhiga hua kagaz — uspe likha tha '50,000 — nahin toh...' baaki mita hua.",
+        "emoji": "📄",
+        "location": "Ghat Ki Paav",
+        "isImportant": true,
+        "order": 2
+      },
+      {
+        "id": "c3_ghadi",
+        "name": "Tooti Ghadi",
+        "description": "Shastri ji ki ghadi — kante 2:17 pe ruke hue hain. Yahi murder ka waqt tha.",
+        "emoji": "⌚",
+        "location": "Paani Ka Kinara",
+        "isImportant": true,
+        "order": 3
+      }
+    ],
+    "characters": [
+      {
+        "id": "char_devraj",
+        "name": "Devraj Pandey",
+        "role": "Dukan Wala",
+        "emoji": "🧑‍💼",
+        "description": "Ghat ke paas prasad ki dukan hai. Shastri ji usse blackmail karta tha — ek purani galti ki wajah se.",
+        "suspicionLevel": 85,
+        "dialogues": [
+          {
+            "id": "d3_d1",
+            "trigger": "Shastri ji ko jaante the?",
+            "response": "Haan, purane parichit the. Par koi dushmani nahi thi.",
+            "revealClue": null,
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": false,
+            "followUpIds": []
+          },
+          {
+            "id": "d3_d2",
+            "trigger": "Unhe paise de rahe the aap?",
+            "response": "Aap... aapko kaise pata?! Woh haramzada teen mahine se maar raha tha mujhe! Maine sirf... sirf dhakka diya tha... woh khud gir gaye!",
+            "revealClue": "c3_kagaz",
+            "isHidden": true,
+            "requiredClueId": "c3_kagaz",
+            "isImportant": true,
+            "followUpIds": []
+          }
+        ]
+      },
+      {
+        "id": "char_baba",
+        "name": "Naga Baba",
+        "role": "Ghat Ka Sadhu",
+        "emoji": "🧘",
+        "description": "Ghat pe rehta hai saalon se. Raat ko jaag raha tha.",
+        "suspicionLevel": 20,
+        "dialogues": [
+          {
+            "id": "d3_b1",
+            "trigger": "Raat ko kuch dekha?",
+            "response": "Raat 2 baje ek aadmi tezi se ghat se nikla. Devraj ki dukan wala lagta tha.",
+            "revealClue": "c3_ghadi",
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": true,
+            "followUpIds": []
+          }
+        ]
+      }
+    ],
+    "spots": [
+      {
+        "id": "spot_seedi",
+        "name": "Ghat Ki Seedi 🪜",
+        "emoji": "🪜",
+        "xPercent": 0.3,
+        "yPercent": 0.6,
+        "clueId": "c3_diara",
+        "description": "Purani pattharon ki seedi — neechli paav geeli hai."
+      },
+      {
+        "id": "spot_kinara",
+        "name": "Ganga Ka Kinara 🌊",
+        "emoji": "🌊",
+        "xPercent": 0.55,
+        "yPercent": 0.75,
+        "clueId": "c3_kagaz",
+        "description": "Paani ka kinara — kuch kaagaz lehraa raha hai."
+      },
+      {
+        "id": "spot_paav",
+        "name": "Paav Ka Patthar 🪨",
+        "emoji": "🪨",
+        "xPercent": 0.75,
+        "yPercent": 0.65,
+        "clueId": "c3_ghadi",
+        "description": "Bada patthar — neeche kuch chamak raha hai."
+      }
+    ]
+  },
+  {
+    "id": "chapter_4",
+    "title": "Rani Ka Gehna",
+    "subtitle": "Jaipur ke mahal mein khoon ka rang laal...",
+    "location": "Jaipur — Pink City Haveli",
+    "backgroundEmoji": "🏯",
+    "mystery": "Thakur Pratap Singh ki beti Rukmini ki shaadi kal hai. Aaj raat unki pushtaini haar -- jis ki qeemat 50 lakh hai -- gum ho gayi. Aur garde mein khoon ke nishan bhi mile hain.",
+    "solution": "char_gopal",
+    "isLocked": true,
+    "order": 4,
+    "clues": [
+      {
+        "id": "c4_khoon",
+        "name": "Khoon Ke Nishan",
+        "description": "Garde ke kone mein khoon ke daag — mitti mein ghisita hua trail.",
+        "emoji": "🩸",
+        "location": "Phoolwala Bagicha",
+        "isImportant": true,
+        "order": 1
+      },
+      {
+        "id": "c4_taala",
+        "name": "Toot Hua Taala",
+        "description": "Gehne wali tijori ka taala toot hua mila — kisi ne zabardasti khola.",
+        "emoji": "🔓",
+        "location": "Zenana Kamra",
+        "isImportant": true,
+        "order": 2
+      }
+    ],
+    "characters": [
+      {
+        "id": "char_gopal",
+        "name": "Gopal Daroga",
+        "role": "Haveli Ka Chaukidar",
+        "emoji": "💂",
+        "description": "15 saal se haveli ki raksha karta hai. Par aaj raat duty pe nahi tha — kyun?",
+        "suspicionLevel": 70,
+        "dialogues": [
+          {
+            "id": "d4_g1",
+            "trigger": "Raat ko kahan the aap?",
+            "response": "Main... tabiyat kharab thi. Kamre mein tha. Maafi chahta hoon.",
+            "revealClue": null,
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": false,
+            "followUpIds": []
+          },
+          {
+            "id": "d4_g2",
+            "trigger": "Haath pe yeh khoon kahan se aaya?",
+            "response": "Yeh... kuchh nahi hai! Main bata nahi sakta! Maafi chahiye... mujhe rokna chahiye tha unhe...",
+            "revealClue": "c4_khoon",
+            "isHidden": true,
+            "requiredClueId": "c4_khoon",
+            "isImportant": true,
+            "followUpIds": []
+          }
+        ]
+      },
+      {
+        "id": "char_rukmini",
+        "name": "Rukmini Thakur",
+        "role": "Thakur Ji Ki Beti",
+        "emoji": "👰",
+        "description": "Shaadi se pahle bahut tensed thi. Gehne ki zaroorat thi — kyun itni?",
+        "suspicionLevel": 35,
+        "dialogues": [
+          {
+            "id": "d4_r1",
+            "trigger": "Gehna kab gayab hua?",
+            "response": "Raat 10 baje maine dekha tha tijori mein. Subah 6 baje gum tha. Gopal ne hi uthaya hoga!",
+            "revealClue": "c4_taala",
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": true,
+            "followUpIds": []
+          }
+        ]
+      }
+    ],
+    "spots": [
+      {
+        "id": "spot_bagicha",
+        "name": "Phoolwala Bagicha 🌹",
+        "emoji": "🌹",
+        "xPercent": 0.2,
+        "yPercent": 0.5,
+        "clueId": "c4_khoon",
+        "description": "Rangeen phoolon ke beech — kuch laal rang alag hi dikh raha hai."
+      },
+      {
+        "id": "spot_zenana",
+        "name": "Zenana Kamra 🚪",
+        "emoji": "🚪",
+        "xPercent": 0.7,
+        "yPercent": 0.4,
+        "clueId": "c4_taala",
+        "description": "Andar se aawaz aa rahi hai — darwaza adha khula hai."
+      }
+    ]
+  },
+  {
+    "id": "chapter_5",
+    "title": "Zamindaar Ka Sandook",
+    "subtitle": "Kolkata ki galiyon mein chhupta hua laalach...",
+    "location": "Kolkata — North Calcutta Zamindar Bungalow",
+    "backgroundEmoji": "🏛️",
+    "mystery": "Zamindaar Biswajit Roy ka pushtaini sandook -- jisme 80 saal purane dastaawez aur sona tha -- chori ho gaya. Guard ne raat ko kuch nahi suna. Par ek padosi ne ek aadmi ko bhagte hue dekha tha.",
+    "solution": "char_ratan",
+    "isLocked": true,
+    "order": 5,
+    "clues": [
+      {
+        "id": "c5_seendhi",
+        "name": "Seendhi Ki Taaz",
+        "description": "Peechhe ki deewar pe seendhi lagane ke nishan — kaafi mehnat ki hai kisi ne.",
+        "emoji": "🪜",
+        "location": "Peechhi Deewar",
+        "isImportant": true,
+        "order": 1
+      },
+      {
+        "id": "c5_chabi",
+        "name": "Nakli Chabi",
+        "description": "Sandook ke paas ek nakli chabi mili — yeh factory ki bani hai, hath se nahi.",
+        "emoji": "🗝️",
+        "location": "Sandook Ke Paas",
+        "isImportant": true,
+        "order": 2
+      }
+    ],
+    "characters": [
+      {
+        "id": "char_ratan",
+        "name": "Ratan Lal",
+        "role": "Zamindaar Ka Poorva Munshi",
+        "emoji": "🧑‍💼",
+        "description": "6 mahine pahle naukri se nikaala gaya tha. Tab se maalik se dushman hai.",
+        "suspicionLevel": 80,
+        "dialogues": [
+          {
+            "id": "d5_r1",
+            "trigger": "Aap kal raat kahan the?",
+            "response": "Ghar pe tha apne. Koi gawah nahi — akela rehta hoon.",
+            "revealClue": null,
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": false,
+            "followUpIds": []
+          },
+          {
+            "id": "d5_r2",
+            "trigger": "Ye nakli chabi banwane ka hunnar hai aapko?",
+            "response": "Mere chacha ka hardware ka kaam tha... Main... yeh chabi meri nahi hai!",
+            "revealClue": "c5_chabi",
+            "isHidden": true,
+            "requiredClueId": "c5_chabi",
+            "isImportant": true,
+            "followUpIds": []
+          }
+        ]
+      },
+      {
+        "id": "char_padosi",
+        "name": "Manas Ghosh",
+        "role": "Samne Wala Padosi",
+        "emoji": "👴",
+        "description": "Bungalow ke samne rehte hain. Raat ko neend nahi aati — khidki se dekhte rehte hain.",
+        "suspicionLevel": 15,
+        "dialogues": [
+          {
+            "id": "d5_p1",
+            "trigger": "Raat ko kuch dekha?",
+            "response": "Haan! Raat 1 baje ek aadmi tezi se nikla — chhota kala bag tha haath mein. Chehre pe kapda bandha tha par kaafi mota tha — Ratan jaisa.",
+            "revealClue": "c5_seendhi",
+            "isHidden": false,
+            "requiredClueId": null,
+            "isImportant": true,
+            "followUpIds": []
+          }
+        ]
+      }
+    ],
+    "spots": [
+      {
+        "id": "spot_deewar",
+        "name": "Peechhi Deewar 🧱",
+        "emoji": "🧱",
+        "xPercent": 0.15,
+        "yPercent": 0.45,
+        "clueId": "c5_seendhi",
+        "description": "Oonchi deewar — neeche mitti mein kuch kharra hua tha."
+      },
+      {
+        "id": "spot_sandook",
+        "name": "Sandook Ka Kamra 📦",
+        "emoji": "📦",
+        "xPercent": 0.65,
+        "yPercent": 0.5,
+        "clueId": "c5_chabi",
+        "description": "Bhaari sandook abhi bhi khula pada hai — andar khaalipan."
+      }
+    ]
+  }
+]

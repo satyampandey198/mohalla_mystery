@@ -1,24 +1,39 @@
-// lib/services/game_provider.dart
+// lib/services/game_provider.dart — Firebase + Language Support
+// ============================================================
 
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/game_models.dart';
 import '../data/story_data.dart';
+import 'firebase_service.dart';
+import 'translation_service.dart';
+
+enum LoadingState { idle, loading, loaded, error }
 
 class GameProvider extends ChangeNotifier {
   late GameState _gameState;
-  late List<Chapter> _chapters;
-  late List<InvestigationSpot> _currentSpots;
-  String _language = 'hindi'; // 'hindi' or 'english'
+  List<Chapter> _chapters = [];
+  List<InvestigationSpot> _currentSpots = [];
+  String _language = 'english'; // 'hindi' or 'english'
 
+  LoadingState _loadingState = LoadingState.idle;
+  String? _errorMessage;
+  bool _hasNewChapter = false;
+
+  // ─── Getters ─────────────────────────────────────
   GameState get gameState => _gameState;
   List<Chapter> get chapters => _chapters;
   List<InvestigationSpot> get currentSpots => _currentSpots;
   String get language => _language;
+  LoadingState get loadingState => _loadingState;
+  String? get errorMessage => _errorMessage;
+  bool get isLoading => _loadingState == LoadingState.loading;
+  bool get hasNewChapter => _hasNewChapter;
 
   Chapter get currentChapter => _chapters.firstWhere(
         (c) => c.id == _gameState.currentChapterId,
-        orElse: () => _chapters.first,
+        orElse: () => _chapters.isNotEmpty ? _chapters.first : _emptyChapter(),
       );
 
   List<Clue> get foundClues => currentChapter.clues
@@ -31,41 +46,89 @@ class GameProvider extends ChangeNotifier {
 
   GameProvider() {
     _gameState = GameState();
-    _chapters = StoryData.getAllChapters('hindi');
-    _currentSpots = StoryData.getSpotsForChapter(_gameState.currentChapterId, 'hindi');
-    _loadSavedState();
+    _initializeGame();
   }
 
-  Future<void> _loadSavedState() async {
-    final prefs = await SharedPreferences.getInstance();
-    final completedJson = prefs.getStringList('completed_chapters') ?? [];
-    final foundJson = prefs.getStringList('found_clues') ?? [];
-    final hints = prefs.getInt('hints_remaining') ?? 3;
-    final score = prefs.getInt('total_score') ?? 0;
-    _language = prefs.getString('language') ?? 'hindi';
+  // ============================================================
+  // INIT: Saved state load karo, phir Firebase se chapters
+  // ============================================================
+  Future<void> _initializeGame() async {
+    await _loadSavedState();
+    await loadChaptersFromFirebase();
+  }
 
-    _gameState = GameState(
-      completedChapters: Set.from(completedJson),
-      foundClues: Set.from(foundJson),
-      hintsRemaining: hints,
-      totalScore: score,
-    );
+  Future<void> loadChaptersFromFirebase() async {
+    _loadingState = LoadingState.loading;
+    _errorMessage = null;
+    notifyListeners();
 
-    // Refresh data with correct language
-    _chapters = StoryData.getAllChapters(_language);
-    _currentSpots = StoryData.getSpotsForChapter(_gameState.currentChapterId, _language);
+    try {
+      // 1. Check Internet First
+      try {
+        final result = await InternetAddress.lookup('google.com');
+        if (result.isEmpty || result[0].rawAddress.isEmpty) throw Exception();
+      } catch (_) {
+        _errorMessage = 'Internet connection nahi hai. Kripya on karein aur retry karein.';
+        _loadingState = LoadingState.error;
+        notifyListeners();
+        return; // Stop right here
+      }
 
-    // Unlock chapters based on completed chapters
-    _updateChapterLocks();
+      final previousCount = _chapters.length;
+      _chapters = await FirebaseService().fetchAllChapters();
 
-    // Update spots examined status
+      if (previousCount > 0 && _chapters.length > previousCount) {
+        _hasNewChapter = true;
+      }
+
+      _updateChapterLocks();
+      _updateCurrentSpots();
+
+      _loadingState = LoadingState.loaded;
+
+      if (_language == 'english') {
+        _translateAllChaptersProgressively();
+      }
+
+    } catch (e) {
+      _errorMessage = 'Chapters load nahi hue. Internet check karke retry karein.';
+      _loadingState = LoadingState.error;
+      _chapters.clear(); // Ensure it forces retry instead of silent fail
+    }
+
+    notifyListeners();
+  }
+
+  // Specific chapter refresh karo (pull-to-refresh ke liye)
+  Future<void> refreshChapter(String chapterId) async {
+    final updated = await FirebaseService().refreshChapter(chapterId);
+    if (updated != null) {
+      final index = _chapters.indexWhere((c) => c.id == chapterId);
+      if (index != -1) {
+        _chapters[index] = updated;
+        _updateCurrentSpots();
+        notifyListeners();
+      }
+    }
+  }
+
+  void _updateCurrentSpots() {
+    if (_chapters.isEmpty) return;
+
+    // Prefer chapter.spots (from Firebase); fallback to StoryData
+    if (currentChapter.spots.isNotEmpty) {
+      _currentSpots = currentChapter.spots;
+    } else {
+      _currentSpots = StoryData.getSpotsForChapter(
+          _gameState.currentChapterId, _language);
+    }
+
+    // Previously found clues ke spots mark karo
     for (var spot in _currentSpots) {
       if (spot.clueId != null && _gameState.foundClues.contains(spot.clueId)) {
         spot.isExamined = true;
       }
     }
-
-    notifyListeners();
   }
 
   // Unlock chapters based on completed chapters list
@@ -81,38 +144,65 @@ class GameProvider extends ChangeNotifier {
     }
   }
 
+  void dismissNewChapterNotification() {
+    _hasNewChapter = false;
+    notifyListeners();
+  }
+
+  // ============================================================
+  // Language Support
+  // ============================================================
   Future<void> setLanguage(String lang) async {
     _language = lang;
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('language', lang);
-    
-    _chapters = StoryData.getAllChapters(lang);
-    _currentSpots = StoryData.getSpotsForChapter(_gameState.currentChapterId, lang);
-    _updateChapterLocks();
-    
-    for (var spot in _currentSpots) {
-      if (spot.clueId != null && _gameState.foundClues.contains(spot.clueId)) {
-        spot.isExamined = true;
+
+    if (_loadingState != LoadingState.loading) {
+      if (lang == 'english') {
+        _translateAllChaptersProgressively();
+      } else {
+        await loadChaptersFromFirebase(); // re-load hindi originals
       }
     }
-    
-    notifyListeners();
   }
 
-  void setCurrentChapter(String chapterId) {
-    if (_gameState.currentChapterId != chapterId) {
-      _gameState.currentChapterId = chapterId;
-      _currentSpots = StoryData.getSpotsForChapter(chapterId, _language);
-      
-      // Update spots examined status for the new chapter
-      for (var spot in _currentSpots) {
-        if (spot.clueId != null && _gameState.foundClues.contains(spot.clueId)) {
-          spot.isExamined = true;
+  Future<void> _translateAllChaptersProgressively() async {
+    for (int i = 0; i < _chapters.length; i++) {
+      if (_language != 'english') break; // stop if switched back
+      try {
+        if (_chapters[i].id == _gameState.currentChapterId) {
+          // Fully translate only the current playing chapter
+          _chapters[i] = await TranslationService.translateChapter(_chapters[i]);
+        } else {
+          // Only translate titles for menus to save time
+          _chapters[i] = await TranslationService.translateChapterBasicInfo(_chapters[i]);
         }
+        
+        if (i < 5 || i % 5 == 0 || _chapters[i].id == _gameState.currentChapterId) {
+          notifyListeners(); // Update UI selectively to avoid jank
+        }
+      } catch (e) {
+        print("Progressive translation error: $e");
       }
-      
-      notifyListeners();
     }
+    notifyListeners();
+    _updateCurrentSpots();
+  }
+
+
+  // ============================================================
+  // Saved State Load/Save
+  // ============================================================
+  Future<void> _loadSavedState() async {
+    final prefs = await SharedPreferences.getInstance();
+    _language = prefs.getString('language') ?? 'english';
+    _gameState = GameState(
+      completedChapters: Set.from(prefs.getStringList('completed_chapters') ?? []),
+      foundClues: Set.from(prefs.getStringList('found_clues') ?? []),
+      hintsRemaining: prefs.getInt('hints_remaining') ?? 3,
+      totalScore: prefs.getInt('total_score') ?? 0,
+      currentChapterId: prefs.getString('current_chapter') ?? 'chapter_1',
+    );
   }
 
   Future<void> _saveState() async {
@@ -122,14 +212,17 @@ class GameProvider extends ChangeNotifier {
     await prefs.setStringList('found_clues', _gameState.foundClues.toList());
     await prefs.setInt('hints_remaining', _gameState.hintsRemaining);
     await prefs.setInt('total_score', _gameState.totalScore);
+    await prefs.setString('current_chapter', _gameState.currentChapterId);
   }
 
-  // Examine a spot and find clue — always shows clue detail if already found
+  // ============================================================
+  // Game Logic
+  // ============================================================
   Clue? examineSpot(String spotId) {
     final spot = _currentSpots.firstWhere((s) => s.id == spotId);
 
     if (spot.isExamined) {
-      // Return the clue so it can be shown again (re-open)
+      // Re-show clue if already found
       if (spot.clueId != null) {
         return currentChapter.clues.firstWhere((c) => c.id == spot.clueId);
       }
@@ -143,7 +236,6 @@ class GameProvider extends ChangeNotifier {
       _gameState.totalScore += 100;
       _saveState();
       notifyListeners();
-
       return currentChapter.clues.firstWhere((c) => c.id == spot.clueId);
     }
 
@@ -151,14 +243,12 @@ class GameProvider extends ChangeNotifier {
     return null;
   }
 
-  // Check if a dialogue is accessible
   bool isDialogueAccessible(DialogueBranch dialogue) {
     if (!dialogue.isHidden) return true;
     if (dialogue.requiredClueId == null) return true;
     return _gameState.foundClues.contains(dialogue.requiredClueId);
   }
 
-  // Trigger dialogue and mark character as spoken
   void triggerDialogue(String characterId, String dialogueId) {
     final char = currentChapter.characters.firstWhere((c) => c.id == characterId);
     char.hasSpoken = true;
@@ -168,12 +258,10 @@ class GameProvider extends ChangeNotifier {
       _gameState.foundClues.add(dialogue.revealClue!);
       _gameState.totalScore += 50;
     }
-
     _saveState();
     notifyListeners();
   }
 
-  // Use a hint
   bool useHint() {
     if (_gameState.hintsRemaining <= 0) return false;
     _gameState.hintsRemaining--;
@@ -182,7 +270,6 @@ class GameProvider extends ChangeNotifier {
     return true;
   }
 
-  // Add hints (after watching ad)
   void addHints(int count) {
     _gameState.hintsRemaining += count;
     _gameState.hasWatchedAd = true;
@@ -190,23 +277,16 @@ class GameProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Get hint for current chapter
   String getHint() {
-    final unfoundImportant = currentChapter.clues
+    final unfound = currentChapter.clues
         .where((c) => c.isImportant && !_gameState.foundClues.contains(c.id))
         .toList();
-
-    if (unfoundImportant.isEmpty) {
-      return 'Tum sahi raste par ho! Suspects se zyada baat karo.';
-    }
-
-    return '${unfoundImportant.first.location} ko dhyan se dekho — wahan kuch chhupta hai.';
+    if (unfound.isEmpty) return 'Tum sahi raste par ho! Suspects se zyada baat karo.';
+    return '${unfound.first.location} ko dhyan se dekho — wahan kuch chhupta hai.';
   }
 
-  // Submit accusation and unlock next chapter on correct answer
   bool submitAccusation(String characterId) {
     final isCorrect = currentChapter.solution == characterId;
-
     if (isCorrect) {
       _gameState.completedChapters.add(currentChapter.id);
       _gameState.totalScore += 500;
@@ -214,18 +294,36 @@ class GameProvider extends ChangeNotifier {
       // Unlock next chapter
       final currentIndex = _chapters.indexWhere((c) => c.id == currentChapter.id);
       if (currentIndex >= 0 && currentIndex + 1 < _chapters.length) {
-        _chapters[currentIndex + 1] = _chapters[currentIndex + 1].copyWith(isLocked: false);
+        _chapters[currentIndex + 1] =
+            _chapters[currentIndex + 1].copyWith(isLocked: false);
       }
 
       _saveState();
       notifyListeners();
     }
-
     return isCorrect;
   }
 
-  bool isChapterCompleted(String chapterId) {
-    return _gameState.completedChapters.contains(chapterId);
+  bool isChapterCompleted(String chapterId) =>
+      _gameState.completedChapters.contains(chapterId);
+
+  void setCurrentChapter(String chapterId) async {
+    if (_gameState.currentChapterId != chapterId) {
+      _gameState.currentChapterId = chapterId;
+      _updateCurrentSpots();
+      _saveState();
+      notifyListeners();
+
+      // Lazy translate full chapter if english
+      if (_language == 'english') {
+        final index = _chapters.indexWhere((c) => c.id == chapterId);
+        if (index != -1) {
+          _chapters[index] = await TranslationService.translateChapter(_chapters[index]);
+          _updateCurrentSpots();
+          notifyListeners();
+        }
+      }
+    }
   }
 
   // Reset for new game
@@ -233,8 +331,12 @@ class GameProvider extends ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
     _gameState = GameState();
-    _chapters = StoryData.getAllChapters(_language);
-    _currentSpots = StoryData.getSpotsForChapter(_gameState.currentChapterId, _language);
-    notifyListeners();
+    await loadChaptersFromFirebase();
   }
+
+  Chapter _emptyChapter() => Chapter(
+    id: '', title: 'Loading...', subtitle: '', location: '',
+    backgroundEmoji: '⏳', mystery: '', solution: '', clues: [],
+    characters: [], spots: [],
+  );
 }

@@ -1,0 +1,352 @@
+[
+  {
+    "id": "chapter_36",
+    "title": "Golghar Ki Goonj",
+    "subtitle": "Awaaz me chhipa ek bada raaz...",
+    "location": "Patna — Golghar",
+    "backgroundEmoji": "🏛️",
+    "mystery": "Golghar ke andar ek ajeeb aawaz aati hai, aur usi waqt ek VIP tourist ka heere ka haar gayab ho jata hai. Wahan 4 log the.",
+    "solution": "char_guide",
+    "isLocked": true,
+    "order": 36,
+    "clues": [
+      {"id":"c36_map","name":"Phata Map","description":"Zameen par aadha phata hua purana map.","emoji":"🗺️","location":"Golghar Ke Andar","isImportant":true,"order":1},
+      {"id":"c36_cap","name":"Hari Topi","description":"Guide ki hari topi seedhiyon par padi hai.","emoji":"🧢","location":"Upar Ki Seedhi","isImportant":true,"order":2},
+      {"id":"c36_torch","name":"Tooti Torch","description":"Andhere kone me tooti hui flashlight.","emoji":"🔦","location":"Andhera Kona","isImportant":false,"order":3},
+      {"id":"c36_hook","name":"Dhaaga Aur Hook","description":"Deewar me ek chota fish hook fasa hai.","emoji":"🪝","location":"Deewar","isImportant":true,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_guide",
+        "name": "Babloo Guide",
+        "role": "Local Guide",
+        "emoji": "👳‍♂️",
+        "description": "Golghar ki har goonj jaanta hai. Humesha topi pehnta hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d36_g1","trigger":"Topi upar kaise aayi?","response":"Hawa bahut thi sir, ud gayi hogi.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d36_g2","trigger":"Hook aur dhaaga kiska hai?","response":"Pata nahi... Shayad main fish hook use karta hu aawaz karne ke liye! Par haar nahi liya!","revealClue":"c36_hook","isHidden":true,"requiredClueId":"c36_hook","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_vip2",
+        "name": "Mrs. Singh",
+        "role": "Tourist",
+        "emoji": "👩‍🦱",
+        "description": "Bohot gusse me hai aur ro rahi hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d36_v1","trigger":"Haar kaise gayab hua?","response":"Achanak aawaz goonji, main dari aur mera haar kisi ne khinch liya.","revealClue":"c36_cap","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_student2",
+        "name": "Arjun",
+        "role": "College Student",
+        "emoji": "🎒",
+        "description": "Research ke liye aaya tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d36_s1","trigger":"Phata map tumhara hai?","response":"Haan, main study kar raha tha. Aawaz se darr kar gir gaya.","revealClue":"c36_map","isHidden":true,"requiredClueId":"c36_map","isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_cleaner2",
+        "name": "Ramu",
+        "role": "Safai Karamchari",
+        "emoji": "🧹",
+        "description": "Jhaadu laga raha tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d36_c1","trigger":"Torch tooti kyu hai?","response":"Mera haath fisal gaya tha andhere me.","revealClue":"c36_torch","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_andar","name":"Golghar Andar 🏛️","emoji":"🏛️","xPercent":0.5,"yPercent":0.5,"clueId":"c36_map","description":"Gol jagah jahan aawaz goonjti hai."},
+      {"id":"spot_seedhi","name":"Seedhiyan 🪜","emoji":"🪜","xPercent":0.8,"yPercent":0.3,"clueId":"c36_cap","description":"Golghar ke upar jane ka rasta."},
+      {"id":"spot_kona","name":"Andhera Kona ⬛","emoji":"⬛","xPercent":0.2,"yPercent":0.7,"clueId":"c36_torch","description":"Yahan roshni nahi hai."},
+      {"id":"spot_deewar","name":"Upar Ki Deewar 🧱","emoji":"🧱","xPercent":0.5,"yPercent":0.1,"clueId":"c36_hook","description":"Jahan se aawaz takrati hai."}
+    ]
+  },
+  {
+    "id": "chapter_37",
+    "title": "Gandhi Maidan Ki Bheed",
+    "subtitle": "Rally ke beech ek chori...",
+    "location": "Patna — Gandhi Maidan",
+    "backgroundEmoji": "🎪",
+    "mystery": "Gandhi Maidan ki rally me neta ji ki jeeb se ek khufiya pendrive nikal li gayi. Char shakk ke ghere me hain.",
+    "solution": "char_reporter",
+    "isLocked": true,
+    "order": 37,
+    "clues": [
+      {"id":"c37_mic","name":"Toota Mic","description":"Stage ke paas ek toota hua lapel mic.","emoji":"🎤","location":"Stage Ke Paas","isImportant":true,"order":1},
+      {"id":"c37_id","name":"Press Card","description":"Ek adha jala press card dustbin me.","emoji":"🪪","location":"Dustbin","isImportant":true,"order":2},
+      {"id":"c37_shoe","name":"Boot Ka Nishan","description":"Keechad me bade boot ka nishan.","emoji":"🥾","location":"Keechad","isImportant":false,"order":3},
+      {"id":"c37_water","name":"Giri Botal","description":"Pani ki aadhi giri hui bottle.","emoji":"💧","location":"VIP Area","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_reporter",
+        "name": "Rajat Press",
+        "role": "Journalist",
+        "emoji": "📸",
+        "description": "Scandal ki talash me ghoomta hai. Press card nahi pehna.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d37_r1","trigger":"Press card kahan hai?","response":"Ghar bhool gaya tha, par meri entry approved thi.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d37_r2","trigger":"Dustbin me jala card kiska tha?","response":"Shayad kisi aur ka ho! Maine data leak karne ke liye chori nahi ki!","revealClue":"c37_id","isHidden":true,"requiredClueId":"c37_id","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_bodyguard",
+        "name": "Bheem",
+        "role": "Bodyguard",
+        "emoji": "🕶️",
+        "description": "Neta ji ke sabse kareeb tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d37_b1","trigger":"Tumhare boot ke nishan kyu hain?","response":"Main neta ji ko bacha kar VIP area me le ja raha tha.","revealClue":"c37_shoe","isHidden":true,"requiredClueId":"c37_shoe","isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_neta",
+        "name": "Neta Ji",
+        "role": "Politician",
+        "emoji": "🗣️",
+        "description": "Gusse me hain, pendrive bahut zaroori thi.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d37_n1","trigger":"Kaun kareeb aaya tha?","response":"Jab mic kharab hua toh reporter Rajat mic theek karne ke bahane mere pas aaya tha.","revealClue":"c37_mic","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_worker2",
+        "name": "Chandar",
+        "role": "Party Worker",
+        "emoji": "🚩",
+        "description": "Pani pilane ki duty thi.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d37_w1","trigger":"Pani ki botal kisne girayi?","response":"Bheed me dhakka laga tha sahab.","revealClue":"c37_water","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_stage","name":"Main Stage 🎤","emoji":"🎤","xPercent":0.5,"yPercent":0.3,"clueId":"c37_mic","description":"Jahan bhashan ho raha tha."},
+      {"id":"spot_dustbin","name":"Kachra 🗑️","emoji":"🗑️","xPercent":0.8,"yPercent":0.7,"clueId":"c37_id","description":"Maidan ke kone me."},
+      {"id":"spot_mud","name":"Keechad 🟤","emoji":"🟤","xPercent":0.2,"yPercent":0.8,"clueId":"c37_shoe","description":"Barish ki wajah se keechad."},
+      {"id":"spot_vip","name":"VIP Area 🛋️","emoji":"🛋️","xPercent":0.6,"yPercent":0.5,"clueId":"c37_water","description":"Khas mehmanon ke baithne ki jagah."}
+    ]
+  },
+  {
+    "id": "chapter_38",
+    "title": "Patna Sahib Ka Khanjar",
+    "subtitle": "Pavithra sthan par paap...",
+    "location": "Patna — Patna Sahib",
+    "backgroundEmoji": "🕌",
+    "mystery": "Museum se purana sone ka khanjar chori ho gaya. Char logo ko andar dekha gaya tha.",
+    "solution": "char_sewadar2",
+    "isLocked": true,
+    "order": 38,
+    "clues": [
+      {"id":"c38_cloth","name":"Kesar Kapda","description":"Toote sheeshe par kesari rang ke kapde ka tukda.","emoji":"🧣","location":"Display Case","isImportant":true,"order":1},
+      {"id":"c38_polish","name":"Metal Polish","description":"Khanjar ki jagah par thoda chemical polish.","emoji":"🧴","location":"Museum Floor","isImportant":true,"order":2},
+      {"id":"c38_camera","name":"CCTV Wire","description":"Kati hui CCTV taar.","emoji":"🔌","location":"Corner Deewar","isImportant":false,"order":3},
+      {"id":"c38_match","name":"Maachis","description":"Jali hui maachis ki teeli.","emoji":"🔥","location":"Bahar Ka Rasta","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_sewadar2",
+        "name": "Manjit",
+        "role": "Sewadar",
+        "emoji": "👳‍♂️",
+        "description": "Sone ki safai yahi karta hai. Kesari kapde pehnta hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d38_m1","trigger":"Tumhara kapda toota kyu hai?","response":"Safai karte waqt fas gaya tha!","revealClue":"c38_cloth","isHidden":true,"requiredClueId":"c38_cloth","isImportant":true,"followUpIds":[]},
+          {"id":"d38_m2","trigger":"Yahan metal polish kyu gira hai?","response":"Haan, main raat me chupke se polish kar raha tha, par churaya nahi!","revealClue":"c38_polish","isHidden":true,"requiredClueId":"c38_polish","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_guard2",
+        "name": "Santosh",
+        "role": "Night Guard",
+        "emoji": "👮‍♂️",
+        "description": "Aankh lag gayi thi iski.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d38_g1","trigger":"CCTV wire kisne kaati?","response":"Pata nahi sahab, maine toh Manjit ko safai karte dekha tha.","revealClue":"c38_camera","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_tourist3",
+        "name": "Anil",
+        "role": "Shraddhalu",
+        "emoji": "🙏",
+        "description": "Raat ko ruka hua tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d38_t1","trigger":"Bahar machis kyu padi hai?","response":"Main bidi pi raha tha, galti ho gayi.","revealClue":"c38_match","isHidden":true,"requiredClueId":"c38_match","isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_manager2",
+        "name": "Manager Sahib",
+        "role": "Prabandhak",
+        "emoji": "🧔",
+        "description": "Bahut pareshan hain.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d38_ma1","trigger":"Safai kaun karta hai?","response":"Sirf Manjit ko raat me polish karne ki ijazat hai.","revealClue":"c38_polish","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_case2","name":"Display 🖼️","emoji":"🖼️","xPercent":0.5,"yPercent":0.4,"clueId":"c38_cloth","description":"Toota kanch."},
+      {"id":"spot_floor","name":"Zameen 🟫","emoji":"🟫","xPercent":0.6,"yPercent":0.6,"clueId":"c38_polish","description":"Saaf ki hui jagah."},
+      {"id":"spot_wire","name":"Corner 🔌","emoji":"🔌","xPercent":0.2,"yPercent":0.2,"clueId":"c38_camera","description":"Deewar ka upari hissa."},
+      {"id":"spot_out2","name":"Bahar 🚪","emoji":"🚪","xPercent":0.8,"yPercent":0.8,"clueId":"c38_match","description":"Nikalne ka rasta."}
+    ]
+  },
+  {
+    "id": "chapter_39",
+    "title": "NIT Ghat Ka Tasqar",
+    "subtitle": "Ganga ki lehron me chhipa maal...",
+    "location": "Patna — NIT Ghat",
+    "backgroundEmoji": "🛶",
+    "mystery": "Ek naav se smuggled antiques chori ho gaye. Ghat par char suspicious log mile hain.",
+    "solution": "char_boatman",
+    "isLocked": true,
+    "order": 39,
+    "clues": [
+      {"id":"c39_rope","name":"Kati Rassi","description":"Naav ki rassi chaku se kati hui hai.","emoji":"🪢","location":"Ghat Kinara","isImportant":true,"order":1},
+      {"id":"c39_tobacco","name":"Khaini Ka Puda","description":"Ek khaini (tobacco) ka khali puda naav me.","emoji":"🌿","location":"Naav Ke Andar","isImportant":true,"order":2},
+      {"id":"c39_watch","name":"Sasti Ghadi","description":"Tooti hui sasti ghadi paani me.","emoji":"⌚","location":"Paani Ke Paas","isImportant":false,"order":3},
+      {"id":"c39_mud","name":"Geeli Mitti","description":"Geeli mitti ke bade nishan kinare par.","emoji":"🟤","location":"Kinare Par","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_boatman",
+        "name": "Mallah",
+        "role": "Naav Wala",
+        "emoji": "🚣",
+        "description": "Naav ka malik, khaini khata hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d39_b1","trigger":"Naav ki rassi kaise kati?","response":"Shayad lehron ki wajah se.","revealClue":"c39_rope","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d39_b2","trigger":"Ye khaini ka puda kiska hai?","response":"Theek hai, main naav par gaya tha maal nikalne, par police aane se dar gaya tha!","revealClue":"c39_tobacco","isHidden":true,"requiredClueId":"c39_tobacco","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_student3",
+        "name": "Vikash",
+        "role": "NIT Student",
+        "emoji": "🧑‍🎓",
+        "description": "Raat ko padhai ke baad ghoom raha tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d39_s1","trigger":"Ghadi tumhari hai?","response":"Haan, dhakka lagne se paani me gir gayi.","revealClue":"c39_watch","isHidden":true,"requiredClueId":"c39_watch","isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_smuggler",
+        "name": "Don",
+        "role": "Tasqar",
+        "emoji": "🕶️",
+        "description": "Bhaagne ke chakkar me tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d39_sm1","trigger":"Mitti ke nishan tumhare boot ke hain?","response":"Main bhag raha tha kyu ki police aa rahi thi.","revealClue":"c39_mud","isHidden":true,"requiredClueId":"c39_mud","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_chai",
+        "name": "Chaiwala",
+        "role": "Tea Vendor",
+        "emoji": "☕",
+        "description": "Sab dekhta hai ghat par.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d39_c1","trigger":"Kuch dekha tumne?","response":"Mallah chaku se apni hi rassi kaat raha tha aur khaini kha raha tha.","revealClue":"c39_tobacco","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_ghat","name":"Ghat Kinara 🏞️","emoji":"🏞️","xPercent":0.2,"yPercent":0.6,"clueId":"c39_rope","description":"Naav bandhne ki jagah."},
+      {"id":"spot_naav2","name":"Naav Andar 🛶","emoji":"🛶","xPercent":0.6,"yPercent":0.7,"clueId":"c39_tobacco","description":"Andar maal rakha tha."},
+      {"id":"spot_water","name":"Paani 💧","emoji":"💧","xPercent":0.8,"yPercent":0.8,"clueId":"c39_watch","description":"Ganga nadi."},
+      {"id":"spot_sand","name":"Geeli Mitti 🟤","emoji":"🟤","xPercent":0.4,"yPercent":0.9,"clueId":"c39_mud","description":"Pairo ke nishan hain yahan."}
+    ]
+  },
+  {
+    "id": "chapter_40",
+    "title": "Mysore Palace Ka Heera",
+    "subtitle": "Rajwado ke zewar me dhokha...",
+    "location": "Mysore — Mysore Palace",
+    "backgroundEmoji": "🏰",
+    "mystery": "Palace ke museum se ek beshkeemti heera chori. Char staff members ki duty thi us room me.",
+    "solution": "char_curator",
+    "isLocked": true,
+    "order": 40,
+    "clues": [
+      {"id":"c40_glass","name":"Nakli Kanch","description":"Heere ki jagah chamakta hua nakli kanch rakha hai.","emoji":"💎","location":"Display Stand","isImportant":true,"order":1},
+      {"id":"c40_glove","name":"Safed Dastana","description":"Curator ka safed dastana jo usne display ke pas choda.","emoji":"🧤","location":"Cushion","isImportant":true,"order":2},
+      {"id":"c40_key","name":"Locker Chabhi","description":"Extra chabhi farsh par mili.","emoji":"🔑","location":"Farsh","isImportant":false,"order":3},
+      {"id":"c40_note","name":"Phata Parcha","description":"Auction house ka adha phata number.","emoji":"📄","location":"Curator Desk","isImportant":true,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_curator",
+        "name": "Mr. Rao",
+        "role": "Museum Curator",
+        "emoji": "👨‍💼",
+        "description": "Heere ki dekh-rekh karta hai. Paise ka lalach tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d40_r1","trigger":"Nakli heera kaise rakha gaya?","response":"Mujhe kya pata, shayad safai wale ne kiya ho.","revealClue":"c40_glass","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d40_r2","trigger":"Auction house ka parcha aur dastana?","response":"Wo... main heere ko polish karke bechne ki deal kar raha tha... mujhe maaf kardo!","revealClue":"c40_note","isHidden":true,"requiredClueId":"c40_note","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_guard3",
+        "name": "Somu",
+        "role": "Security Guard",
+        "emoji": "👮‍♂️",
+        "description": "Duty par so raha tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d40_s1","trigger":"Chabhi zameen par kyu hai?","response":"Mera chabhi ka guccha gir gaya tha, par main andar nahi gaya.","revealClue":"c40_key","isHidden":true,"requiredClueId":"c40_key","isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_cleaner3",
+        "name": "Kanta",
+        "role": "Maid",
+        "emoji": "🧹",
+        "description": "Bholi bhaali safai wali.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d40_k1","trigger":"Curator desk par kya tha?","response":"Maine Rao sir ko kal raat heere ke paas safed glove pehan kar kaam karte dekha tha.","revealClue":"c40_glove","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_tourist4",
+        "name": "Jane",
+        "role": "Videshi Tourist",
+        "emoji": "👱‍♀️",
+        "description": "Aakhri aayi thi dekhne.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d40_t1","trigger":"Aapko kaisa laga heera?","response":"It looked like cheap glass today. Not like real diamond.","revealClue":"c40_glass","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_display","name":"Display Stand 💎","emoji":"💎","xPercent":0.5,"yPercent":0.4,"clueId":"c40_glass","description":"Yahan heera rakha tha."},
+      {"id":"spot_cushion","name":"Red Cushion 🟥","emoji":"🟥","xPercent":0.5,"yPercent":0.5,"clueId":"c40_glove","description":"Stand ke andar ka kapda."},
+      {"id":"spot_floor","name":"Marble Farsh ⬜","emoji":"⬜","xPercent":0.3,"yPercent":0.8,"clueId":"c40_key","description":"Chamkili zameen."},
+      {"id":"spot_desk","name":"Curator Desk 🪑","emoji":"🪑","xPercent":0.8,"yPercent":0.3,"clueId":"c40_note","description":"Rao ka table."}
+    ]
+  }
+]

@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../utils/app_theme.dart';
 import '../utils/app_strings.dart';
 import '../services/game_provider.dart';
+import '../services/sound_service.dart';
 import '../models/game_models.dart';
 import 'investigation_screen.dart';
 
@@ -73,10 +74,6 @@ class ChapterSelectScreen extends StatelessWidget {
                     children: [
                       Text(AppStrings.get('coming_soon_title', gameProvider.language),
                           style: Theme.of(context).textTheme.bodyLarge),
-                      Text(
-                        AppStrings.get('coming_soon_sub', gameProvider.language),
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
                     ],
                   ),
                 ),
@@ -89,6 +86,7 @@ class ChapterSelectScreen extends StatelessWidget {
   }
 
   void _startChapter(BuildContext context, Chapter chapter) {
+    SoundService().playChapterUnlock(); // 🔊 Chapter start sound
     context.read<GameProvider>().setCurrentChapter(chapter.id);
     Navigator.push(
       context,

@@ -3,8 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'services/game_provider.dart';
 import 'services/ad_service.dart';
+import 'services/sound_service.dart';
 import 'utils/app_theme.dart';
 import 'screens/splash_screen.dart';
 
@@ -17,7 +20,6 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  // Dark status bar
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -25,8 +27,16 @@ void main() async {
     ),
   );
 
-  // Initialize Ads
+  // 🔥 Firebase initialize karo
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // AdMob initialize karo
   await AdService().initialize();
+
+  // 🔊 Sound initialize karo
+  await SoundService().init();
 
   runApp(const MohallaMysteryApp());
 }

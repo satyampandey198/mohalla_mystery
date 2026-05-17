@@ -1,0 +1,235 @@
+[
+  {
+    "id": "chapter_6",
+    "title": "Karim Ki Dukaan",
+    "subtitle": "Dilli ki gali mein daba hua raaz...",
+    "location": "Purani Dilli — Matia Mahal Gali",
+    "backgroundEmoji": "🏪",
+    "mystery": "Karim Chacha ki mashoor biryani dukaan mein aaj subah tijori khaali mili. 2 lakh ka hisaab gayab. Par dukaan ka darwaza toot nahi tha — andar waale ne khola tha.",
+    "solution": "char_salim",
+    "isLocked": true,
+    "order": 6,
+    "clues": [
+      {"id":"c6_rekha","name":"Khaata Bahi","description":"Hisaab ki bahi mein ek page phaata hua — last teen mahine ke entries gayab.","emoji":"📒","location":"Counter Ke Peeche","isImportant":true,"order":1},
+      {"id":"c6_chabi","name":"Duplicate Chabi","description":"Tijori ke paas doosri chabi mili — same shape, nai bani.","emoji":"🗝️","location":"Tijori Ke Neeche","isImportant":true,"order":2},
+      {"id":"c6_anguthi","name":"Chandi Ki Anguthi","description":"Chacha ki anguthi neeche giri padi thi — kisi se ladai hui thi.","emoji":"💍","location":"Farsh Pe","isImportant":false,"order":3}
+    ],
+    "characters": [
+      {
+        "id": "char_salim",
+        "name": "Salim Bhai",
+        "role": "Dukaan Ka Kaamgaar",
+        "emoji": "👨‍🍳",
+        "description": "5 saal se kaam karta hai. Teen mahine se bonus nahi mila — gussa tha.",
+        "suspicionLevel": 78,
+        "dialogues": [
+          {"id":"d6_s1","trigger":"Raat ko dukaan mein the?","response":"Nahi ji, 10 baje nikal gaya tha main.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d6_s2","trigger":"Ye duplicate chabi kahan se aayi?","response":"Woh... woh maine banwayi thi sirf emergency ke liye! Karim chacha ko pata nahi tha!","revealClue":"c6_chabi","isHidden":true,"requiredClueId":"c6_chabi","isImportant":true,"followUpIds":[]},
+          {"id":"d6_s3","trigger":"Teen mahine ka hisaab kyun gum hua?","response":"Mujhe kya pata... main toh bas kaam karta hoon!","revealClue":"c6_rekha","isHidden":true,"requiredClueId":"c6_rekha","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_rashida",
+        "name": "Rashida Begum",
+        "role": "Padosin",
+        "emoji": "👩",
+        "description": "Samne ki dukaan waali. Raat ko jaagti rehti hai.",
+        "suspicionLevel": 20,
+        "dialogues": [
+          {"id":"d6_r1","trigger":"Raat ko kuch dikha?","response":"Haan, raat 11 baje Salim bhai wapas aaye the dukaan pe — mujhe taajjub hua tha.","revealClue":"c6_anguthi","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_counter","name":"Counter 🍛","emoji":"🍛","xPercent":0.6,"yPercent":0.4,"clueId":"c6_rekha","description":"Chacha ka purana counter — drawer thoda khula hai."},
+      {"id":"spot_tijori","name":"Tijori 🔐","emoji":"🔐","xPercent":0.25,"yPercent":0.55,"clueId":"c6_chabi","description":"Lohe ki tijori — darwaza khula pada hai."},
+      {"id":"spot_farsh","name":"Farsh 🪵","emoji":"🪵","xPercent":0.5,"yPercent":0.75,"clueId":"c6_anguthi","description":"Purana farsh — kuch chamak raha hai kone mein."}
+    ]
+  },
+  {
+    "id": "chapter_7",
+    "title": "Imambara Ka Saaya",
+    "subtitle": "Lucknow ki raat mein chupi maut...",
+    "location": "Lucknow — Chhota Imambara",
+    "backgroundEmoji": "🕌",
+    "mystery": "Imambara ke pujari Hafiz Sahab subah namaaz ke waqt nahi aaye. Unhe unke hujre mein mritak paya gaya. Koi bahari nishaan nahi — par ek khaas khusboo kamre mein thi.",
+    "solution": "char_naseem",
+    "isLocked": true,
+    "order": 7,
+    "clues": [
+      {"id":"c7_itr","name":"Itr Ki Boo","description":"Kamre mein ek khaas itr ki boo — 'Shamama' brand, sirf khaas dukaan mein milta hai.","emoji":"🧴","location":"Hujra","isImportant":true,"order":1},
+      {"id":"c7_tasbih","name":"Tooti Tasbih","description":"Hafiz sahab ki tasbih tooti padi thi — kisi se haath-apai hui.","emoji":"📿","location":"Farsh Pe","isImportant":false,"order":2},
+      {"id":"c7_wasiyat","name":"Wasiyat Ka Kagaz","description":"Ek naya wasiyat kagaz — property Naseem ke naam kiya hua, kal ki taareekh.","emoji":"📜","location":"Mez Pe","isImportant":true,"order":3}
+    ],
+    "characters": [
+      {
+        "id": "char_naseem",
+        "name": "Naseem Khan",
+        "role": "Hafiz Ka Bhatija",
+        "emoji": "🧑",
+        "description": "Property ke liye kaafi arsa se jhagda tha chacha se. Shamama itr laata tha unhe.",
+        "suspicionLevel": 82,
+        "dialogues": [
+          {"id":"d7_n1","trigger":"Aakhri baar kab mile the chacha se?","response":"Kal shaam ko... milne aaya tha. Bas pyaar se mila tha.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d7_n2","trigger":"Ye wasiyat tumne likhi?","response":"Woh... unhone khud likhi! Maine sirf... sirf madad ki thi unhe!","revealClue":"c7_wasiyat","isHidden":true,"requiredClueId":"c7_wasiyat","isImportant":true,"followUpIds":[]},
+          {"id":"d7_n3","trigger":"Shamama itr aap use karte ho?","response":"Haan magar... main wahan gaya hi nahi tha kal!","revealClue":"c7_itr","isHidden":true,"requiredClueId":"c7_itr","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_muazzin",
+        "name": "Bilal Muazzin",
+        "role": "Imambara Ka Muazzin",
+        "emoji": "🧕",
+        "description": "Roz subah 4 baje aata hai. Aaj kuch alag tha.",
+        "suspicionLevel": 18,
+        "dialogues": [
+          {"id":"d7_b1","trigger":"Aaj kuch alag tha?","response":"Haan, raat bhar ek aadmi aata-jaata raha. Naseem jaisa lagta tha — wahi khusboo bhi aayi.","revealClue":"c7_tasbih","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_hujra","name":"Hafiz Ka Hujra 🚪","emoji":"🚪","xPercent":0.55,"yPercent":0.4,"clueId":"c7_itr","description":"Chhota sa kamra — darwaza adha khula hai."},
+      {"id":"spot_farsh","name":"Farsh 🪨","emoji":"🪨","xPercent":0.3,"yPercent":0.65,"clueId":"c7_tasbih","description":"Purana farsh — kuch bikhra pada hai."},
+      {"id":"spot_mez","name":"Mez 📋","emoji":"📋","xPercent":0.7,"yPercent":0.55,"clueId":"c7_wasiyat","description":"Lakdi ki mez — kagazon ka dher."}
+    ]
+  },
+  {
+    "id": "chapter_8",
+    "title": "Tulsi Ghat Ki Chori",
+    "subtitle": "Devta ke khazaane par buri nazar...",
+    "location": "Varanasi — Tulsi Ghat Mandir",
+    "backgroundEmoji": "⛩️",
+    "mystery": "Tulsi Ghat ke mandir se chandi ka ghanta aur prasad ki bhari potli raat bhar mein gaayab. CCTV nahi tha — par ek bhakt ne kuch dekha tha.",
+    "solution": "char_mahesh",
+    "isLocked": true,
+    "order": 8,
+    "clues": [
+      {"id":"c8_paon","name":"Geeli Mitti Ke Nishan","description":"Mandir ke andar geeli mitti ke paon ke nishan — ghat se aaye the.","emoji":"👣","location":"Mandir Ka Pravesh","isImportant":true,"order":1},
+      {"id":"c8_dhaga","name":"Laal Dhaga","description":"Mandir ki jaali mein laal dhaga fansa hua — pujari nahi pehnte aise.","emoji":"🧵","location":"Peechi Jaali","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_mahesh",
+        "name": "Mahesh Prasad",
+        "role": "Mandir Ka Safaai Wala",
+        "emoji": "🧹",
+        "description": "Roz subah 4 baje safai karta hai. Aaj zyada jaldi aa gaya. Laal dhage ka ek bangle tha uske haath mein.",
+        "suspicionLevel": 76,
+        "dialogues": [
+          {"id":"d8_m1","trigger":"Aaj itni jaldi kyun aaye?","response":"Mujhe... neend nahi aayi. Bas kaam karne aagaya.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d8_m2","trigger":"Ye laal dhaga aapka hai?","response":"Woh toh... har koi pehenta hai! Mera nahi hai!","revealClue":"c8_dhaga","isHidden":true,"requiredClueId":"c8_dhaga","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_bhakt",
+        "name": "Kamla Devi",
+        "role": "Niyamit Bhakt",
+        "emoji": "👵",
+        "description": "Roz raat ko mandir aati hai. Aaj kuch alag dikh gaya.",
+        "suspicionLevel": 10,
+        "dialogues": [
+          {"id":"d8_k1","trigger":"Raat ko kuch ajeeb dekha?","response":"Haan bete! Raat 2 baje Mahesh andar ghus raha tha — bade jatan se, jaise chori se aa raha ho.","revealClue":"c8_paon","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_pravesh","name":"Mandir Ka Pravesh ⛩️","emoji":"⛩️","xPercent":0.4,"yPercent":0.35,"clueId":"c8_paon","description":"Sangmarmar ka pravesh — neeche geeli mitti."},
+      {"id":"spot_jaali","name":"Peechi Jaali 🪟","emoji":"🪟","xPercent":0.7,"yPercent":0.6,"clueId":"c8_dhaga","description":"Lohe ki jaali — kuch fansa hua dikh raha hai."}
+    ]
+  },
+  {
+    "id": "chapter_9",
+    "title": "Johri Ka Jhooth",
+    "subtitle": "Jaipur ke bazaar mein sach kitna qeemti hai...",
+    "location": "Jaipur — Johri Bazaar",
+    "backgroundEmoji": "💎",
+    "mystery": "Seth Jugal Kishore Johri ko kisi ne dhamki di — 'Meri baat maano, warna teri dukaan ki saari naajaiz dealings sab ko pata chalegi.' Seth ne police ko nahi bataya. Aaj unhi ki dukaan jalane ki koshish hui.",
+    "solution": "char_pappu",
+    "isLocked": true,
+    "order": 9,
+    "clues": [
+      {"id":"c9_sms","name":"Dhamki Ka Message","description":"Seth ji ke purane phone mein ek message — 'Kal raat tak 5 lakh — warna sab khatam.'","emoji":"📱","location":"Dukaan Ki Mez","isImportant":true,"order":1},
+      {"id":"c9_petrol","name":"Petrol Ki Gandhh","description":"Dukaan ke bahar petrol ki tej gandhh — ek khali bottle bhi mili.","emoji":"🛢️","location":"Dukaan Ka Bahar","isImportant":true,"order":2},
+      {"id":"c9_chashma","name":"Toota Chashma","description":"Gali mein ek toota chashma — kisi ka zewar uthate waqt toot gaya.","emoji":"👓","location":"Gali Mein","isImportant":false,"order":3}
+    ],
+    "characters": [
+      {
+        "id": "char_pappu",
+        "name": "Pappu Lal",
+        "role": "Pratidwandi Johri",
+        "emoji": "💼",
+        "description": "Seth ka sabse bada dushman. Kuch saal pehle Seth ne uski dukaan todwayi thi benami complaints se.",
+        "suspicionLevel": 80,
+        "dialogues": [
+          {"id":"d9_p1","trigger":"Seth ji se koi dushman thi?","response":"Unse toh kai logon ki dushman thi. Meri bhi hai — unhone mera dhandha barbad kiya.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d9_p2","trigger":"Kal raat kahan the aap?","response":"Ghar pe tha... akela.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d9_p3","trigger":"Ye chashma aapka lagta hai?","response":"Mera chashma toh... arey yeh... main explain kar sakta hoon!","revealClue":"c9_chashma","isHidden":true,"requiredClueId":"c9_chashma","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_munim",
+        "name": "Bhagwan Das Munim",
+        "role": "Seth Ka Munim",
+        "emoji": "🧓",
+        "description": "30 saal se Seth ka hisaab rakhta hai. Naajaiz dealings ka pura pata hai usse.",
+        "suspicionLevel": 30,
+        "dialogues": [
+          {"id":"d9_b1","trigger":"Seth ko dhamki mili thi?","response":"Haan, ek hafte se. Pappu Lal ka kaam lag raha hai — woh petrol bhi istemal karta hai dukaan ke andor ke liye.","revealClue":"c9_petrol","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]},
+          {"id":"d9_b2","trigger":"Seth ki naajaiz dealings?","response":"Ji... woh toh... main nahi bata sakta. Seth bahut bura maanenge.","revealClue":"c9_sms","isHidden":true,"requiredClueId":"c9_sms","isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_mez","name":"Dukaan Ki Mez 💎","emoji":"💎","xPercent":0.5,"yPercent":0.4,"clueId":"c9_sms","description":"Sheeshe ki mez — neeche ek purana phone pada hai."},
+      {"id":"spot_bahar","name":"Dukaan Ke Bahar 🚪","emoji":"🚪","xPercent":0.15,"yPercent":0.6,"clueId":"c9_petrol","description":"Dukaan ka baahari hissa — kuch geela sa lag raha hai."},
+      {"id":"spot_gali","name":"Seedhi Gali 🏘️","emoji":"🏘️","xPercent":0.75,"yPercent":0.65,"clueId":"c9_chashma","description":"Tangi gali — kuch toot hua sa pada hai."}
+    ]
+  },
+  {
+    "id": "chapter_10",
+    "title": "Para Ka Khoon",
+    "subtitle": "Kolkata ki baarish mein dooba raaz...",
+    "location": "Kolkata — Shyambazar Para",
+    "backgroundEmoji": "🌧️",
+    "mystery": "Baarish ki raat Shyambazar para mein Durga Prasad Sharma ki laash mili — chat pe. Koi marks nahi the, par woh akele upar nahi gaye the. Koi unke saath tha — kisne unhe dhakka diya?",
+    "solution": "char_kartik",
+    "isLocked": true,
+    "order": 10,
+    "clues": [
+      {"id":"c10_bidi","name":"Bujhi Bidi","description":"Chat pe ek bujhi bidi — Durga Prasad nahi pite the. Koi aur tha.","emoji":"🚬","location":"Chat Ka Kona","isImportant":true,"order":1},
+      {"id":"c10_chitthi","name":"Insurance Paper","description":"Durga ji ki mez pe ek insurance paper — nominee mein Kartik ka naam.","emoji":"📋","location":"Neeche Ka Kamra","isImportant":true,"order":2},
+      {"id":"c10_jutte","name":"Geele Jutte","description":"Seedhiyon ke paas geele jutte — size 9, Durga ji ka size 7 tha.","emoji":"👞","location":"Seedhi Ke Paas","isImportant":false,"order":3}
+    ],
+    "characters": [
+      {
+        "id": "char_kartik",
+        "name": "Kartik Sharma",
+        "role": "Mritak Ka Beta",
+        "emoji": "👦",
+        "description": "Kafi karz tha uske upar. Baap ki insurance ka intejar tha. Bidi pita hai.",
+        "suspicionLevel": 85,
+        "dialogues": [
+          {"id":"d10_k1","trigger":"Raat ko chat pe gaye the?","response":"Nahi! Main neeche tha! Baap akele gaye hoge!","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d10_k2","trigger":"Insurance mein tumhara naam kyun?","response":"Baap ne khud kiya tha! Main kya kar sakta hoon!","revealClue":"c10_chitthi","isHidden":true,"requiredClueId":"c10_chitthi","isImportant":true,"followUpIds":[]},
+          {"id":"d10_k3","trigger":"Ye geele jutte size 9 ke hain — aapka size?","response":"Main... woh baarish mein gaya tha thodi der ko... chat pe nahi gaya tha! Bas seedhi tak!","revealClue":"c10_jutte","isHidden":true,"requiredClueId":"c10_jutte","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_pados",
+        "name": "Sundar Kaka",
+        "role": "Para Ka Buzurg",
+        "emoji": "👴",
+        "description": "50 saal se para mein hai. Sab kuch dekhte hain.",
+        "suspicionLevel": 12,
+        "dialogues": [
+          {"id":"d10_s1","trigger":"Raat ko kuch ajeeb tha?","response":"Haan bhai — raat 11 baje Kartik tezi se seedhiyan chadhta dikha. Upar se zor ki awaaz aayi — phir khamoshi.","revealClue":"c10_bidi","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_chat","name":"Makan Ki Chat 🏠","emoji":"🏠","xPercent":0.5,"yPercent":0.25,"clueId":"c10_bidi","description":"Khuli chat — baarish abhi bhi ho rahi hai."},
+      {"id":"spot_kamra","name":"Neeche Ka Kamra 🚪","emoji":"🚪","xPercent":0.65,"yPercent":0.55,"clueId":"c10_chitthi","description":"Seedha kamra — mez pe kagazon ka dher."},
+      {"id":"spot_seedhi","name":"Seedhi Ke Paas 🪜","emoji":"🪜","xPercent":0.3,"yPercent":0.65,"clueId":"c10_jutte","description":"Andheri seedhi — neeche kuch pada hua hai."}
+    ]
+  }
+]

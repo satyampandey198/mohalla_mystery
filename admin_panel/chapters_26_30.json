@@ -1,0 +1,222 @@
+[
+  {
+    "id": "chapter_26",
+    "title": "OMR Ka Cyber Chor",
+    "subtitle": "IT park ke andhere server room mein...",
+    "location": "Chennai — OMR IT Corridor",
+    "backgroundEmoji": "🏢",
+    "mystery": "Ek badi IT company ka server hack ho gaya aur naya game code chori ho gaya. Access sirf rat ki shift wale do logo ke paas tha.",
+    "solution": "char_vivek",
+    "isLocked": true,
+    "order": 26,
+    "clues": [
+      {"id":"c26_coffee","name":"Giri Hui Coffee","description":"Server rack ke paas filter coffee giri hai.","emoji":"☕","location":"Server Room","isImportant":true,"order":1},
+      {"id":"c26_pendrive","name":"Pendrive Cover","description":"Ek nayi pendrive ka cover mila dustbin mein.","emoji":"🗑️","location":"Pantry","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_vivek",
+        "name": "Vivek",
+        "role": "System Admin",
+        "emoji": "🧑‍💻",
+        "description": "Coffee ka bahut shauqeen hai. Rival company mein interview diya tha.",
+        "suspicionLevel": 85,
+        "dialogues": [
+          {"id":"d26_v1","trigger":"Tum server room mein kya kar rahe the?","response":"Main toh routine check ke liye gaya tha.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d26_v2","trigger":"Tumhari coffee wahan kaise giri?","response":"Haa, main coffee le gaya tha, par maine data copy nahi kiya!","revealClue":"c26_coffee","isHidden":true,"requiredClueId":"c26_coffee","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_anjali",
+        "name": "Anjali",
+        "role": "Security Guard",
+        "emoji": "👮‍♀️",
+        "description": "CCTV monitor dekhti hai, par aadhi raat ko so gai thi.",
+        "suspicionLevel": 15,
+        "dialogues": [
+          {"id":"d26_a1","trigger":"CCTV mein kuch kyu nahi dikha?","response":"Camera 3 band tha... aur pantry ke dustbin mein maine ek pendrive ka cover dekha tha!","revealClue":"c26_pendrive","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_server","name":"Server Rack 🗄️","emoji":"🗄️","xPercent":0.3,"yPercent":0.5,"clueId":"c26_coffee","description":"Bade computers jahan data hai."},
+      {"id":"spot_pantry","name":"Pantry 🍵","emoji":"🍵","xPercent":0.7,"yPercent":0.4,"clueId":"c26_pendrive","description":"Coffee aur snacks ka area."}
+    ]
+  },
+  {
+    "id": "chapter_27",
+    "title": "Fatehpur Sikri Ka Farzi",
+    "subtitle": "Buland Darwaze ke saaye mein...",
+    "location": "Agra — Fatehpur Sikri",
+    "backgroundEmoji": "🕌",
+    "mystery": "Ek videshi group ko fake tickets bechi gayi. Asli ticket counter wale ne kisi par shak jataya hai.",
+    "solution": "char_raju",
+    "isLocked": true,
+    "order": 27,
+    "clues": [
+      {"id":"c27_printer","name":"Chota Printer","description":"Jhaadiyon ke peeche ek battery wala mini printer mila.","emoji":"🖨️","location":"Jhaadiyan","isImportant":true,"order":1},
+      {"id":"c27_ink","name":"Neeli Syaahi","description":"Fake tickets par ajeeb neeli syaahi lagi hai.","emoji":"🖊️","location":"Gate Ke Paas","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_raju",
+        "name": "Raju Guide",
+        "role": "Local Guide",
+        "emoji": "👳‍♂️",
+        "description": "Bina license ke foreigners ko ghumata hai. Hath mein neeli syaahi lagi hai.",
+        "suspicionLevel": 90,
+        "dialogues": [
+          {"id":"d27_r1","trigger":"Ye fake tickets tumne diye?","response":"Arey nahi sahab, main toh sirf guide hoon!","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d27_r2","trigger":"Tumhare hath pe ye neeli syaahi kaisi?","response":"Wo toh... pen leak ho gaya tha! Printer mera nahi hai!","revealClue":"c27_ink","isHidden":true,"requiredClueId":"c27_ink","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_counter",
+        "name": "Ramesh",
+        "role": "Ticket Babu",
+        "emoji": "👨‍💼",
+        "description": "Gusse mein hai ki uski naukri khatre mein hai.",
+        "suspicionLevel": 10,
+        "dialogues": [
+          {"id":"d27_c1","trigger":"Tumhe kispar shak hai?","response":"Raju aaj subah se jhaadiyon ke piche chhip-chhip kar kisi ko paper de raha tha.","revealClue":"c27_printer","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_gate","name":"Buland Darwaza 🚪","emoji":"🚪","xPercent":0.5,"yPercent":0.3,"clueId":"c27_ink","description":"Mukhya dwar."},
+      {"id":"spot_jhaadi","name":"Jhaadiyan 🌿","emoji":"🌿","xPercent":0.2,"yPercent":0.7,"clueId":"c27_printer","description":"Raste ke kinare chhipi jagah."}
+    ]
+  },
+  {
+    "id": "chapter_28",
+    "title": "Jallianwala Bagh Ki Yaad",
+    "subtitle": "Khoon ke nishanon ke beech...',
+    "location": "Amritsar — Jallianwala Bagh",
+    "backgroundEmoji": "🌳",
+    "mystery": "Museum se 1919 ki ek purani bandook gayab ho gayi. Glass case toota hua tha aur ek safai karamchari chotil paya gaya.",
+    "solution": "char_watchman",
+    "isLocked": true,
+    "order": 28,
+    "clues": [
+      {"id":"c28_glass","name":"Kanch Ke Tukde","description":"Toote hue kanch mein uniform ka kapda phasa tha.","emoji":"🪟","location":"Display Case","isImportant":true,"order":1},
+      {"id":"c28_lathi","name":"Tooti Lathi","description":"Watchman ki lathi jo shayad kanch todne me use hui.","emoji":"🦯","location":"Museum Kone Mein","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_watchman",
+        "name": "Gurpreet",
+        "role": "Night Watchman",
+        "emoji": "💂‍♂️",
+        "description": "Raat ko akela tha. Kehta hai chor ne uspe hamla kiya.",
+        "suspicionLevel": 88,
+        "dialogues": [
+          {"id":"d28_g1","trigger":"Bandook kisne li?","response":"Koi kaale kapdon mein tha, usne mujhe dhakka diya.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d28_g2","trigger":"Tumhari uniform phati kyu hai?","response":"Dhakke se... maine lathi se case nahi toda!","revealClue":"c28_glass","isHidden":true,"requiredClueId":"c28_glass","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_sweeper",
+        "name": "Karam",
+        "role": "Safai Wala",
+        "emoji": "🧹",
+        "description": "Sir par chot lagi hai.",
+        "suspicionLevel": 12,
+        "dialogues": [
+          {"id":"d28_k1","trigger":"Chot kaise lagi?","response":"Main andar aaya toh Gurpreet lathi se kuch tod raha tha, usne mujhe mara.","revealClue":"c28_lathi","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_case","name":"Display Case 🖼️","emoji":"🖼️","xPercent":0.6,"yPercent":0.5,"clueId":"c28_glass","description":"Yahan bandook rakhi thi."},
+      {"id":"spot_kona","name":"Andhera Kona ⬛","emoji":"⬛","xPercent":0.8,"yPercent":0.8,"clueId":"c28_lathi","description":"Museum ka ek kona."}
+    ]
+  },
+  {
+    "id": "chapter_29",
+    "title": "Golconda Ki Goonj",
+    "subtitle": "Kile ki deewaron mein saazish...",
+    "location": "Hyderabad — Golconda Fort",
+    "backgroundEmoji": "🏰",
+    "mystery": "Kile ke light and sound show ka aawaz ka system kharab kar diya gaya. Ek VIP aane wale the aur ye show bahut zaroori tha.",
+    "solution": "char_sound_guy",
+    "isLocked": true,
+    "order": 29,
+    "clues": [
+      {"id":"c29_wire","name":"Kaati Taar","description":"Speaker ki taar chaku se kaati gayi hai.","emoji":"✂️","location":"Speaker Box","isImportant":true,"order":1},
+      {"id":"c29_chaku","name":"Multitool Chaku","description":"Ek chota sa lal pocket knife.","emoji":"🔪","location":"Control Room","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_sound_guy",
+        "name": "Tariq",
+        "role": "Sound Engineer",
+        "emoji": "🎧",
+        "description": "VIP se nafrat karta hai kyunki uske ghar tod diye gaye the.",
+        "suspicionLevel": 92,
+        "dialogues": [
+          {"id":"d29_t1","trigger":"Speaker kisne kharab kiye?","response":"Pata nahi, kal raat theek the!","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d29_t2","trigger":"Ye pocket knife tumhara hai?","response":"Haan par... maine show sabotage nahi kiya!","revealClue":"c29_chaku","isHidden":true,"requiredClueId":"c29_chaku","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_manager",
+        "name": "Rao Sahab",
+        "role": "Show Manager",
+        "emoji": "👨‍💼",
+        "description": "Bokhlaye hue hain.",
+        "suspicionLevel": 8,
+        "dialogues": [
+          {"id":"d29_m1","trigger":"Raat ko kiske paas chabhi thi?","response":"Tariq aakhri tha jo speakers check kar raha tha. Wo hamesha knife rakhta hai apne paas.","revealClue":"c29_wire","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_speaker","name":"Speakers 🔈","emoji":"🔈","xPercent":0.3,"yPercent":0.6,"clueId":"c29_wire","description":"Kile ke paas lage bade speakers."},
+      {"id":"spot_control","name":"Control Desk 🎛️","emoji":"🎛️","xPercent":0.7,"yPercent":0.4,"clueId":"c29_chaku","description":"Jahan se show chalaya jata hai."}
+    ]
+  },
+  {
+    "id": "chapter_30",
+    "title": "Sadar Bazaar Ka Zehar",
+    "subtitle": "Pethe ki mithaas mein kadwahat...",
+    "location": "Agra — Sadar Bazaar",
+    "backgroundEmoji": "🏬",
+    "mystery": "Bazaar ki sabse badi pethe ki dukaan mein pethe ka ek batch kha kar log bimar pad gaye. Pata chala usme galti se safai wala chemical mil gaya tha.",
+    "solution": "char_rival",
+    "isLocked": true,
+    "order": 30,
+    "clues": [
+      {"id":"c30_botttle","name":"Khali Chemical Bottle","description":"Floor cleaner ki ek choti khali bottle gudam mein.","emoji":"🧴","location":"Pethe Ka Gudam","isImportant":true,"order":1},
+      {"id":"c30_foot","name":"Mitti Ke Nishan","description":"Gudam ki khidki se andar aane ke nishan.","emoji":"👣","location":"Khidki","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_rival",
+        "name": "Lala Ji",
+        "role": "Rival Dukandar",
+        "emoji": "🧔",
+        "description": "Samne wale ki dukaan band karwana chahte the.",
+        "suspicionLevel": 89,
+        "dialogues": [
+          {"id":"d30_l1","trigger":"Raat ko aap kahan the?","response":"Main apni dukaan par hisaab kar raha tha.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d30_l2","trigger":"Khidki ke nishan aapke jooton jaise kyu hai?","response":"Main toh bas unka gudam dekhne gaya tha! Chemical maine nahi dala!","revealClue":"c30_foot","isHidden":true,"requiredClueId":"c30_foot","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_worker",
+        "name": "Chhotu",
+        "role": "Dukaan Ka Naukar",
+        "emoji": "👦",
+        "description": "Dara hua hai ki ilzaam uspar aayega.",
+        "suspicionLevel": 11,
+        "dialogues": [
+          {"id":"d30_c1","trigger":"Floor cleaner kisne rakha tha?","response":"Maine nahi! Maine dekha Lala ji raat ko hamari khidki ke paas theek jahan bottle mili wahan ghoom rahe the!","revealClue":"c30_botttle","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_gudam","name":"Gudam Ka Rasta 🛖","emoji":"🛖","xPercent":0.5,"yPercent":0.5,"clueId":"c30_botttle","description":"Jahan petha banta hai."},
+      {"id":"spot_khidki","name":"Peeche Ki Khidki 🪟","emoji":"🪟","xPercent":0.8,"yPercent":0.3,"clueId":"c30_foot","description":"Gudam ke piche ek choti khidki."}
+    ]
+  }
+]

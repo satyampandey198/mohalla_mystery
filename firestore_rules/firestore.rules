@@ -1,0 +1,84 @@
+// ============================================================
+// FIRESTORE DATABASE STRUCTURE — Mohalla Mystery
+// ============================================================
+//
+// Collection: chapters
+// └── Document: chapter_1
+//     ├── id: "chapter_1"
+//     ├── title: "Neem Wali Haveli"
+//     ├── subtitle: "Raaz jo 40 saal se chhupta raha..."
+//     ├── location: "Purani Dilli — Mohalla Gulshan Nagar"
+//     ├── backgroundEmoji: "🏚️"
+//     ├── mystery: "Full mystery text..."
+//     ├── solution: "char_vikram"
+//     ├── isLocked: false
+//     ├── order: 1
+//     ├── version: 1
+//     ├── createdAt: Timestamp
+//     ├── updatedAt: Timestamp
+//     │
+//     ├── Sub-collection: clues
+//     │   └── Document: clue_1_footprints
+//     │       ├── id: "clue_1_footprints"
+//     │       ├── name: "Paon ke Nishan"
+//     │       ├── description: "Neem ke neeche..."
+//     │       ├── emoji: "👣"
+//     │       ├── location: "Neem Ka Ped"
+//     │       ├── isImportant: true
+//     │       └── order: 1
+//     │
+//     ├── Sub-collection: characters
+//     │   └── Document: char_sunita_bai
+//     │       ├── id: "char_sunita_bai"
+//     │       ├── name: "Sunita Bai"
+//     │       ├── role: "Kaam Wali Bai"
+//     │       ├── emoji: "👩‍🦳"
+//     │       ├── description: "..."
+//     │       ├── suspicionLevel: 30
+//     │       └── dialogues: [ Array of dialogue objects ]
+//     │
+//     └── Sub-collection: spots
+//         └── Document: spot_neem
+//             ├── id: "spot_neem"
+//             ├── name: "Neem Ka Ped 🌳"
+//             ├── emoji: "🌳"
+//             ├── xPercent: 0.15
+//             ├── yPercent: 0.35
+//             ├── clueId: "clue_1_footprints"
+//             └── description: "Purana neem ka ped..."
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Chapters — anyone can READ, only admin can WRITE
+    match /chapters/{chapterId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+
+      // Clues sub-collection
+      match /clues/{clueId} {
+        allow read: if true;
+        allow write: if request.auth != null && request.auth.token.admin == true;
+      }
+
+      // Characters sub-collection
+      match /characters/{characterId} {
+        allow read: if true;
+        allow write: if request.auth != null && request.auth.token.admin == true;
+      }
+
+      // Spots sub-collection
+      match /spots/{spotId} {
+        allow read: if true;
+        allow write: if request.auth != null && request.auth.token.admin == true;
+      }
+    }
+
+    // App config (version check, announcements)
+    match /config/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+  }
+}

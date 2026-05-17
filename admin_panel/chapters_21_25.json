@@ -1,0 +1,222 @@
+[
+  {
+    "id": "chapter_21",
+    "title": "Purane Qile Ka Khazana",
+    "subtitle": "Mughal dor ki chhupi hui daulat...",
+    "location": "Agra — Old Fort Road",
+    "backgroundEmoji": "🏰",
+    "mystery": "Ek historian ne Agra Fort ke paas khudai mein Mughal dor ka ek sone ka sikka dhunda tha. Agli subah sikka uske tent se gayab tha. Sirf uske do assistant the wahan.",
+    "solution": "char_rahul",
+    "isLocked": true,
+    "order": 21,
+    "clues": [
+      {"id":"c21_mitti","name":"Laal Mitti","description":"Tent ke andar laal mitti ke paon ke nishaan, jo sirf khudai wali jagah milti hai.","emoji":"🟤","location":"Tent Ke Andar","isImportant":true,"order":1},
+      {"id":"c21_ticket","name":"Train Ticket","description":"Delhi ki train ka tatkal ticket, usi din ka.","emoji":"🎫","location":"Assistant Ka Bag","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_rahul",
+        "name": "Rahul",
+        "role": "Junior Assistant",
+        "emoji": "🧑‍🎓",
+        "description": "Kaafi dino se loan chukane ke pressure mein tha.",
+        "suspicionLevel": 85,
+        "dialogues": [
+          {"id":"d21_r1","trigger":"Raat ko kahan the?","response":"Main apne tent mein so raha tha.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d21_r2","trigger":"Delhi kyu jaa rahe ho achanak?","response":"Woh toh... ghar mein emergency hai! Sikka maine nahi liya!","revealClue":"c21_ticket","isHidden":true,"requiredClueId":"c21_ticket","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_historian",
+        "name": "Dr. Verma",
+        "role": "Historian",
+        "emoji": "👨‍🏫",
+        "description": "Apni research ko lekar bahut protective hain.",
+        "suspicionLevel": 15,
+        "dialogues": [
+          {"id":"d21_v1","trigger":"Kise pata tha sikke ke baare mein?","response":"Sirf mujhe aur Rahul ko. Uske jooton pe wahi laal mitti lagi thi subah.","revealClue":"c21_mitti","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_tent","name":"Main Tent ⛺","emoji":"⛺","xPercent":0.4,"yPercent":0.5,"clueId":"c21_mitti","description":"Dr. Verma ka tent, jahan sikka rakha tha."},
+      {"id":"spot_bag","name":"Rahul Ka Bag 🎒","emoji":"🎒","xPercent":0.7,"yPercent":0.6,"clueId":"c21_ticket","description":"Chota sa backpack."}
+    ]
+  },
+  {
+    "id": "chapter_22",
+    "title": "Swarn Mandir Ka Langar",
+    "subtitle": "Sewa mein kisne ki chori?",
+    "location": "Amritsar — Golden Temple Market",
+    "backgroundEmoji": "✨",
+    "mystery": "Langar ke liye rakha gaya 50 kilo ghee ek raat mein chori ho gaya. Bazar mein itna ghee chupana aasan nahi.",
+    "solution": "char_halwai",
+    "isLocked": true,
+    "order": 22,
+    "clues": [
+      {"id":"c22_tyre","name":"Tyre Ke Nishan","description":"Gudam ke bahar truck ke naye tyre ke nishan.","emoji":"🛞","location":"Gudam Ke Bahar","isImportant":true,"order":1},
+      {"id":"c22_bill","name":"Nakli Bill","description":"Ghee bechne ki receipt mili.","emoji":"🧾","location":"Dukaan Ke Paas","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_halwai",
+        "name": "Banta Halwai",
+        "role": "Market Ka Dukandar",
+        "emoji": "👨‍🍳",
+        "description": "Mithaai ki dukaan hai. Raat ko iska mini-truck idhar hi tha.",
+        "suspicionLevel": 90,
+        "dialogues": [
+          {"id":"d22_h1","trigger":"Tumhara truck yahan kyu tha?","response":"Main toh aata-jaata rehta hoon samaan ke liye.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d22_h2","trigger":"Ye nakli bill kya hai?","response":"Oye, ye bill toh puraana hai... Ghee maine sewadar se kharida!","revealClue":"c22_bill","isHidden":true,"requiredClueId":"c22_bill","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_sewadar",
+        "name": "Sewa Singh",
+        "role": "Gudam Incharge",
+        "emoji": "👳",
+        "description": "Langar ki dekh-rekh karte hain.",
+        "suspicionLevel": 10,
+        "dialogues": [
+          {"id":"d22_s1","trigger":"Raat ko kon aaya tha?","response":"Banta ka truck maine dekha tha, usne bola aata delivery karne aaya hai.","revealClue":"c22_tyre","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_gudam","name":"Gudam 🛖","emoji":"🛖","xPercent":0.3,"yPercent":0.4,"clueId":"c22_tyre","description":"Bada sa store room."},
+      {"id":"spot_dukaan","name":"Mithaai Dukaan 🍬","emoji":"🍬","xPercent":0.8,"yPercent":0.5,"clueId":"c22_bill","description":"Banta ki dukaan."}
+    ]
+  },
+  {
+    "id": "chapter_23",
+    "title": "Wagah Ki Sarhad",
+    "subtitle": "Border ke paas chalaki ka khel...",
+    "location": "Amritsar — Wagah Border Village",
+    "backgroundEmoji": "🇮🇳",
+    "mystery": "Ek local jasoos ke ghar se ek sensitive map chori ho gaya. Gaon mein sirf do mehmaan the.",
+    "solution": "char_photographer",
+    "isLocked": true,
+    "order": 23,
+    "clues": [
+      {"id":"c23_flash","name":"Toota Flash","description":"Camera ka toota hua flash map wali mez ke paas.","emoji":"📸","location":"Study Table","isImportant":true,"order":1},
+      {"id":"c23_joota","name":"Videshi Joota","description":"Khet mein imported joote ka nishan.","emoji":"👟","location":"Khet","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_photographer",
+        "name": "Alex",
+        "role": "Wildlife Photographer",
+        "emoji": "📷",
+        "description": "Dikhne mein sidha sadha, par raat ko khet mein jaata hai.",
+        "suspicionLevel": 95,
+        "dialogues": [
+          {"id":"d23_a1","trigger":"Mez ke paas kya kar rahe the?","response":"Just taking pictures of the moon!","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d23_a2","trigger":"Tumhara flash toota kaise?","response":"It fell... Map maine print karne ke liye photo liya tha!","revealClue":"c23_flash","isHidden":true,"requiredClueId":"c23_flash","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_jasoos",
+        "name": "Major Singh",
+        "role": "Retired Army",
+        "emoji": "🎖️",
+        "description": "Gusse mein hain apna map khone ke baad.",
+        "suspicionLevel": 5,
+        "dialogues": [
+          {"id":"d23_m1","trigger":"Kaun andar aaya tha?","response":"Sirf ye photographer Alex tha mere room ke aas-paas. Uske imported joote pehchan me aate hain.","revealClue":"c23_joota","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_study","name":"Study Table 🗺️","emoji":"🗺️","xPercent":0.5,"yPercent":0.5,"clueId":"c23_flash","description":"Naksha yahin rakha tha."},
+      {"id":"spot_khet","name":"Bahar Ka Khet 🌾","emoji":"🌾","xPercent":0.2,"yPercent":0.7,"clueId":"c23_joota","description":"Sarhad ke khet."}
+    ]
+  },
+  {
+    "id": "chapter_24",
+    "title": "T Nagar Ka Sona",
+    "subtitle": "Chennai ke sabse bheed wale bazaar mein...",
+    "location": "Chennai — T Nagar",
+    "backgroundEmoji": "🏬",
+    "mystery": "Ek jewellery showroom se ek designer set trial room se gayab. Customer ne andar se door lock kiya tha par set uske purse mein nahi mila.",
+    "solution": "char_staff",
+    "isLocked": true,
+    "order": 24,
+    "clues": [
+      {"id":"c24_vent","name":"Khula AC Vent","description":"Trial room ka AC vent andar se khula tha.","emoji":"🌬️","location":"Trial Room","isImportant":true,"order":1},
+      {"id":"c24_chabhi","name":"Staff Locker Key","description":"Vent ke paas staff room ki chabhi giri thi.","emoji":"🔑","location":"AC Vent","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_staff",
+        "name": "Kannan",
+        "role": "Showroom Staff",
+        "emoji": "👔",
+        "description": "Vent safai ka kaam yehi dekhta hai.",
+        "suspicionLevel": 85,
+        "dialogues": [
+          {"id":"d24_s1","trigger":"Trial room me kon tha?","response":"Madam thi na, unhone hi liya hoga!","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d24_s2","trigger":"Tumhari chabhi vent ke paas kaise?","response":"Woh gir gayi hogi! Maine AC vent se haath daal ke set nahi nikala!","revealClue":"c24_chabhi","isHidden":true,"requiredClueId":"c24_chabhi","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_customer",
+        "name": "Anjali",
+        "role": "Customer",
+        "emoji": "👩‍🦰",
+        "description": "Bahut pareshan hai ki uspe shak ho raha hai.",
+        "suspicionLevel": 20,
+        "dialogues": [
+          {"id":"d24_c1","trigger":"Set kahan gaya?","response":"Main change kar rahi thi, tabhi upar se kuch aawaz aayi thi!","revealClue":"c24_vent","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_trial","name":"Trial Room 🚪","emoji":"🚪","xPercent":0.6,"yPercent":0.5,"clueId":"c24_vent","description":"Chota sa fitting room."},
+      {"id":"spot_vent","name":"AC Vent ❄️","emoji":"❄️","xPercent":0.4,"yPercent":0.2,"clueId":"c24_chabhi","description":"Chhat par laga vent."}
+    ]
+  },
+  {
+    "id": "chapter_25",
+    "title": "Hussain Sagar Ki Gawah",
+    "subtitle": "Lake ke paas ek sunsaan raat...",
+    "location": "Hyderabad — Hussain Sagar",
+    "backgroundEmoji": "🌊",
+    "mystery": "Ek politician ka briefcase jisme secret documents the, Necklace Road se chori ho gaya. Unka driver behosh paya gaya.",
+    "solution": "char_driver",
+    "isLocked": true,
+    "order": 25,
+    "clues": [
+      {"id":"c25_dawai","name":"Neend Ki Dawai","description":"Driver ki bottle mein neend ki dawai ka powder.","emoji":"💊","location":"Car Ki Seat","isImportant":true,"order":1},
+      {"id":"c25_paisa","name":"Naya Cash","description":"Driver ke dashboard me naye notes ka bundle.","emoji":"💵","location":"Dashboard","isImportant":true,"order":2}
+    ],
+    "characters": [
+      {
+        "id": "char_driver",
+        "name": "Raju Driver",
+        "role": "Politician's Driver",
+        "emoji": "🚗",
+        "description": "Behosh hone ka naatak kar raha tha.",
+        "suspicionLevel": 90,
+        "dialogues": [
+          {"id":"d25_d1","trigger":"Kaise behosh hue?","response":"Kisi ne piche se kapda sunghaya sir.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d25_d2","trigger":"Bottle mein dawai tumne khud daali?","response":"Nahi! Aur woh cash mera loan ka paisa hai! Maine sir ko dhokha nahi diya!","revealClue":"c25_dawai","isHidden":true,"requiredClueId":"c25_dawai","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_politician",
+        "name": "Minister Rao",
+        "role": "Politician",
+        "emoji": "🫱🏼‍🫲🏾",
+        "description": "Gusse mein hain, opposition par shak hai.",
+        "suspicionLevel": 10,
+        "dialogues": [
+          {"id":"d25_p1","trigger":"Kab hua ye sab?","response":"Main ice cream lene gaya, laut ke aaya toh Raju behosh aur brief case gayab. Uska naya cash bundle maine dekha dashboard mein!","revealClue":"c25_paisa","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_car","name":"Car Seat 🚙","emoji":"🚙","xPercent":0.5,"yPercent":0.6,"clueId":"c25_dawai","description":"Minister ki car."},
+      {"id":"spot_dash","name":"Dashboard 🗃️","emoji":"🗃️","xPercent":0.7,"yPercent":0.4,"clueId":"c25_paisa","description":"Car ke aage ka hissa."}
+    ]
+  }
+]

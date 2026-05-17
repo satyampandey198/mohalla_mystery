@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:vibration/vibration.dart';
 import '../utils/app_theme.dart';
 import '../services/game_provider.dart';
+import '../services/sound_service.dart';
 import '../models/game_models.dart';
 import '../utils/app_strings.dart';
 import 'mystery_solved_screen.dart';
@@ -181,39 +182,6 @@ class _AccusationScreenState extends State<AccusationScreen> {
                                       style: GoogleFonts.notoSansDevanagari(
                                           color: AppTheme.accent,
                                           fontSize: 11)),
-                                  const SizedBox(height: 4),
-                                  // Suspicion bar
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(2),
-                                          child: LinearProgressIndicator(
-                                            value:
-                                                character.suspicionLevel / 100,
-                                            backgroundColor: AppTheme.bgSurface,
-                                            valueColor: AlwaysStoppedAnimation(
-                                              character.suspicionLevel >= 70
-                                                  ? AppTheme.danger
-                                                  : character.suspicionLevel >=
-                                                          40
-                                                      ? AppTheme.warning
-                                                      : AppTheme.success,
-                                            ),
-                                            minHeight: 4,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(width: 8),
-                                      Text(
-                                        '${character.suspicionLevel}%',
-                                        style: GoogleFonts.cinzel(
-                                            color: AppTheme.textMuted,
-                                            fontSize: 10),
-                                      ),
-                                    ],
-                                  ),
                                 ],
                               ),
                             ),
@@ -280,9 +248,16 @@ class _AccusationScreenState extends State<AccusationScreen> {
     if (_selectedSuspect == null) return;
 
     Vibration.vibrate(duration: 100);
+    SoundService().playButtonTap(); // 🔊 Button tap
 
     final gameProvider = context.read<GameProvider>();
     final isCorrect = gameProvider.submitAccusation(_selectedSuspect!);
+
+    if (isCorrect) {
+      SoundService().playMysterySolved(); // 🔊 Sahi accusation
+    } else {
+      SoundService().playWrongAccusation(); // 🔊 Galat accusation
+    }
 
     final selectedChar = widget.chapter.characters.firstWhere(
       (c) => c.id == _selectedSuspect,

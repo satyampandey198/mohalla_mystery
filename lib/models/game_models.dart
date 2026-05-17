@@ -9,6 +9,7 @@ class Chapter {
   final String mystery;
   final List<Clue> clues;
   final List<Character> characters;
+  final List<InvestigationSpot> spots;
   final String solution;
   final bool isLocked;
 
@@ -22,20 +23,28 @@ class Chapter {
     required this.clues,
     required this.characters,
     required this.solution,
+    List<InvestigationSpot>? spots,
     this.isLocked = false,
-  });
+  }) : spots = spots ?? [];
 
-  Chapter copyWith({bool? isLocked}) {
+  Chapter copyWith({
+    String? title,
+    String? subtitle,
+    String? location,
+    bool? isLocked,
+    List<InvestigationSpot>? spots,
+  }) {
     return Chapter(
       id: id,
-      title: title,
-      subtitle: subtitle,
-      location: location,
+      title: title ?? this.title,
+      subtitle: subtitle ?? this.subtitle,
+      location: location ?? this.location,
       backgroundEmoji: backgroundEmoji,
       mystery: mystery,
       clues: clues,
       characters: characters,
       solution: solution,
+      spots: spots ?? this.spots,
       isLocked: isLocked ?? this.isLocked,
     );
   }

@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:vibration/vibration.dart';
 import '../utils/app_theme.dart';
 import '../services/game_provider.dart';
+import '../services/sound_service.dart';
 import '../models/game_models.dart';
 import '../utils/app_strings.dart';
 
@@ -115,37 +116,6 @@ class _DialogueScreenState extends State<DialogueScreen> {
                         color: AppTheme.accent, fontSize: 11)),
               ],
             ),
-          ),
-
-          // Suspicion meter
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(
-                AppStrings.get('suspicion', context.read<GameProvider>().language).toUpperCase(),
-                style: GoogleFonts.cinzel(
-                    color: AppTheme.textMuted, fontSize: 8, letterSpacing: 1),
-              ),
-              const SizedBox(height: 4),
-              SizedBox(
-                width: 60,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(2),
-                  child: LinearProgressIndicator(
-                    value: widget.character.suspicionLevel / 100,
-                    backgroundColor: AppTheme.bgSurface,
-                    valueColor: AlwaysStoppedAnimation(
-                      widget.character.suspicionLevel >= 70
-                          ? AppTheme.danger
-                          : widget.character.suspicionLevel >= 40
-                              ? AppTheme.warning
-                              : AppTheme.success,
-                    ),
-                    minHeight: 6,
-                  ),
-                ),
-              ),
-            ],
           ),
         ],
       ),
@@ -355,6 +325,7 @@ class _DialogueScreenState extends State<DialogueScreen> {
   }
 
   void _selectDialogue(DialogueBranch dialogue) {
+    SoundService().playButtonTap(); // 🔊 Dialogue select sound
     Vibration.vibrate(duration: 30);
 
     final gameProvider = context.read<GameProvider>();

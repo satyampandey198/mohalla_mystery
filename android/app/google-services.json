@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "325842716219",
+    "project_id": "mohalla-mystery",
+    "storage_bucket": "mohalla-mystery.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325842716219:android:63e237ba7e06936b1e3e1e",
+        "android_client_info": {
+          "package_name": "com.example.mohalla_mystery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOXIvhBCUEJgJ_bNhupbMcPNMqyH7lIOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

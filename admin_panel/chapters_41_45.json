@@ -1,0 +1,353 @@
+[
+  {
+    "id": "chapter_41",
+    "title": "Brindavan Ki Fuhar",
+    "subtitle": "Sangeet wale fountain ka raaz...",
+    "location": "Mysore — Brindavan Gardens",
+    "backgroundEmoji": "⛲",
+    "mystery": "Musical fountain show se pehle kisi ne water pipes me rang daal diya. Show me paani laal rang ka nikalne laga. Char log us area me the.",
+    "solution": "char_plumber",
+    "isLocked": true,
+    "order": 41,
+    "clues": [
+      {"id":"c41_bottle","name":"Laal Rang Ki Botal","description":"Pipes ke piche chhupi hui khali rang ki botal.","emoji":"🧴","location":"Pump Room","isImportant":true,"order":1},
+      {"id":"c41_wrench","name":"Bada Wrench","description":"Plumber ka panna paani me pada hai.","emoji":"🔧","location":"Fountain Base","isImportant":true,"order":2},
+      {"id":"c41_ticket","name":"Show Ticket","description":"Bheega hua visitor ticket.","emoji":"🎟️","location":"Grass","isImportant":false,"order":3},
+      {"id":"c41_shoe","name":"Geela Joota","description":"Mitti me geely joote ka chota nishan.","emoji":"👟","location":"Keechad","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_plumber",
+        "name": "Ramesh Plumber",
+        "role": "Maintenance",
+        "emoji": "👷",
+        "description": "Show management se gussa tha kyunki uski chhutti cancel ho gayi thi.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d41_p1","trigger":"Wrench tumhara hai?","response":"Haan, main leak theek kar raha tha.","revealClue":"c41_wrench","isHidden":true,"requiredClueId":"c41_wrench","isImportant":false,"followUpIds":[]},
+          {"id":"d41_p2","trigger":"Botal kahan se aayi?","response":"Mera dimaag kharab tha, maine rang daala taaki show ruk jaye!","revealClue":"c41_bottle","isHidden":true,"requiredClueId":"c41_bottle","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_manager4",
+        "name": "Show Manager",
+        "role": "Incharge",
+        "emoji": "👨‍💼",
+        "description": "Bahut gusse me hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d41_m1","trigger":"Kaun andar ja sakta hai?","response":"Sirf Ramesh ke paas pump room ki chabi thi subah.","revealClue":"c41_bottle","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_child",
+        "name": "Chintu",
+        "role": "Bacha",
+        "emoji": "👦",
+        "description": "Khel raha tha wahan.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d41_c1","trigger":"Joote ka nishan tumhara hai?","response":"Haan, main baraf ka gola kha raha tha aur paani me gir gaya.","revealClue":"c41_shoe","isHidden":true,"requiredClueId":"c41_shoe","isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_visitor",
+        "name": "Ananya",
+        "role": "Tourist",
+        "emoji": "👩",
+        "description": "Gussa hai ki show kharab hua.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d41_v1","trigger":"Ticket kiska hai?","response":"Mera gir gaya tha grass par.","revealClue":"c41_ticket","isHidden":true,"requiredClueId":"c41_ticket","isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_pump","name":"Pump Room ⚙️","emoji":"⚙️","xPercent":0.2,"yPercent":0.4,"clueId":"c41_bottle","description":"Jahan se paani control hota hai."},
+      {"id":"spot_base","name":"Fountain Base ⛲","emoji":"⛲","xPercent":0.5,"yPercent":0.6,"clueId":"c41_wrench","description":"Paani nikalne ki jagah."},
+      {"id":"spot_grass","name":"Grass 🌿","emoji":"🌿","xPercent":0.8,"yPercent":0.5,"clueId":"c41_ticket","description":"Hare ghaas ka maidan."},
+      {"id":"spot_mud41","name":"Keechad 🟤","emoji":"🟤","xPercent":0.6,"yPercent":0.8,"clueId":"c41_shoe","description":"Geeli mitti."}
+    ]
+  },
+  {
+    "id": "chapter_42",
+    "title": "Chamundi Ki Chori",
+    "subtitle": "Pahadi mandir ka bhed...",
+    "location": "Mysore — Chamundi Hill",
+    "backgroundEmoji": "⛰️",
+    "mystery": "Pahadi ki choti par mandir ke piche rakhi hui ek purani murti chori ho gayi. Char logon par shak hai jo piche ki taraf gaye the.",
+    "solution": "char_photographer2",
+    "isLocked": true,
+    "order": 42,
+    "clues": [
+      {"id":"c42_lens","name":"Camera Lens Cap","description":"Patharon ke beech ek mehengi lens cap.","emoji":"📷","location":"Piche Ke Pathar","isImportant":true,"order":1},
+      {"id":"c42_bag","name":"Bada Thaila","description":"Murti le jane ke liye use hone wala ek fat gaya thaila.","emoji":"🎒","location":"Jhaadi","isImportant":true,"order":2},
+      {"id":"c42_stick","name":"Walking Stick","description":"Buzurg ka danda, giri hui halat me.","emoji":"🦯","location":"Seedhi","isImportant":false,"order":3},
+      {"id":"c42_flower","name":"Kusum Phool","description":"Pooja ka phool, piche gira hua.","emoji":"🌸","location":"Murti Sthan","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_photographer2",
+        "name": "Karan Photo",
+        "role": "Wildlife Photographer",
+        "emoji": "📷",
+        "description": "Murtiyo ki 'photo' lene ke bahane antiques churata hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d42_k1","trigger":"Tumhara lens cap kyu gira hai?","response":"Main photo le raha tha, tab gir gaya.","revealClue":"c42_lens","isHidden":true,"requiredClueId":"c42_lens","isImportant":false,"followUpIds":[]},
+          {"id":"d42_k2","trigger":"Fata thaila tumhare bag se match hota hai!","response":"Theek hai! Maine murti thode me bechne ke liye li thi.","revealClue":"c42_bag","isHidden":true,"requiredClueId":"c42_bag","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_oldman",
+        "name": "Dada Ji",
+        "role": "Tirthyatri",
+        "emoji": "👴",
+        "description": "Thak gaye hain aur aaram kar rahe the.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d42_o1","trigger":"Aapka danda kyu gira hai?","response":"Beta, kutte ne dara diya tha, toh main gir gaya.","revealClue":"c42_stick","isHidden":true,"requiredClueId":"c42_stick","isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_priest2",
+        "name": "Pujari",
+        "role": "Mandir Pujari",
+        "emoji": "🕉️",
+        "description": "Pooja kar rahe the.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d42_p1","trigger":"Phool kyu gire hain?","response":"Hawa tez thi, pooja thal se udd gaye.","revealClue":"c42_flower","isHidden":true,"requiredClueId":"c42_flower","isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_guard4",
+        "name": "Ramu Guard",
+        "role": "Security",
+        "emoji": "👮‍♂️",
+        "description": "Chaukanna rehta hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d42_g1","trigger":"Kon piche gaya tha?","response":"Wo camera wala ladka, bada thaila leke 'sunrise' ki photo lene gaya tha.","revealClue":"c42_bag","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_rock","name":"Pathar 🪨","emoji":"🪨","xPercent":0.2,"yPercent":0.7,"clueId":"c42_lens","description":"Piche ke bde pathar."},
+      {"id":"spot_bush","name":"Jhaadi 🌿","emoji":"🌿","xPercent":0.8,"yPercent":0.5,"clueId":"c42_bag","description":"Ghani jhaadiyan."},
+      {"id":"spot_stairs2","name":"Seedhi 🪜","emoji":"🪜","xPercent":0.5,"yPercent":0.9,"clueId":"c42_stick","description":"Mandir ki upar jati seedhiyan."},
+      {"id":"spot_murti","name":"Murti Sthan 🛕","emoji":"🛕","xPercent":0.5,"yPercent":0.3,"clueId":"c42_flower","description":"Yahan murti thi."}
+    ]
+  },
+  {
+    "id": "chapter_43",
+    "title": "Resham Ka Daag",
+    "subtitle": "Mysore silk factory ki ek kali raat...",
+    "location": "Mysore — Silk Factory",
+    "backgroundEmoji": "🏭",
+    "mystery": "Factory se lakho ka ek special lal silk roll gayab hai. Duty par char log the.",
+    "solution": "char_driver2",
+    "isLocked": true,
+    "order": 43,
+    "clues": [
+      {"id":"c43_thread","name":"Lal Dhaga","description":"Truck ke tyre ke pas ek lal silk ka dhaga.","emoji":"🧶","location":"Truck Tyre","isImportant":true,"order":1},
+      {"id":"c43_log","name":"Fake Entry Log","description":"Register me farzi entry ki hui hai.","emoji":"📖","location":"Gate","isImportant":true,"order":2},
+      {"id":"c43_bobbin","name":"Khali Bobbin","description":"Ek purani khali firki giri hai.","emoji":"🧵","location":"Machine Room","isImportant":false,"order":3},
+      {"id":"c43_tea","name":"Chai Cup","description":"Gate par adha piya chai ka cup.","emoji":"🍵","location":"Gate","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_driver2",
+        "name": "Babu Driver",
+        "role": "Delivery Truck Driver",
+        "emoji": "🚛",
+        "description": "Raat ko truck le ja raha tha. Karze me hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d43_d1","trigger":"Truck me dhaga kaise fasa?","response":"Factory me truck khada tha, ud ke aa gaya hoga.","revealClue":"c43_thread","isHidden":true,"requiredClueId":"c43_thread","isImportant":false,"followUpIds":[]},
+          {"id":"d43_d2","trigger":"Entry log par tumhari fake handwriting hai!","response":"Pakda gaya... Haan, maine roll truck me chipa liya tha.","revealClue":"c43_log","isHidden":true,"requiredClueId":"c43_log","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_guard5",
+        "name": "Shyam",
+        "role": "Gate Guard",
+        "emoji": "💂‍♂️",
+        "description": "Chai pine me busy tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d43_g1","trigger":"Chai ka cup tumhara hai?","response":"Haan sir, neend bhagane ke liye.","revealClue":"c43_tea","isHidden":true,"requiredClueId":"c43_tea","isImportant":false,"followUpIds":[]},
+          {"id":"d43_g2","trigger":"Register kisne bhara?","response":"Babu driver ne khud bhara jab main chai le raha tha.","revealClue":"c43_log","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_weaver",
+        "name": "Sita",
+        "role": "Weaver",
+        "emoji": "👩‍🏭",
+        "description": "Silk banana iska kaam hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d43_w1","trigger":"Khali bobbin kyu gira hai?","response":"Wo purana kachra hai, maine dustbin me dala tha.","revealClue":"c43_bobbin","isHidden":true,"requiredClueId":"c43_bobbin","isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_manager5",
+        "name": "Boss",
+        "role": "Owner",
+        "emoji": "👔",
+        "description": "Pareshan malik.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d43_b1","trigger":"Roll truck tak kaise gaya?","response":"Bina Guard ki laparwahi ke nahi ja sakta. Dhaga maine truck ke pas dekha.","revealClue":"c43_thread","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_tyre","name":"Truck Tyre 🛞","emoji":"🛞","xPercent":0.8,"yPercent":0.8,"clueId":"c43_thread","description":"Bade truck ka pahiya."},
+      {"id":"spot_gate2","name":"Gate Register 📖","emoji":"📖","xPercent":0.1,"yPercent":0.6,"clueId":"c43_log","description":"Entry check post."},
+      {"id":"spot_machine","name":"Machine Room ⚙️","emoji":"⚙️","xPercent":0.5,"yPercent":0.3,"clueId":"c43_bobbin","description":"Kapda banne ki jagah."},
+      {"id":"spot_table2","name":"Guard Table 🪑","emoji":"🪑","xPercent":0.2,"yPercent":0.8,"clueId":"c43_tea","description":"Guard ke baithne ki jagah."}
+    ]
+  },
+  {
+    "id": "chapter_44",
+    "title": "Shaniwar Wada Ki Pukar",
+    "subtitle": "Kile me goonjti darr ki aawaz...",
+    "location": "Pune — Shaniwar Wada",
+    "backgroundEmoji": "🏰",
+    "mystery": "Ek darrane wali aawaz (Kaka mala vachva) sunkar char tourist bhag khade hue, aur unme se ek ka keemti bag kisi ne chura liya.",
+    "solution": "char_prankster",
+    "isLocked": true,
+    "order": 44,
+    "clues": [
+      {"id":"c44_speaker","name":"Bluetooth Speaker","description":"Jhaadi me chhupa ek chota kala speaker jisme aawaz baj rahi thi.","emoji":"🔈","location":"Jhaadi","isImportant":true,"order":1},
+      {"id":"c44_phone","name":"Phone Connection","description":"Speaker ek phone se connected tha jo paas hi gira tha.","emoji":"📱","location":"Kona","isImportant":true,"order":2},
+      {"id":"c44_shoe2","name":"Khelne Wale Joote","description":"Khel-kood wale jooton ke bhagne ke nishan.","emoji":"👟","location":"Farsh","isImportant":false,"order":3},
+      {"id":"c44_strap","name":"Tuti Strap","description":"Bag ka tuta hua pitta.","emoji":"🧳","location":"Gate","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_prankster",
+        "name": "Ajay Prankster",
+        "role": "College Ladka",
+        "emoji": "🧢",
+        "description": "Logo ko darane ka shauq hai. Bag me paise the.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d44_p1","trigger":"Phone aur speaker kiska hai?","response":"Mera phone ghum ho gaya tha. Shayad churane wale ne use kiya.","revealClue":"c44_phone","isHidden":true,"requiredClueId":"c44_phone","isImportant":false,"followUpIds":[]},
+          {"id":"d44_p2","trigger":"Tumhara phone hi speaker se connected tha!","response":"Haan! Main bas prank kar raha tha... darr me kisi ka bag hath aagaya toh le liya.","revealClue":"c44_speaker","isHidden":true,"requiredClueId":"c44_speaker","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_victim",
+        "name": "Rohan",
+        "role": "Tourist",
+        "emoji": "😨",
+        "description": "Dar gaya aur bag phek diya.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d44_v1","trigger":"Bag kab gaya?","response":"Aawaz aayi toh main bhaga, strap tuti aur bag kisi ne utha liya.","revealClue":"c44_strap","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_guide2",
+        "name": "Mama Guide",
+        "role": "Local Guide",
+        "emoji": "👳‍♂️",
+        "description": "Gusse me hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d44_g1","trigger":"Aawaz kahan se aayi?","response":"In patharon ki jhaadiyon ke piche se, lagta hai koi speaker tha wahan.","revealClue":"c44_speaker","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_student4",
+        "name": "Sneha",
+        "role": "Student",
+        "emoji": "🎒",
+        "description": "Dar ke mari bethi hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d44_s1","trigger":"Tumne kiska joota dekha?","response":"Sports shoe pehna ek ladka phone se kuch kar raha tha piche.","revealClue":"c44_shoe2","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_bush2","name":"Jhaadi 🌿","emoji":"🌿","xPercent":0.2,"yPercent":0.7,"clueId":"c44_speaker","description":"Patharon ke pas jhadi."},
+      {"id":"spot_corner2","name":"Andhera Kona ⬛","emoji":"⬛","xPercent":0.8,"yPercent":0.6,"clueId":"c44_phone","description":"Chupne ki jagah."},
+      {"id":"spot_floor2","name":"Farsh 🟫","emoji":"🟫","xPercent":0.5,"yPercent":0.9,"clueId":"c44_shoe2","description":"Bhagne ke nishan."},
+      {"id":"spot_gate3","name":"Gate 🚪","emoji":"🚪","xPercent":0.5,"yPercent":0.2,"clueId":"c44_strap","description":"Bada darwaza."}
+    ]
+  },
+  {
+    "id": "chapter_45",
+    "title": "Dagdusheth Ka Mukut",
+    "subtitle": "Bheed bhare mandir me vishwasghaat...",
+    "location": "Pune — Dagdusheth Temple",
+    "backgroundEmoji": "🛕",
+    "mystery": "Pooja ke baad aarti ki thali se chandi ka chhota mukut chori. Char logo ne aarti li thi.",
+    "solution": "char_fake_priest",
+    "isLocked": true,
+    "order": 45,
+    "clues": [
+      {"id":"c45_wax","name":"Mombatti Ka Wax","description":"Zameen par pighli mombatti ke girne ka daag.","emoji":"🕯️","location":"Aarti Sthan","isImportant":true,"order":1},
+      {"id":"c45_cloth2","name":"Gerua Kapda","description":"Bheed me fasa ek bhagwa kapde ka tukda.","emoji":"🧣","location":"Bheed Ka Rasta","isImportant":true,"order":2},
+      {"id":"c45_bell","name":"Giri Ghanti","description":"Pooja ki choti ghanti niche giri hui.","emoji":"🔔","location":"Dehleez","isImportant":false,"order":3},
+      {"id":"c45_sweets","name":"Gira Prasad","description":"Pedha gira hua hai farsh par.","emoji":"🍬","location":"Dwar","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_fake_priest",
+        "name": "Dhongi Baba",
+        "role": "Fake Sadhu",
+        "emoji": "🧘‍♂️",
+        "description": "Bhagwa kapde pehan kar bhikh mangta hai/choriyan karta hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d45_f1","trigger":"Gerua kapda kahan ka hai?","response":"Ye toh kisi aur ka hoga, mera nahi!","revealClue":"c45_cloth2","isHidden":true,"requiredClueId":"c45_cloth2","isImportant":false,"followUpIds":[]},
+          {"id":"d45_f2","trigger":"Wax girne ka daag tumhare kapde pe kyu?","response":"Maaf kardo! Aarti thali me hath daalte hue mombatti ka wax mujhpar gir gaya, maine mukut churaya hai.","revealClue":"c45_wax","isHidden":true,"requiredClueId":"c45_wax","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_devotee",
+        "name": "Bhakti",
+        "role": "Devotee",
+        "emoji": "🙏",
+        "description": "Dhyan me leen thi.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d45_d1","trigger":"Kuch dekha aarti me?","response":"Ek sadhu jaisa aadmi aarti lete hue apna haath bahut andar tak le gaya tha, thali hili thi.","revealClue":"c45_wax","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_priest3",
+        "name": "Guruji",
+        "role": "Head Priest",
+        "emoji": "🕉️",
+        "description": "Gusse me hain.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d45_p1","trigger":"Kapda kisne choda?","response":"Maine bheed ke raste me gerua rang ka kapda atka hua dekha tha.","revealClue":"c45_cloth2","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_sweeper3",
+        "name": "Madan",
+        "role": "Sweeper",
+        "emoji": "🧹",
+        "description": "Safai karta hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d45_s1","trigger":"Prasad aur ghanti kyu giri?","response":"Bhag-daud me kisi ne gira di hogi sahab.","revealClue":"c45_sweets","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_aarti","name":"Aarti Sthan 🕯️","emoji":"🕯️","xPercent":0.5,"yPercent":0.4,"clueId":"c45_wax","description":"Thali yahin thi."},
+      {"id":"spot_path","name":"Bheed Rasta 🚶‍♂️","emoji":"🚶‍♂️","xPercent":0.8,"yPercent":0.6,"clueId":"c45_cloth2","description":"Jahan log aate hain."},
+      {"id":"spot_door4","name":"Dehleez 🚪","emoji":"🚪","xPercent":0.2,"yPercent":0.8,"clueId":"c45_bell","description":"Mandir ka darwaza."},
+      {"id":"spot_floor3","name":"Farsh 🟫","emoji":"🟫","xPercent":0.5,"yPercent":0.9,"clueId":"c45_sweets","description":"Zameen par prasad."}
+    ]
+  }
+]

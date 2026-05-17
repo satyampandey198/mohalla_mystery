@@ -8,6 +8,7 @@ import 'package:vibration/vibration.dart';
 import '../utils/app_theme.dart';
 import '../services/game_provider.dart';
 import '../services/ad_service.dart';
+import '../services/sound_service.dart';
 import '../models/game_models.dart';
 import 'dialogue_screen.dart';
 import 'accusation_screen.dart';
@@ -427,7 +428,10 @@ class _InvestigationScreenState extends State<InvestigationScreen> {
           const SizedBox(width: 16),
           GestureDetector(
             onTap: hasEnoughClues
-                ? () => _goToAccusation(context, gameProvider)
+                ? () {
+                    SoundService().playButtonTap();
+                    _goToAccusation(context, gameProvider);
+                  }
                 : () => ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
@@ -483,11 +487,13 @@ class _InvestigationScreenState extends State<InvestigationScreen> {
 
   void _examineSpot(
       BuildContext context, GameProvider gameProvider, InvestigationSpot spot) {
+    SoundService().playTapExamine(); // 🔊 Spot tap sound
     Vibration.vibrate(duration: 50);
 
     final clue = gameProvider.examineSpot(spot.id);
 
     if (clue != null) {
+      SoundService().playClueFound(); // 🔊 Clue found sound
       // Show clue overlay whether first time or revisiting
       showDialog(
         context: context,
@@ -533,6 +539,7 @@ class _InvestigationScreenState extends State<InvestigationScreen> {
   }
 
   void _openDialogue(BuildContext context, Character character) {
+    SoundService().playDialogueOpen(); // 🔊 Dialogue open sound
     Navigator.push(
       context,
       PageRouteBuilder(
@@ -694,7 +701,7 @@ class _SuspectCard extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: AppTheme.bgSurface,
                 border: Border.all(
-                    color: _getSuspicionColor(character.suspicionLevel),
+                    color: AppTheme.primary,
                     width: 2),
               ),
               child: Center(
@@ -714,7 +721,6 @@ class _SuspectCard extends StatelessWidget {
                       Text(character.name,
                           style: Theme.of(context).textTheme.headlineMedium),
                       const Spacer(),
-                      _SuspicionBadge(level: character.suspicionLevel),
                     ],
                   ),
                   const SizedBox(height: 2),

@@ -1,0 +1,304 @@
+[
+  {
+    "id": "chapter_11",
+    "title": "Dharavi Ka Danda",
+    "subtitle": "Mumbai ki zindagi mein chupi maut...",
+    "location": "Mumbai — Dharavi",
+    "backgroundEmoji": "🏙️",
+    "mystery": "Dharavi ke mashoor dabbawale Ramesh Kamble ki laash chawl ke bahar mili. Koi bahar waala nahi aaya tha — sab apne hi the. Koi tha jo use khatam karna chahta tha.",
+    "solution": "char_suresh",
+    "isLocked": true,
+    "order": 11,
+    "clues": [
+      {"id":"c11_dabba","name":"Toota Dabba","description":"Ramesh ka khaas delivery dabba toot hua mila — andar ek chitthi thi.","emoji":"📦","location":"Laash Ke Paas","isImportant":true,"order":1},
+      {"id":"c11_chitthi","name":"Dhamki Chitthi","description":"Dabba mein likha tha: 'Zyada jaanta hai tu — chup reh.'","emoji":"✉️","location":"Toote Dabbe Mein","isImportant":true,"order":2},
+      {"id":"c11_bota","name":"Naya Bota","description":"Paas ki nali mein naya plastic bota — Suresh ki factory ka brand.","emoji":"🧴","location":"Nali Ke Paas","isImportant":false,"order":3},
+      {"id":"c11_gawah","name":"Bachche Ki Baat","description":"Padosi ka bacha bola — kal ek chacha ne Ramesh ko dhakka diya tha.","emoji":"👦","location":"Chawl Ka Darwaza","isImportant":true,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_suresh",
+        "name": "Suresh Naik",
+        "role": "Plastic Factory Owner",
+        "emoji": "🏭",
+        "description": "Factory mein illegal chemicals use karta tha. Ramesh ko pata chal gaya tha.",
+        "suspicionLevel": 82,
+        "dialogues": [
+          {"id":"d11_s1","trigger":"Ramesh ko jaante the?","response":"Haan, para mein rehta tha. Bas itna hi.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d11_s2","trigger":"Ye bota aapki factory ka hai?","response":"Bahut log use karte hain mera brand!","revealClue":"c11_bota","isHidden":true,"requiredClueId":"c11_bota","isImportant":false,"followUpIds":[]},
+          {"id":"d11_s3","trigger":"Ramesh ne aapki factory ke baare mein kya jaana tha?","response":"Kuch nahi! Woh zyada poochh raha tha — mujhe rokna tha use!","revealClue":"c11_chitthi","isHidden":true,"requiredClueId":"c11_chitthi","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_meena",
+        "name": "Meena Bai",
+        "role": "Ramesh Ki Biwi",
+        "emoji": "👩",
+        "description": "3 saalon se Suresh se ladai chal rahi thi zameen ke liye.",
+        "suspicionLevel": 35,
+        "dialogues": [
+          {"id":"d11_m1","trigger":"Ramesh ne kuch bataya tha?","response":"Haan, woh bol raha tha Suresh illegal kaam karta hai. RTI daalunga bolta tha.","revealClue":"c11_dabba","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]},
+          {"id":"d11_m2","trigger":"Bacche ne kya dekha?","response":"Mere bete ne kaha Suresh chacha ne dhakka diya tha Ramesh ko — raat ke andhre mein.","revealClue":"c11_gawah","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_dharma",
+        "name": "Dharma Kaka",
+        "role": "Chawl Ka Watchman",
+        "emoji": "💂",
+        "description": "Raat ko duty karta hai. Kuch chhupaata lag raha hai.",
+        "suspicionLevel": 28,
+        "dialogues": [
+          {"id":"d11_d1","trigger":"Raat ko koi aaya tha?","response":"Ek aadmi aaya tha Suresh jaisa — mujhe laga apna hi koi hai toh roka nahi.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_laash","name":"Ghatna Ka Sthan 🚨","emoji":"🚨","xPercent":0.45,"yPercent":0.5,"clueId":"c11_dabba","description":"Yahan laash mili thi — zameen pe nishan hain."},
+      {"id":"spot_nali","name":"Nali 🪣","emoji":"🪣","xPercent":0.2,"yPercent":0.7,"clueId":"c11_bota","description":"Badi nali — kuch floating kar raha hai."},
+      {"id":"spot_darwaza","name":"Chawl Ka Darwaza 🚪","emoji":"🚪","xPercent":0.7,"yPercent":0.35,"clueId":"c11_gawah","description":"Chawl ka main darwaza — bacche yahan khel rahe hain."}
+    ]
+  },
+  {
+    "id": "chapter_12",
+    "title": "Bandra Bungalow",
+    "subtitle": "Ameer ghar mein gareeb sach...",
+    "location": "Mumbai — Bandra West",
+    "backgroundEmoji": "🏘️",
+    "mystery": "Film producer Akash Mehta apni morning walk se wapas nahi aaye. Unhe bungalow ke swimming pool mein paya gaya. Police ko accident bata diya gaya — par clues kuch aur kahte hain.",
+    "solution": "char_priya",
+    "isLocked": true,
+    "order": 12,
+    "clues": [
+      {"id":"c12_phone","name":"Toota Phone","description":"Pool ke paas Akash ka phone toot hua mila — last call 'P' ko.","emoji":"📱","location":"Pool Ke Kinare","isImportant":true,"order":1},
+      {"id":"c12_dawai","name":"Dawai Ki Shishi","description":"Locker mein ek khaas neend ki dawai — 2 goli gayab, prescribed se zyada.","emoji":"💊","location":"Bedroom Locker","isImportant":true,"order":2},
+      {"id":"c12_will","name":"Naya Will","description":"Table pe ek naya will — saari property Priya ke naam. Last week sign hua.","emoji":"📄","location":"Study Room","isImportant":true,"order":3},
+      {"id":"c12_cctv","name":"CCTV Gap","description":"Bungalow ki CCTV recording mein raat 2-4 baje ka hissa delete hua.","emoji":"📹","location":"Security Room","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_priya",
+        "name": "Priya Mehta",
+        "role": "Akash Ki Biwi",
+        "emoji": "👩‍💼",
+        "description": "Divorce ki baat chal rahi thi. Will mein naam tha. Raat bhar 'so rahi thi'.",
+        "suspicionLevel": 88,
+        "dialogues": [
+          {"id":"d12_p1","trigger":"Raat ko kuch suna?","response":"Main so rahi thi. Kuch nahi pata.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d12_p2","trigger":"Will mein sirf aapka naam kyun?","response":"Unhone khud kiya — mujhse poochha bhi nahi!","revealClue":"c12_will","isHidden":true,"requiredClueId":"c12_will","isImportant":true,"followUpIds":[]},
+          {"id":"d12_p3","trigger":"Dawai ki 2 goli kyun gayab hain?","response":"Main... mujhe neend nahi aati... maine li hogi...","revealClue":"c12_dawai","isHidden":true,"requiredClueId":"c12_dawai","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_driver",
+        "name": "Ramzan Driver",
+        "role": "Personal Driver",
+        "emoji": "🚗",
+        "description": "10 saal se kaam karta hai. Sab jaanta hai par chhupaata hai.",
+        "suspicionLevel": 30,
+        "dialogues": [
+          {"id":"d12_r1","trigger":"Raat ko kuch dekha?","response":"Memsahib raat ko pool ke taraf gayi thi — 3 baje ke aaspaas. Main car mein so raha tha.","revealClue":"c12_cctv","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]},
+          {"id":"d12_r2","trigger":"Sahab ka phone kisi 'P' ko gaya tha?","response":"Sahab Priya madam ko call karte the jab fights hoti thi... ya woh nahi uthati thi.","revealClue":"c12_phone","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_maid",
+        "name": "Sheela Maid",
+        "role": "Ghar Ki Naukarani",
+        "emoji": "🧹",
+        "description": "Subah 6 baje aayi — pool dekh ke chillaayi.",
+        "suspicionLevel": 10,
+        "dialogues": [
+          {"id":"d12_sh1","trigger":"Pool mein kya tha?","response":"Sahab pool mein the — mujhe laga so rahe hain... phir samjha. Main toh darr gayi.","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_pool","name":"Swimming Pool 🏊","emoji":"🏊","xPercent":0.5,"yPercent":0.45,"clueId":"c12_phone","description":"Neela pool — kinare pe kuch pada hai."},
+      {"id":"spot_bedroom","name":"Bedroom 🛏️","emoji":"🛏️","xPercent":0.25,"yPercent":0.35,"clueId":"c12_dawai","description":"Bada bedroom — locker thoda khula hai."},
+      {"id":"spot_study","name":"Study Room 📚","emoji":"📚","xPercent":0.7,"yPercent":0.55,"clueId":"c12_will","description":"Bookshelves — mez pe kagazat."},
+      {"id":"spot_security","name":"Security Room 📹","emoji":"📹","xPercent":0.15,"yPercent":0.7,"clueId":"c12_cctv","description":"Chhota kamra — screens khaali hain."}
+    ]
+  },
+  {
+    "id": "chapter_13",
+    "title": "Studio Ka Script",
+    "subtitle": "Glamour ke peeche ka andheraa...",
+    "location": "Mumbai — Andheri Film Studio",
+    "backgroundEmoji": "🎬",
+    "mystery": "Nayi film ka script chor liya gaya — jisme 10 crore ka budget tha. Script writer Anand Kapoor ka kehna hai yeh unka original kaam tha. Director ka kehna hai unka. Aur ab Anand ko kisi ne dhamki di hai.",
+    "solution": "char_vikrant",
+    "isLocked": true,
+    "order": 13,
+    "clues": [
+      {"id":"c13_email","name":"Copy Email","description":"Anand ke computer mein ek email — script director ko bheji gayi thi bina bataye.","emoji":"📧","location":"Anand Ka Office","isImportant":true,"order":1},
+      {"id":"c13_pen","name":"Khaas Pen","description":"Script pe ek khaas ink — sirf Vikrant director ki pen se match karti hai.","emoji":"🖊️","location":"Script Ke Paas","isImportant":true,"order":2},
+      {"id":"c13_gawah","name":"Assistant Ki Baat","description":"Set assistant ne suna — Vikrant bola tha 'woh script meri hai, use chup karao.'","emoji":"🎙️","location":"Set Ka Bahar","isImportant":true,"order":3},
+      {"id":"c13_contract","name":"Purana Contract","description":"Anand ka 3 saal purana contract — usme script rights director ke naam thi.","emoji":"📋","location":"Producer Ka Kamra","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_vikrant",
+        "name": "Vikrant Roy",
+        "role": "Film Director",
+        "emoji": "🎥",
+        "description": "Mashoor director. Script chori ka faida uthaya. Anand ko dhamki deta hai.",
+        "suspicionLevel": 85,
+        "dialogues": [
+          {"id":"d13_v1","trigger":"Script kahan se aayi?","response":"Main saalon se is idea pe kaam kar raha tha — Anand ne copy ki meri!","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d13_v2","trigger":"Aapki pen ki ink match karti hai?","response":"Bahut logo ke paas wahi pen hoti hai!","revealClue":"c13_pen","isHidden":true,"requiredClueId":"c13_pen","isImportant":true,"followUpIds":[]},
+          {"id":"d13_v3","trigger":"Assistant ne kya suna?","response":"Woh jhooth bol raha hai! Mujhe frame kiya ja raha hai!","revealClue":"c13_gawah","isHidden":true,"requiredClueId":"c13_gawah","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_anand",
+        "name": "Anand Kapoor",
+        "role": "Script Writer",
+        "emoji": "✍️",
+        "description": "Bahut talented par contract ka dhyan nahi rakha. Sach uski taraf hai.",
+        "suspicionLevel": 20,
+        "dialogues": [
+          {"id":"d13_a1","trigger":"Email kyun bheji bina bataye?","response":"Feedback lena tha — galti hui meri. Par script meri hai!","revealClue":"c13_email","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d13_a2","trigger":"Contract mein kya tha?","response":"Mujhe nahi pata tha rights unke naam thi! Lawyer ne clear nahi kiya tha!","revealClue":"c13_contract","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_producer",
+        "name": "Ramesh Producer",
+        "role": "Film Producer",
+        "emoji": "💰",
+        "description": "Paisa laga rakha hai. Jhagde se pareshan hai.",
+        "suspicionLevel": 15,
+        "dialogues": [
+          {"id":"d13_r1","trigger":"Dhamki ki baat pata hai?","response":"Haan, Vikrant ne Anand ko bola tha — main khud sun raha tha phone pe.","revealClue":"c13_gawah","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_office","name":"Anand Ka Office 💻","emoji":"💻","xPercent":0.3,"yPercent":0.4,"clueId":"c13_email","description":"Chhota office — screen on hai."},
+      {"id":"spot_script","name":"Script Table 📄","emoji":"📄","xPercent":0.6,"yPercent":0.35,"clueId":"c13_pen","description":"Badi mez — script ka dher."},
+      {"id":"spot_set","name":"Set Ka Bahar 🎬","emoji":"🎬","xPercent":0.5,"yPercent":0.7,"clueId":"c13_gawah","description":"Set ka baahari hissa — log baat kar rahe hain."},
+      {"id":"spot_producer","name":"Producer Ka Kamra 💼","emoji":"💼","xPercent":0.8,"yPercent":0.5,"clueId":"c13_contract","description":"AC kamra — faailon ka dher."}
+    ]
+  },
+  {
+    "id": "chapter_14",
+    "title": "Chawl Ki Aag",
+    "subtitle": "Mumbai ki chawl mein sulgta sach...",
+    "location": "Mumbai — Dadar Chawl",
+    "backgroundEmoji": "🔥",
+    "mystery": "Dadar ki purani chawl mein aag lagi — aur usmein banda Gopal ki maut. Aag accident thi ya saazish? Fire brigade boli short circuit — par bijli ka bill unpaid tha 6 mahine se.",
+    "solution": "char_nitin",
+    "isLocked": true,
+    "order": 14,
+    "clues": [
+      {"id":"c14_petrol","name":"Petrol Ki Gandhh","description":"Aag ke baad bhi ek jagah petrol ki khaas gandhh — short circuit mein nahi hoti.","emoji":"🛢️","location":"Aag Wali Jagah","isImportant":true,"order":1},
+      {"id":"c14_insurance","name":"Double Insurance","description":"Gopal ki building ka insurance tha — nominee Nitin. 2 mahine pehle liya gaya.","emoji":"📋","location":"Gopal Ka Kamra","isImportant":true,"order":2},
+      {"id":"c14_lighter","name":"Jhulsa Lighter","description":"Chhati ke paas ek jhulsa hua lighter — Nitin ki qisam ka.","emoji":"🔥","location":"Chhati Ka Kona","isImportant":false,"order":3},
+      {"id":"c14_gawah","name":"Raat Wala Gawah","description":"Ek raat ko jaagna wala — Nitin ko petrol can le jaate dekha.","emoji":"👁️","location":"Khidki Ke Paas","isImportant":true,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_nitin",
+        "name": "Nitin Gopal",
+        "role": "Mritak Ka Bhai",
+        "emoji": "🧔",
+        "description": "Bhai se property ka jhagda tha. Insurance ka nominee tha. Lighter use karta hai.",
+        "suspicionLevel": 87,
+        "dialogues": [
+          {"id":"d14_n1","trigger":"Aag ke waqt kahan the?","response":"Dost ke ghar tha — sab raat bhar mere saath the!","revealClue":null,"isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d14_n2","trigger":"Insurance 2 mahine pehle kyun liya?","response":"Routine tha! Property old thi — sab karte hain!","revealClue":"c14_insurance","isHidden":true,"requiredClueId":"c14_insurance","isImportant":true,"followUpIds":[]},
+          {"id":"d14_n3","trigger":"Gawah ne petrol can ke saath dekha?","response":"Galat pehchana hoga! Main gaya hi nahi tha wahan!","revealClue":"c14_gawah","isHidden":true,"requiredClueId":"c14_gawah","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_fire",
+        "name": "Shanta Bai",
+        "role": "Upar Ki Manzil Wali",
+        "emoji": "👩‍🦱",
+        "description": "Raat ko jaag rahi thi. Khidki se sab dikhta hai usse.",
+        "suspicionLevel": 12,
+        "dialogues": [
+          {"id":"d14_sh1","trigger":"Aag se pehle kuch dekha?","response":"Nitin neeche se aaya tha raat ko — haath mein kuch tha. 10 minute baad aag lagi.","revealClue":"c14_petrol","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_fireman",
+        "name": "Havaldar Tukaram",
+        "role": "Fire Brigade",
+        "emoji": "🚒",
+        "description": "Aag bujhayi. Kuch anokha tha aag mein.",
+        "suspicionLevel": 5,
+        "dialogues": [
+          {"id":"d14_t1","trigger":"Aag ka pattern kya tha?","response":"Ek jagah se start hua — aur woh jagah petrol se bheegi thi. Short circuit nahi tha yeh.","revealClue":"c14_lighter","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_aag","name":"Aag Wali Jagah 🔥","emoji":"🔥","xPercent":0.5,"yPercent":0.55,"clueId":"c14_petrol","description":"Jaali hui jagah — kuch gandhh abhi bhi hai."},
+      {"id":"spot_kamra","name":"Gopal Ka Kamra 🚪","emoji":"🚪","xPercent":0.3,"yPercent":0.4,"clueId":"c14_insurance","description":"Adha jala kamra — mez pe kagaz hain."},
+      {"id":"spot_chhati","name":"Chhati Ka Kona 🏚️","emoji":"🏚️","xPercent":0.7,"yPercent":0.35,"clueId":"c14_lighter","description":"Andhera kona — kuch pada hua hai."},
+      {"id":"spot_khidki","name":"Khidki 🪟","emoji":"🪟","xPercent":0.15,"yPercent":0.6,"clueId":"c14_gawah","description":"Khidki se bahar nazar jaati hai."}
+    ]
+  },
+  {
+    "id": "chapter_15",
+    "title": "Colaba Ka Chor",
+    "subtitle": "South Mumbai ki gehri saazish...",
+    "location": "Mumbai — Colaba Market",
+    "backgroundEmoji": "🛍️",
+    "mystery": "Colaba ke mashoor antique dealer Khan Sahab ki dukaan se 200 saal purana haathi daant ka idol chor liya gaya. Alarm nahi baja — koi jaanta tha system ko. Police hairan hai.",
+    "solution": "char_rahul",
+    "isLocked": true,
+    "order": 15,
+    "clues": [
+      {"id":"c15_alarm","name":"Alarm Code","description":"Alarm system ka code badla gaya tha 3 din pehle — sirf ek naya employee jaanta tha.","emoji":"🔔","location":"Security Panel","isImportant":true,"order":1},
+      {"id":"c15_kapda","name":"Kapde Ka Tukda","description":"Dukaan ki jaali mein ek high-end kapda — koi ameer banda ghusa tha.","emoji":"🧣","location":"Peechhi Jaali","isImportant":true,"order":2},
+      {"id":"c15_online","name":"Online Listing","description":"Idol waisi cheez ek shady website pe list hua — seller ka naam 'R.S.'","emoji":"💻","location":"Ek Tip Se","isImportant":true,"order":3},
+      {"id":"c15_chabi","name":"Master Key","description":"Counter ke neeche ek master key — kisi ne copy karwayi thi.","emoji":"🗝️","location":"Counter Ke Neeche","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_rahul",
+        "name": "Rahul Sharma",
+        "role": "Naya Sales Assistant",
+        "emoji": "🧑‍💼",
+        "description": "3 din pehle join kiya. Alarm code jaanta tha. 'R.S.' initials match karte hain.",
+        "suspicionLevel": 83,
+        "dialogues": [
+          {"id":"d15_r1","trigger":"Alarm code badla tha tumne?","response":"Haan, Khan sahab ne bola tha purana code weak tha.","revealClue":"c15_alarm","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]},
+          {"id":"d15_r2","trigger":"Online listing mein R.S. kaun hai?","response":"Main... bahut saare R.S. hote hain! Mere upar ilzaam mat lagao!","revealClue":"c15_online","isHidden":true,"requiredClueId":"c15_online","isImportant":true,"followUpIds":[]},
+          {"id":"d15_r3","trigger":"Master key tune banwaayi?","response":"Emergency ke liye... Khan sahab ko pata tha! Mera matlab chori nahi tha!","revealClue":"c15_chabi","isHidden":true,"requiredClueId":"c15_chabi","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_khan",
+        "name": "Arif Khan",
+        "role": "Dukaan Ka Maalik",
+        "emoji": "👴",
+        "description": "30 saal purani dukaan. Rahul pe vishwas kiya — ab pachhtaa raha hai.",
+        "suspicionLevel": 15,
+        "dialogues": [
+          {"id":"d15_k1","trigger":"Rahul par bharosa kyun kiya?","response":"Usne bahut achhi tarah interview diya. Recommendations bhi thi. Mujhe kya pata tha...","revealClue":"c15_kapda","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_guard",
+        "name": "Ramkhelawan Guard",
+        "role": "Night Guard",
+        "emoji": "💂",
+        "description": "Raat ki duty thi. Kuch ajeeb tha.",
+        "suspicionLevel": 22,
+        "dialogues": [
+          {"id":"d15_g1","trigger":"Raat ko kuch hua?","response":"Alarm nahi baja toh main relaxed tha. Par ek aadmi dikha tha — achhe kapdon mein. Rahul jaisa tha.","revealClue":"c15_kapda","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_panel","name":"Security Panel 🔒","emoji":"🔒","xPercent":0.2,"yPercent":0.4,"clueId":"c15_alarm","description":"Deewar pe security system — lights blink kar rahi hain."},
+      {"id":"spot_jaali","name":"Peechhi Jaali 🪟","emoji":"🪟","xPercent":0.8,"yPercent":0.6,"clueId":"c15_kapda","description":"Lohe ki jaali — kuch fansa hua hai."},
+      {"id":"spot_counter","name":"Counter 🏪","emoji":"🏪","xPercent":0.5,"yPercent":0.5,"clueId":"c15_chabi","description":"Sheeshe ka counter — neeche drawer hai."},
+      {"id":"spot_laptop","name":"Laptop 💻","emoji":"💻","xPercent":0.35,"yPercent":0.65,"clueId":"c15_online","description":"Purana laptop — browser khula hua hai."}
+    ]
+  }
+]

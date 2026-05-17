@@ -1,0 +1,352 @@
+[
+  {
+    "id": "chapter_46",
+    "title": "Osho Ka Dhyan",
+    "subtitle": "Shanti me chhipa zehar...",
+    "location": "Pune — Osho Ashram",
+    "backgroundEmoji": "🧘‍♂️",
+    "mystery": "Dhyan (Meditation) ke dauran ek VIP sadhak ki paani ki bottle me kisne neend ki dawai mila di? Char sadhak wahan the.",
+    "solution": "char_rival_yogi",
+    "isLocked": true,
+    "order": 46,
+    "clues": [
+      {"id":"c46_wrapper","name":"Dawai Ka Panna","description":"Paudhe ke gamle me neend ki dawai ka wrapper mila.","emoji":"💊","location":"Gamla","isImportant":true,"order":1},
+      {"id":"c46_mat","name":"Ghisatne Ka Nishan","description":"Yoga mat par ajeeb tareeke se chalne ke nishan.","emoji":"🧘‍♀️","location":"Yoga Mat","isImportant":true,"order":2},
+      {"id":"c46_incense","name":"Bujhi Agarbatti","description":"Bujhi hui agarbatti.","emoji":"🪔","location":"Kona","isImportant":false,"order":3},
+      {"id":"c46_book","name":"Pooja Ki Kitab","description":"Kitab par paani gira hua hai.","emoji":"📖","location":"Table","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_rival_yogi",
+        "name": "Swami G",
+        "role": "Yogi",
+        "emoji": "🧘‍♂️",
+        "description": "VIP ko pasand nahi karta, uski jagah lena chahta hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d46_r1","trigger":"Wrapper kahan se aaya?","response":"Shayad kachre se udd kar aaya ho.","revealClue":"c46_wrapper","isHidden":true,"requiredClueId":"c46_wrapper","isImportant":false,"followUpIds":[]},
+          {"id":"d46_r2","trigger":"Mat par nishan tumhare paon ke hain?","response":"Haan, main andhere me bottle ke paas se guzra tha! Dawai daalni thi!","revealClue":"c46_mat","isHidden":true,"requiredClueId":"c46_mat","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_vip3",
+        "name": "Rich Man",
+        "role": "VIP Sadhak",
+        "emoji": "🤵",
+        "description": "Behosh hone wala tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d46_v1","trigger":"Paani kaisa laga?","response":"Kadwa tha, maine turant thook diya aur kitab par gira diya.","revealClue":"c46_book","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_cleaner4",
+        "name": "Mali",
+        "role": "Gardener",
+        "emoji": "🧑‍🌾",
+        "description": "Poudhon ki dekh bhal karta hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d46_c1","trigger":"Gamle me kya tha?","response":"Maine subah safai karte waqt dawai ka wrapper dekha.","revealClue":"c46_wrapper","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_yogi2",
+        "name": "Anand",
+        "role": "Sadhak",
+        "emoji": "🙏",
+        "description": "Dhyan kar raha tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d46_y1","trigger":"Mat par kon aaya?","response":"Dhyan ke beech Swami G apni jagah se hat kar VIP ki taraf gaye the, mat ghisatne ki aawaz aayi.","revealClue":"c46_mat","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_plant","name":"Gamla 🪴","emoji":"🪴","xPercent":0.2,"yPercent":0.3,"clueId":"c46_wrapper","description":"Paudha."},
+      {"id":"spot_mat","name":"Yoga Mat 🧘‍♂️","emoji":"🧘‍♂️","xPercent":0.5,"yPercent":0.6,"clueId":"c46_mat","description":"Zameen par bichha mat."},
+      {"id":"spot_corner3","name":"Kona ⬛","emoji":"⬛","xPercent":0.8,"yPercent":0.8,"clueId":"c46_incense","description":"Agarbatti yahin thi."},
+      {"id":"spot_table3","name":"Table 🪑","emoji":"🪑","xPercent":0.7,"yPercent":0.4,"clueId":"c46_book","description":"Kitab rakhi hai."}
+    ]
+  },
+  {
+    "id": "chapter_47",
+    "title": "FC Road Ka Hacker",
+    "subtitle": "Cafe ke free WiFi me trap...",
+    "location": "Pune — FC Road Cafe",
+    "backgroundEmoji": "☕",
+    "mystery": "College ke pas ke mashhoor cafe me baithe char logo me se kisi ek ne manager ka laptop hack kar liya. Kise pakdoge?",
+    "solution": "char_nerd",
+    "isLocked": true,
+    "order": 47,
+    "clues": [
+      {"id":"c47_usb","name":"Chhota USB","description":"Laptop port ke pas ek chhota kale rang ka USB plug tha jo jaldi me chhut gaya.","emoji":"🔌","location":"Manager Desk","isImportant":true,"order":1},
+      {"id":"c47_coffee","name":"Cold Coffee Receipt","description":"Hacker ki table par cold coffee ka receipt hai.","emoji":"🧾","location":"Table No 4","isImportant":true,"order":2},
+      {"id":"c47_bag","name":"Laptop Bag","description":"Ek bhari laptop bag rakha hua.","emoji":"🎒","location":"Chair","isImportant":false,"order":3},
+      {"id":"c47_headphones","name":"Headphones","description":"Gaming headphones table par.","emoji":"🎧","location":"Table No 2","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_nerd",
+        "name": "Vicky Hacker",
+        "role": "IT Student",
+        "emoji": "🧑‍💻",
+        "description": "Cold coffee pita hai, geek lagta hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d47_n1","trigger":"Table 4 ka receipt tumhara hai?","response":"Haan, main cold coffee pi raha tha. Isme kya?","revealClue":"c47_coffee","isHidden":true,"requiredClueId":"c47_coffee","isImportant":false,"followUpIds":[]},
+          {"id":"d47_n2","trigger":"USB tumhara hai kya?","response":"Damn it! Mera hacking dongle wahan chhut gaya!","revealClue":"c47_usb","isHidden":true,"requiredClueId":"c47_usb","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_manager6",
+        "name": "Cafe Manager",
+        "role": "Owner",
+        "emoji": "👨‍💼",
+        "description": "Laptop ka password change karna bhool gaya.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d47_m1","trigger":"Hack kab hua?","response":"Jab main order lene gaya, tabhi kisi ne ye kala dongle mere laptop me ghusa diya.","revealClue":"c47_usb","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_gamer",
+        "name": "Rahul Gamer",
+        "role": "Student",
+        "emoji": "🎮",
+        "description": "Gaming headphones pehne hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d47_g1","trigger":"Tum kahan the?","response":"Main game khel raha tha Table 2 par, mere headphones wahi hain.","revealClue":"c47_headphones","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_waiter",
+        "name": "Ramu Waiter",
+        "role": "Staff",
+        "emoji": "🤵",
+        "description": "Sab dekhta hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d47_w1","trigger":"Kon Manager ke desk ke pas tha?","response":"Maine Table 4 wale (cold coffee wale) ko desk ke paas khade dekha tha.","revealClue":"c47_coffee","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_desk2","name":"Manager Desk 💻","emoji":"💻","xPercent":0.2,"yPercent":0.5,"clueId":"c47_usb","description":"Laptop yahin hai."},
+      {"id":"spot_table4","name":"Table No 4 ☕","emoji":"☕","xPercent":0.7,"yPercent":0.4,"clueId":"c47_coffee","description":"Hacker ka thikana."},
+      {"id":"spot_chair","name":"Chair 🪑","emoji":"🪑","xPercent":0.8,"yPercent":0.6,"clueId":"c47_bag","description":"Bag rakha hai."},
+      {"id":"spot_table2","name":"Table No 2 🎧","emoji":"🎧","xPercent":0.5,"yPercent":0.8,"clueId":"c47_headphones","description":"Gaming setup."}
+    ]
+  },
+  {
+    "id": "chapter_48",
+    "title": "Aga Khan Ki Tasveer",
+    "subtitle": "Khoon pasine se bani painting gayab...",
+    "location": "Pune — Aga Khan Palace",
+    "backgroundEmoji": "🖼️",
+    "mystery": "Palace ke museum se ek choti par mehengi historical painting frame se kaat li gayi. Char tourist the us kamre me.",
+    "solution": "char_art_thief",
+    "isLocked": true,
+    "order": 48,
+    "clues": [
+      {"id":"c48_blade","name":"Surgical Blade","description":"Painting ke neeche ek sharp chhota blade.","emoji":"🔪","location":"Frame Ke Paas","isImportant":true,"order":1},
+      {"id":"c48_glove2","name":"Silicone Glove","description":"Fingers par nishan na chodne wala transparent glove.","emoji":"🧤","location":"Dustbin","isImportant":true,"order":2},
+      {"id":"c48_photo","name":"Flash Camera","description":"Ek tourist ka camera.","emoji":"📸","location":"Seat","isImportant":false,"order":3},
+      {"id":"c48_book2","name":"Guide Book","description":"Ek tourist ki kitab.","emoji":"📖","location":"Zameen","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_art_thief",
+        "name": "Raj Art",
+        "role": "Art Collector",
+        "emoji": "🧑‍🎨",
+        "description": "Painting par pehle se nazar thi.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d48_a1","trigger":"Silicone glove kiska hai?","response":"Mera nahi hai, kisi doctor ka hoga.","revealClue":"c48_glove2","isHidden":true,"requiredClueId":"c48_glove2","isImportant":false,"followUpIds":[]},
+          {"id":"d48_a2","trigger":"Blade se sirf ek art expert hi itni safai se kaat sakta hai.","response":"Ha, mujhe painting apne collection me chahiye thi. Blade mera hai.","revealClue":"c48_blade","isHidden":true,"requiredClueId":"c48_blade","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_guide3",
+        "name": "Historian",
+        "role": "Guide",
+        "emoji": "👨‍🏫",
+        "description": "Sabko tour de raha tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d48_h1","trigger":"Kaise kati painting?","response":"Bahut safai se ek blade se kati gayi hai, jaise koi professional ho.","revealClue":"c48_blade","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_tourist5",
+        "name": "Tourist Aunty",
+        "role": "Tourist",
+        "emoji": "👩",
+        "description": "Photos lene me busy thi.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d48_t1","trigger":"Kya dekha apne?","response":"Main photo le rahi thi, tabhi ek admi transparent glove pehan ke kuch kar raha tha.","revealClue":"c48_glove2","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_student5",
+        "name": "Nitin",
+        "role": "Student",
+        "emoji": "👦",
+        "description": "Kitab padh raha tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d48_s1","trigger":"Tum kahan the?","response":"Main guide book padh raha tha zameen par baith kar.","revealClue":"c48_book2","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_frame","name":"Khali Frame 🖼️","emoji":"🖼️","xPercent":0.5,"yPercent":0.4,"clueId":"c48_blade","description":"Yahan painting thi."},
+      {"id":"spot_dustbin2","name":"Dustbin 🗑️","emoji":"🗑️","xPercent":0.2,"yPercent":0.8,"clueId":"c48_glove2","description":"Kachre ka dabba."},
+      {"id":"spot_seat2","name":"Bench 🪑","emoji":"🪑","xPercent":0.8,"yPercent":0.6,"clueId":"c48_photo","description":"Baithne ki jagah."},
+      {"id":"spot_floor4","name":"Zameen 🟫","emoji":"🟫","xPercent":0.6,"yPercent":0.9,"clueId":"c48_book2","description":"Yahan kitab giri hai."}
+    ]
+  },
+  {
+    "id": "chapter_49",
+    "title": "Sinhagad Ka Khazana",
+    "subtitle": "Khandahar me chupaya sona...",
+    "location": "Pune — Sinhagad Fort",
+    "backgroundEmoji": "⛰️",
+    "mystery": "Trekking club ko ek purana khazana mila tha kile me, par agle din wahan se gayab! Char logo me se ek gaddar hai.",
+    "solution": "char_trekker",
+    "isLocked": true,
+    "order": 49,
+    "clues": [
+      {"id":"c49_rope2","name":"Nylon Rope","description":"Pahad se utarne ke liye nai nylon ki rassi bandhi hui.","emoji":"🪢","location":"Kile Ki Deewar","isImportant":true,"order":1},
+      {"id":"c49_bag2","name":"Trekking Bag","description":"Ek bhari bag jisme se mitti gir rahi hai.","emoji":"🎒","location":"Trekker Camp","isImportant":true,"order":2},
+      {"id":"c49_map2","name":"Khazane Ka Naksha","description":"Table par rakha map.","emoji":"🗺️","location":"Base Camp","isImportant":false,"order":3},
+      {"id":"c49_torch2","name":"Torch","description":"Khandahar me giri hui head-torch.","emoji":"🔦","location":"Khandahar","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_trekker",
+        "name": "Rocky",
+        "role": "Trek Leader",
+        "emoji": "🧗‍♂️",
+        "description": "Ropes ka expert hai. Khazana akele chahta tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d49_r1","trigger":"Bag me mitti kyu hai?","response":"Wo.. pahad ki mitti hai.","revealClue":"c49_bag2","isHidden":true,"requiredClueId":"c49_bag2","isImportant":false,"followUpIds":[]},
+          {"id":"d49_r2","trigger":"Tumne nayi rassi ka use kyu kiya?","response":"Theek hai! Khazana bhari tha, main akela rassi se utar gaya tha raat me!","revealClue":"c49_rope2","isHidden":true,"requiredClueId":"c49_rope2","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_friend",
+        "name": "Amit",
+        "role": "Member",
+        "emoji": "👦",
+        "description": "Rocky ka dost.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d49_f1","trigger":"Rassi kisne bandhi?","response":"Sirf Rocky hi aisi knot bandh sakta hai pahad par.","revealClue":"c49_rope2","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_guide4",
+        "name": "Kaka",
+        "role": "Local Guide",
+        "emoji": "👴",
+        "description": "Kila ache se janta hai.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d49_g1","trigger":"Raat ko kya hua?","response":"Maine ek head-torch wale ko khandahar ki taraf jate dekha tha.","revealClue":"c49_torch2","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_police",
+        "name": "Inspector",
+        "role": "Police",
+        "emoji": "👮‍♂️",
+        "description": "Investigation ke liye aaya.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d49_p1","trigger":"Suspicious kya laga?","response":"Rocky ke bag se wahi wali mitti gir rahi thi jo khazane ki jagah par thi.","revealClue":"c49_bag2","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_wall","name":"Deewar 🧱","emoji":"🧱","xPercent":0.2,"yPercent":0.4,"clueId":"c49_rope2","description":"Yahan se utar sakte hain."},
+      {"id":"spot_camp","name":"Trekker Camp ⛺","emoji":"⛺","xPercent":0.7,"yPercent":0.7,"clueId":"c49_bag2","description":"Jahan log ruke the."},
+      {"id":"spot_base2","name":"Base Desk 🪑","emoji":"🪑","xPercent":0.5,"yPercent":0.2,"clueId":"c49_map2","description":"Naksha table par."},
+      {"id":"spot_ruins","name":"Khandahar 🏛️","emoji":"🏛️","xPercent":0.8,"yPercent":0.4,"clueId":"c49_torch2","description":"Andheri jagah."}
+    ]
+  },
+  {
+    "id": "chapter_50",
+    "title": "Koregaon Ka Mastermind",
+    "subtitle": "Khel ka aakhri padaw...",
+    "location": "Pune — Koregaon Park",
+    "backgroundEmoji": "🌳",
+    "mystery": "Ek posh bungalow me chal rahe secret poker game me 1 Crore ki cash chori. 4 khiladi, light gul, aur cash gayab!",
+    "solution": "char_dealer",
+    "isLocked": true,
+    "order": 50,
+    "clues": [
+      {"id":"c50_cards","name":"Giri Hui Taash","description":"Dealer ki table ke piche extra patte.","emoji":"🃏","location":"Table Ke Niche","isImportant":true,"order":1},
+      {"id":"c50_fuse","name":"Kala Fuse","description":"Bijli ka fuse jaanbujh kar nikala gaya tha.","emoji":"🔌","location":"Main Board","isImportant":true,"order":2},
+      {"id":"c50_bag3","name":"Khali Duffle Bag","description":"Sofe ke niche chipaya kala bag.","emoji":"👜","location":"Sofa","isImportant":true,"order":3},
+      {"id":"c50_glass","name":"Wine Glass","description":"Tuta hua wine glass farsh par.","emoji":"🍷","location":"Farsh","isImportant":false,"order":4}
+    ],
+    "characters": [
+      {
+        "id": "char_dealer",
+        "name": "Ravi Dealer",
+        "role": "Card Dealer",
+        "emoji": "🤵",
+        "description": "Professionally cards bant ta hai, fuse board ke pass khada tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d50_d1","trigger":"Extra cards table ke niche kyu?","response":"Gir gaye honge andhere me.","revealClue":"c50_cards","isHidden":true,"requiredClueId":"c50_cards","isImportant":false,"followUpIds":[]},
+          {"id":"d50_d2","trigger":"Tumne hi fuse nikala tha andhera karne ke liye!","response":"Haa! Cash mere samne tha, aur ye ameer log aise hi paise udate hain. Mera haq tha!","revealClue":"c50_fuse","isHidden":true,"requiredClueId":"c50_fuse","isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_player1",
+        "name": "Don",
+        "role": "Mafia",
+        "emoji": "🕴️",
+        "description": "Gusse me hai, paise usi ke the.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d50_p1","trigger":"Light jane par kya hua?","response":"Dealer Ravi fuse board ke paas chala gaya tha, bahane se!","revealClue":"c50_fuse","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_player2",
+        "name": "Sonia",
+        "role": "Actress",
+        "emoji": "👩‍🎤",
+        "description": "Dar ke chillane lagi thi.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d50_p21","trigger":"Bag kiska hai?","response":"Maine Ravi ko us kale bag ke sath room me aate dekha tha.","revealClue":"c50_bag3","isHidden":false,"requiredClueId":null,"isImportant":true,"followUpIds":[]}
+        ]
+      },
+      {
+        "id": "char_butler",
+        "name": "Kaka",
+        "role": "Butler",
+        "emoji": "👨‍🍳",
+        "description": "Wine serve kar raha tha.",
+        "suspicionLevel": 0,
+        "dialogues": [
+          {"id":"d50_b1","trigger":"Glass kisne toda?","response":"Andhere me mujhse gir gaya sir.","revealClue":"c50_glass","isHidden":false,"requiredClueId":null,"isImportant":false,"followUpIds":[]}
+        ]
+      }
+    ],
+    "spots": [
+      {"id":"spot_table5","name":"Poker Table 🃏","emoji":"🃏","xPercent":0.5,"yPercent":0.5,"clueId":"c50_cards","description":"Jahan cash tha."},
+      {"id":"spot_fuse","name":"Fuse Board ⚡","emoji":"⚡","xPercent":0.2,"yPercent":0.3,"clueId":"c50_fuse","description":"Bijli control."},
+      {"id":"spot_sofa2","name":"Bada Sofa 🛋️","emoji":"🛋️","xPercent":0.8,"yPercent":0.7,"clueId":"c50_bag3","description":"Baithne ki jagah."},
+      {"id":"spot_floor5","name":"Zameen 🟫","emoji":"🟫","xPercent":0.4,"yPercent":0.8,"clueId":"c50_glass","description":"Yahan kanch pada hai."}
+    ]
+  }
+]

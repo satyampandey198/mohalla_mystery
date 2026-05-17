@@ -9,6 +9,8 @@ import '../utils/app_theme.dart';
 import '../utils/app_strings.dart';
 import '../services/game_provider.dart';
 import '../services/ad_service.dart';
+import '../services/sound_service.dart';
+import '../widgets/sound_settings_widget.dart';
 import 'chapter_select_screen.dart';
 
 class MainMenuScreen extends StatefulWidget {
@@ -92,6 +94,16 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
     );
   }
 
+  void _showSettingsDialog() {
+    showDialog(
+      context: context,
+      builder: (_) => const Dialog(
+        backgroundColor: Colors.transparent,
+        child: SoundSettingsWidget(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final gameProvider = context.watch<GameProvider>();
@@ -104,12 +116,31 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
           _buildBackground(),
 
           SafeArea(
-            child: Column(
+            child: Stack(
               children: [
-                const SizedBox(height: 40),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.settings,
+                        color: AppTheme.primary,
+                        size: 32,
+                      ),
+                      onPressed: () {
+                        SoundService().playButtonTap();
+                        _showSettingsDialog();
+                      },
+                    ),
+                  ),
+                ),
+                Column(
+                  children: [
+                    const SizedBox(height: 40),
 
-                // Game Title
-                _buildTitle(),
+                    // Game Title
+                    _buildTitle(),
 
                 const Spacer(),
 
@@ -126,6 +157,8 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                 // Banner Ad
                 const BannerAdWidget(),
                 const SizedBox(height: 8),
+              ],
+            ),
               ],
             ),
           ),
@@ -207,6 +240,61 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
   }
 
   Widget _buildMenuButtons(BuildContext context, GameProvider gameProvider) {
+    if (gameProvider.loadingState == LoadingState.loading) {
+      return const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 32, vertical: 40),
+        child: Center(child: CircularProgressIndicator(color: AppTheme.accent)),
+      );
+    }
+
+    if (gameProvider.loadingState == LoadingState.error) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: AppTheme.primary.withValues(alpha: 0.1),
+                border: Border.all(color: AppTheme.primary.withValues(alpha: 0.5)),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                children: [
+                  const Text('⚠️', style: TextStyle(fontSize: 32)),
+                  const SizedBox(height: 8),
+                  Text(
+                    gameProvider.errorMessage ?? 'No Internet',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white, fontSize: 14),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            _MenuButton(
+              label: 'RETRY CONNECTION',
+              emoji: '🔄',
+              isPrimary: true,
+              onTap: () {
+                SoundService().playButtonTap();
+                gameProvider.loadChaptersFromFirebase();
+              },
+            ),
+            const SizedBox(height: 16),
+            _MenuButton(
+              label: AppStrings.get('btn_language', gameProvider.language),
+              emoji: '🌐',
+              onTap: () {
+                SoundService().playButtonTap();
+                _showLanguageDialog();
+              },
+            ),
+          ],
+        ),
+      );
+    }
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32),
       child: Column(
@@ -217,10 +305,13 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
             subtitle: AppStrings.get('btn_start_sub', gameProvider.language),
             emoji: '🔍',
             isPrimary: true,
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const ChapterSelectScreen()),
-            ),
+            onTap: () {
+              SoundService().playButtonTap();
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ChapterSelectScreen()),
+              );
+            },
           ).animate().fadeIn(delay: 800.ms).slideY(begin: 0.3),
 
           const SizedBox(height: 12),
@@ -232,7 +323,10 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                   label: AppStrings.get('btn_hints', gameProvider.language),
                   emoji: '💡',
                   score: gameProvider.hintsRemaining,
-                  onTap: () => _showHintsDialog(context, gameProvider),
+                  onTap: () {
+                    SoundService().playButtonTap();
+                    _showHintsDialog(context, gameProvider);
+                  },
                 ),
               ),
               const SizedBox(width: 12),
@@ -240,7 +334,10 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                 child: _MenuButton(
                   label: AppStrings.get('btn_language', gameProvider.language),
                   emoji: '🌐',
-                  onTap: () => _showLanguageDialog(),
+                  onTap: () {
+                    SoundService().playButtonTap();
+                    _showLanguageDialog();
+                  },
                 ),
               ),
             ],
@@ -252,7 +349,10 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
             label: AppStrings.get('btn_how_to_play', gameProvider.language),
             subtitle: AppStrings.get('btn_how_to_play_sub', gameProvider.language),
             emoji: '📖',
-            onTap: () => _showHowToPlay(context),
+            onTap: () {
+              SoundService().playButtonTap();
+              _showHowToPlay(context);
+            },
           ).animate().fadeIn(delay: 1100.ms),
         ],
       ),
